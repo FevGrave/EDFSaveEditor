@@ -18,12 +18,12 @@ VSVersionInfo(
           u'040904B0', # Language and code page
           [
             StringStruct(u'CompanyName', u'FevGrave - EDF Community - A Community Based Project'),
-            StringStruct(u'FileDescription', u'Save Modification Editor'),
+            StringStruct(u'FileDescription', u'Save Modification Editor For The Earth Defense Force Series'),
             StringStruct(u'FileVersion', u'1.0.0.0'),
-            StringStruct(u'InternalName', u'EDF MML.exe'),
+            StringStruct(u'InternalName', u'EDFSaveEditor.exe'),
             StringStruct(u'LegalCopyright', u'CC0 1.0 Universal (CC0 1.0) Public Domain Dedication'),
-            StringStruct(u'OriginalFilename', u'EDF MML.exe'),
-            StringStruct(u'ProductName', u'Earth Defense Force: Multi Mod Loader'),
+            StringStruct(u'OriginalFilename', u'EDFSaveEditor.exe'),
+            StringStruct(u'ProductName', u'Earth Defense Force: Save Editor'),
             StringStruct(u'ProductVersion', u'1.0.0.0'),
           ]
         )

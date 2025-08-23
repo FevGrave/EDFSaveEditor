@@ -1,0 +1,40 @@
+[*] Starting EDF6 save analysis script
+[✓] Copied c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\saveslot00 to c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Encrypted
+[!] MAIN.GST not found, skipping rename
+[!] COMMON.CFG not found, skipping rename
+[!] TROPHY.DAT not found, skipping rename
+[!] DEFP_M00.MST not found, skipping rename
+[*] Running decrypt tool...
+[✓] Decrypt tool completed.
+
+[*] Checking file headers...
+[!] Missing file: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\MAIN.GST
+[!] Missing file: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\TROPHY.DAT
+[!] Missing file: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\COMMON.CFG
+[!] Missing file: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\DEFP_M00.MST
+[!] Missing file: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\DEFP_DLC1.MST
+[!] Missing file: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\DEFP_DLC2.MST
+[!] Cannot parse MAIN.GST, file missing: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\MAIN.GST
+[!] Cannot parse COMMON.CFG, file missing: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\COMMON.CFG
+[!] Cannot parse TROPHY.DAT, file missing: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\TROPHY.DAT
+[!] Cannot parse DEFP_M00.MST, file missing: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\DEFP_M00.MST
+[!] Cannot parse DEFP_DLC1.MST, file missing: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\DEFP_DLC1.MST
+[!] Cannot parse DEFP_DLC2.MST, file missing: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\DEFP_DLC2.MST
+
+[*] Generating ImHex bookmark files (.hexbm)...
+[✓] Generated bookmark file: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\MAIN.GST.hexbm
+[✓] Generated bookmark file: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\COMMON.CFG.hexbm
+[✓] Generated bookmark file: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\TROPHY.DAT.hexbm
+[✓] Generated bookmark file: c:\Users\seanm\AppData\Local\EDF6ModdedSaves\SAVE_DATA\76561198189146781\EDFSaveEditor\EDF6_Decrypted\DEFP_M00.MST.hexbm
+[*] launch_imhex: exe='C:\Program Files\ImHex\imhex-gui.exe', files=['MAIN.GST', 'COMMON.CFG', 'TROPHY.DAT', 'DEFP_M00.MST', 'DEFP_DLC1.MST', 'DEFP_DLC2.MST']
+[!] MAIN.GST not found for ImHex!
+[!] COMMON.CFG not found for ImHex!
+[!] TROPHY.DAT not found for ImHex!
+[!] DEFP_M00.MST not found for ImHex!
+[!] DEFP_DLC1.MST not found for ImHex!
+[!] DEFP_DLC2.MST not found for ImHex!
+[!] Failed to open or focus ImHex.
+
+[*] Computing coverage summaries...
+
+[✓] All tasks completed.

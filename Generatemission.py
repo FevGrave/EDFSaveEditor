@@ -3,6 +3,13 @@ import os
 import sys
 import zlib
 from typing import Literal
+'''
+# Generatemission.py
+# Generates any MST with no data found in a file for EDF6 with basic lobby settings.
+# Note: Modded mission packs are created as a file with no data made and will crash the game if played.
+# MST files are not 100% figured out yet but >90% of data is understood for EDF6. so this file should be a outside remedy for missing or empty MST files.
+# Unless we find the full structure for the saves within the EDF.dll, this is the best we can do for now. so USE THIS TO BRUTE FORCE A DEFAULT MST FILE.
+# Expect alot of Crash to desktop if you try to play a modded mission pack with this file.'''
 
 # Total size = last offset 0x16D0 + size 0x08 = 0x16D8 (5848 bytes)
 MST_TOTAL_SIZE = 0x16D8

@@ -1,0 +1,2556 @@
+{
+    "bookmarks": [
+        {
+            "color": 1216185642,
+            "comment": "",
+            "id": 1,
+            "locked": false,
+            "name": "Header (should be MDB0) [0x0 - 0x3]",
+            "region": {
+                "address": 0,
+                "size": 4
+            }
+        },
+        {
+            "color": 3500345895,
+            "comment": "",
+            "id": 2,
+            "locked": false,
+            "name": "File Version [0x4 - 0x7]",
+            "region": {
+                "address": 4,
+                "size": 4
+            }
+        },
+        {
+            "color": 2758712466,
+            "comment": "",
+            "id": 3,
+            "locked": false,
+            "name": "unknown [0x8 - 0xB]",
+            "region": {
+                "address": 8,
+                "size": 4
+            }
+        },
+        {
+            "color": 427504648,
+            "comment": "",
+            "id": 4,
+            "locked": false,
+            "name": "CRC32 Checksum [0xC - 0xF]",
+            "region": {
+                "address": 12,
+                "size": 4
+            }
+        },
+        {
+            "color": 705914814,
+            "comment": "",
+            "id": 5,
+            "locked": false,
+            "name": "unknown [0x10 - 0x13]",
+            "region": {
+                "address": 16,
+                "size": 4
+            }
+        },
+        {
+            "color": 1225023351,
+            "comment": "",
+            "id": 6,
+            "locked": false,
+            "name": "unknown [0x14 - 0x17]",
+            "region": {
+                "address": 20,
+                "size": 4
+            }
+        },
+        {
+            "color": 3450455737,
+            "comment": "Processed value with possible note",
+            "id": 7,
+            "locked": false,
+            "name": "Look Left / Right [0x18 - 0x1B]",
+            "region": {
+                "address": 24,
+                "size": 4
+            }
+        },
+        {
+            "color": 106978895,
+            "comment": "Processed value with possible note",
+            "id": 8,
+            "locked": false,
+            "name": "Look Up / Down [0x1C - 0x1F]",
+            "region": {
+                "address": 28,
+                "size": 4
+            }
+        },
+        {
+            "color": 3086440472,
+            "comment": "Processed value with possible note",
+            "id": 9,
+            "locked": false,
+            "name": "Platform ID [0x22 - 0x22]",
+            "region": {
+                "address": 34,
+                "size": 1
+            }
+        },
+        {
+            "color": 4161817801,
+            "comment": "Processed value with possible note",
+            "id": 10,
+            "locked": false,
+            "name": "Camera Type [0x2C - 0x2F]",
+            "region": {
+                "address": 44,
+                "size": 4
+            }
+        },
+        {
+            "color": 2915125333,
+            "comment": "Processed value with possible note",
+            "id": 11,
+            "locked": false,
+            "name": "Damage Value Display Type [0x30 - 0x33]",
+            "region": {
+                "address": 48,
+                "size": 4
+            }
+        },
+        {
+            "color": 2539682873,
+            "comment": "",
+            "id": 12,
+            "locked": false,
+            "name": "Ranger's Operation Controls Attack [0xC4 - 0xC7]",
+            "region": {
+                "address": 196,
+                "size": 4
+            }
+        },
+        {
+            "color": 567901581,
+            "comment": "",
+            "id": 13,
+            "locked": false,
+            "name": "Ranger's Operation Controls Zoom / Activate [0xC8 - 0xCB]",
+            "region": {
+                "address": 200,
+                "size": 4
+            }
+        },
+        {
+            "color": 4139955469,
+            "comment": "",
+            "id": 14,
+            "locked": false,
+            "name": "Ranger's Operation Controls Jump [0xCC - 0xCF]",
+            "region": {
+                "address": 204,
+                "size": 4
+            }
+        },
+        {
+            "color": 1414883882,
+            "comment": "",
+            "id": 15,
+            "locked": false,
+            "name": "Ranger's Operation Controls Switch Weapons [0xD0 - 0xD3]",
+            "region": {
+                "address": 208,
+                "size": 4
+            }
+        },
+        {
+            "color": 1907478419,
+            "comment": "",
+            "id": 16,
+            "locked": false,
+            "name": "Ranger's Operation Controls Reload [0xD4 - 0xD7]",
+            "region": {
+                "address": 212,
+                "size": 4
+            }
+        },
+        {
+            "color": 2509248191,
+            "comment": "",
+            "id": 17,
+            "locked": false,
+            "name": "Ranger's Operation Controls Sprint [0xD8 - 0xDB]",
+            "region": {
+                "address": 216,
+                "size": 4
+            }
+        },
+        {
+            "color": 951856623,
+            "comment": "",
+            "id": 18,
+            "locked": false,
+            "name": "Ranger's Operation Controls Call Vehicle Dropoff [0xDC - 0xDF]",
+            "region": {
+                "address": 220,
+                "size": 4
+            }
+        },
+        {
+            "color": 3696222115,
+            "comment": "",
+            "id": 19,
+            "locked": false,
+            "name": "Ranger's Operation Controls Use Backpack Tools [0xE0 - 0xE3]",
+            "region": {
+                "address": 224,
+                "size": 4
+            }
+        },
+        {
+            "color": 2527140901,
+            "comment": "",
+            "id": 20,
+            "locked": false,
+            "name": "unknown [0xE4 - 0xE7]",
+            "region": {
+                "address": 228,
+                "size": 4
+            }
+        },
+        {
+            "color": 1498982787,
+            "comment": "",
+            "id": 21,
+            "locked": false,
+            "name": "unknown [0xE8 - 0xEB]",
+            "region": {
+                "address": 232,
+                "size": 4
+            }
+        },
+        {
+            "color": 487731770,
+            "comment": "",
+            "id": 22,
+            "locked": false,
+            "name": "unknown [0xEC - 0xEF]",
+            "region": {
+                "address": 236,
+                "size": 4
+            }
+        },
+        {
+            "color": 1458923048,
+            "comment": "",
+            "id": 23,
+            "locked": false,
+            "name": "unknown [0xF0 - 0xF3]",
+            "region": {
+                "address": 240,
+                "size": 4
+            }
+        },
+        {
+            "color": 1869494689,
+            "comment": "",
+            "id": 24,
+            "locked": false,
+            "name": "unknown [0xF4 - 0xF7]",
+            "region": {
+                "address": 244,
+                "size": 4
+            }
+        },
+        {
+            "color": 2759421650,
+            "comment": "",
+            "id": 25,
+            "locked": false,
+            "name": "unknown [0xF8 - 0xFB]",
+            "region": {
+                "address": 248,
+                "size": 4
+            }
+        },
+        {
+            "color": 3178911433,
+            "comment": "",
+            "id": 26,
+            "locked": false,
+            "name": "unknown [0xFC - 0xFF]",
+            "region": {
+                "address": 252,
+                "size": 4
+            }
+        },
+        {
+            "color": 1079871442,
+            "comment": "",
+            "id": 27,
+            "locked": false,
+            "name": "unknown [0x100 - 0x103]",
+            "region": {
+                "address": 256,
+                "size": 4
+            }
+        },
+        {
+            "color": 197184217,
+            "comment": "",
+            "id": 28,
+            "locked": false,
+            "name": "Ranger's Vehicle (B) Operation Controls Accelerate [0x104 - 0x107]",
+            "region": {
+                "address": 260,
+                "size": 4
+            }
+        },
+        {
+            "color": 1329027945,
+            "comment": "",
+            "id": 29,
+            "locked": false,
+            "name": "Ranger's Vehicle (B) Operation Controls Brake / Reverse [0x108 - 0x10B]",
+            "region": {
+                "address": 264,
+                "size": 4
+            }
+        },
+        {
+            "color": 2185555731,
+            "comment": "",
+            "id": 30,
+            "locked": false,
+            "name": "Ranger's Vehicle (B) Operation Controls Handbrake [0x10C - 0x10F]",
+            "region": {
+                "address": 268,
+                "size": 4
+            }
+        },
+        {
+            "color": 884373961,
+            "comment": "",
+            "id": 31,
+            "locked": false,
+            "name": "Ranger's Vehicle (B) Operation Controls Attack 1 [0x110 - 0x113]",
+            "region": {
+                "address": 272,
+                "size": 4
+            }
+        },
+        {
+            "color": 1338356001,
+            "comment": "",
+            "id": 32,
+            "locked": false,
+            "name": "Ranger's Vehicle (B) Operation Controls Attack 2 [0x114 - 0x117]",
+            "region": {
+                "address": 276,
+                "size": 4
+            }
+        },
+        {
+            "color": 2332061886,
+            "comment": "",
+            "id": 33,
+            "locked": false,
+            "name": "Ranger's Vehicle (B) Operation Controls Horn [0x170 - 0x173]",
+            "region": {
+                "address": 368,
+                "size": 4
+            }
+        },
+        {
+            "color": 61866020,
+            "comment": "",
+            "id": 34,
+            "locked": false,
+            "name": "Ranger's Combat Vehicle Operation Controls Attack 1 [0x118 - 0x11B]",
+            "region": {
+                "address": 280,
+                "size": 4
+            }
+        },
+        {
+            "color": 2462702444,
+            "comment": "",
+            "id": 35,
+            "locked": false,
+            "name": "Ranger's Combat Vehicle Operation Controls Attack 2 [0x11C - 0x11F]",
+            "region": {
+                "address": 284,
+                "size": 4
+            }
+        },
+        {
+            "color": 2001671260,
+            "comment": "",
+            "id": 36,
+            "locked": false,
+            "name": "Ranger's Combat Vehicle Operation Horn [0x120 - 0x123]",
+            "region": {
+                "address": 288,
+                "size": 4
+            }
+        },
+        {
+            "color": 3293701362,
+            "comment": "",
+            "id": 37,
+            "locked": false,
+            "name": "Ranger's Combat Frame Operation Controls Attack - Right Hand [0x124 - 0x127]",
+            "region": {
+                "address": 292,
+                "size": 4
+            }
+        },
+        {
+            "color": 67906179,
+            "comment": "",
+            "id": 38,
+            "locked": false,
+            "name": "Ranger's Combat Frame Operation Controls Attack - Left Hand [0x128 - 0x12B]",
+            "region": {
+                "address": 296,
+                "size": 4
+            }
+        },
+        {
+            "color": 3573610137,
+            "comment": "",
+            "id": 39,
+            "locked": false,
+            "name": "Ranger's Combat Frame Operation Controls Attack - Right Shoulder [0x12C - 0x12F]",
+            "region": {
+                "address": 300,
+                "size": 4
+            }
+        },
+        {
+            "color": 1602593633,
+            "comment": "",
+            "id": 40,
+            "locked": false,
+            "name": "Ranger's Combat Frame Operation Controls Attack - Left Shoulder [0x130 - 0x133]",
+            "region": {
+                "address": 304,
+                "size": 4
+            }
+        },
+        {
+            "color": 1418146289,
+            "comment": "",
+            "id": 41,
+            "locked": false,
+            "name": "Ranger's Combat Frame Operation Controls Jump [0x134 - 0x137]",
+            "region": {
+                "address": 308,
+                "size": 4
+            }
+        },
+        {
+            "color": 770792374,
+            "comment": "",
+            "id": 42,
+            "locked": false,
+            "name": "Ranger's Barga Operation Controls Punch - Right Hand [0x138 - 0x13B]",
+            "region": {
+                "address": 312,
+                "size": 4
+            }
+        },
+        {
+            "color": 2433230427,
+            "comment": "",
+            "id": 43,
+            "locked": false,
+            "name": "Ranger's Barga Operation Controls Punch - Left Hand [0x13C - 0x13F]",
+            "region": {
+                "address": 316,
+                "size": 4
+            }
+        },
+        {
+            "color": 1274275222,
+            "comment": "",
+            "id": 44,
+            "locked": false,
+            "name": "Ranger's Barga Operation Controls Stamp - Right Foot [0x140 - 0x143]",
+            "region": {
+                "address": 320,
+                "size": 4
+            }
+        },
+        {
+            "color": 1088840250,
+            "comment": "",
+            "id": 45,
+            "locked": false,
+            "name": "Ranger's Barga Operation Controls Stamp - Left Foot [0x144 - 0x147]",
+            "region": {
+                "address": 324,
+                "size": 4
+            }
+        },
+        {
+            "color": 1469748560,
+            "comment": "",
+            "id": 46,
+            "locked": false,
+            "name": "Ranger's Barga Operation Controls Special Pose [0x148 - 0x14B]",
+            "region": {
+                "address": 328,
+                "size": 4
+            }
+        },
+        {
+            "color": 2214440437,
+            "comment": "",
+            "id": 47,
+            "locked": false,
+            "name": "Ranger's Barga Operation Controls Special Attack [0x14C - 0x14F]",
+            "region": {
+                "address": 332,
+                "size": 4
+            }
+        },
+        {
+            "color": 9608600,
+            "comment": "",
+            "id": 48,
+            "locked": false,
+            "name": "Ranger's Depth Crawler Operation Controls Bombard - Right [0x150 - 0x153]",
+            "region": {
+                "address": 336,
+                "size": 4
+            }
+        },
+        {
+            "color": 3324902370,
+            "comment": "",
+            "id": 49,
+            "locked": false,
+            "name": "Ranger's Depth Crawler Operation Controls Bombard - Left [0x154 - 0x157]",
+            "region": {
+                "address": 340,
+                "size": 4
+            }
+        },
+        {
+            "color": 1279367957,
+            "comment": "",
+            "id": 50,
+            "locked": false,
+            "name": "Ranger's Depth Crawler Operation Controls Gatling [0x158 - 0x15B]",
+            "region": {
+                "address": 344,
+                "size": 4
+            }
+        },
+        {
+            "color": 4146991948,
+            "comment": "",
+            "id": 51,
+            "locked": false,
+            "name": "Ranger's Depth Crawler Operation Controls Emergency Avoidance [0x15C - 0x15F]",
+            "region": {
+                "address": 348,
+                "size": 4
+            }
+        },
+        {
+            "color": 1927555833,
+            "comment": "",
+            "id": 52,
+            "locked": false,
+            "name": "Ranger's Depth Crawler Operation Controls Jump [0x160 - 0x163]",
+            "region": {
+                "address": 352,
+                "size": 4
+            }
+        },
+        {
+            "color": 341962685,
+            "comment": "",
+            "id": 53,
+            "locked": false,
+            "name": "Ranger's Helicopter Operation Controls Attack 1 [0x164 - 0x167]",
+            "region": {
+                "address": 356,
+                "size": 4
+            }
+        },
+        {
+            "color": 3790915470,
+            "comment": "",
+            "id": 54,
+            "locked": false,
+            "name": "Ranger's Helicopter Operation Controls Attack 2 [0x168 - 0x16B]",
+            "region": {
+                "address": 360,
+                "size": 4
+            }
+        },
+        {
+            "color": 3926831025,
+            "comment": "",
+            "id": 55,
+            "locked": false,
+            "name": "Ranger's Helicopter Operation Controls Fly [0x16C - 0x16F]",
+            "region": {
+                "address": 364,
+                "size": 4
+            }
+        },
+        {
+            "color": 1349390184,
+            "comment": "",
+            "id": 56,
+            "locked": false,
+            "name": "Spacer for Ranger's Controls [0x174 - 0x437]",
+            "region": {
+                "address": 372,
+                "size": 708
+            }
+        },
+        {
+            "color": 3890409169,
+            "comment": "",
+            "id": 57,
+            "locked": false,
+            "name": "Wingdiver's Controls Attack [0x4C0 - 0x4C3]",
+            "region": {
+                "address": 1216,
+                "size": 4
+            }
+        },
+        {
+            "color": 3485191577,
+            "comment": "",
+            "id": 58,
+            "locked": false,
+            "name": "Wingdiver's Controls Zoom / Activate [0x4C4 - 0x4C7]",
+            "region": {
+                "address": 1220,
+                "size": 4
+            }
+        },
+        {
+            "color": 396129474,
+            "comment": "",
+            "id": 59,
+            "locked": false,
+            "name": "Wingdiver's Controls Jump / Ascend [0x4C8 - 0x4CB]",
+            "region": {
+                "address": 1224,
+                "size": 4
+            }
+        },
+        {
+            "color": 1482031140,
+            "comment": "",
+            "id": 60,
+            "locked": false,
+            "name": "Wingdiver's Controls Switch Weapons [0x4CC - 0x4CF]",
+            "region": {
+                "address": 1228,
+                "size": 4
+            }
+        },
+        {
+            "color": 4017269265,
+            "comment": "",
+            "id": 61,
+            "locked": false,
+            "name": "Wingdiver's Controls Reload [0x4D0 - 0x4D3]",
+            "region": {
+                "address": 1232,
+                "size": 4
+            }
+        },
+        {
+            "color": 4291362028,
+            "comment": "",
+            "id": 62,
+            "locked": false,
+            "name": "Wingdiver's Controls Boost [0x4D4 - 0x4D7]",
+            "region": {
+                "address": 1236,
+                "size": 4
+            }
+        },
+        {
+            "color": 1006712021,
+            "comment": "",
+            "id": 63,
+            "locked": false,
+            "name": "Wingdiver's Controls unknown (Possibly ) [0x4D8 - 0x4DB]",
+            "region": {
+                "address": 1240,
+                "size": 4
+            }
+        },
+        {
+            "color": 2639268338,
+            "comment": "",
+            "id": 64,
+            "locked": false,
+            "name": "Wingdiver's Controls Use Independently Operated Equipment [0x4DC - 0x4DF]",
+            "region": {
+                "address": 1244,
+                "size": 4
+            }
+        },
+        {
+            "color": 1470689422,
+            "comment": "",
+            "id": 65,
+            "locked": false,
+            "name": "Wingdiver's Vehicle (B) Operation Controls Accelerate [0x500 - 0x503]",
+            "region": {
+                "address": 1280,
+                "size": 4
+            }
+        },
+        {
+            "color": 832827541,
+            "comment": "",
+            "id": 66,
+            "locked": false,
+            "name": "Wingdiver's Vehicle (B) Operation Controls Brake / Reverse [0x504 - 0x507]",
+            "region": {
+                "address": 1284,
+                "size": 4
+            }
+        },
+        {
+            "color": 2608562268,
+            "comment": "",
+            "id": 67,
+            "locked": false,
+            "name": "Wingdiver's Vehicle (B) Operation Controls Handbrake [0x508 - 0x50B]",
+            "region": {
+                "address": 1288,
+                "size": 4
+            }
+        },
+        {
+            "color": 3293496953,
+            "comment": "",
+            "id": 68,
+            "locked": false,
+            "name": "Wingdiver's Vehicle (B) Operation Controls Attack 1 [0x50C - 0x50F]",
+            "region": {
+                "address": 1292,
+                "size": 4
+            }
+        },
+        {
+            "color": 3951566018,
+            "comment": "",
+            "id": 69,
+            "locked": false,
+            "name": "Wingdiver's Vehicle (B) Operation Controls Attack 2 [0x510 - 0x513]",
+            "region": {
+                "address": 1296,
+                "size": 4
+            }
+        },
+        {
+            "color": 935041663,
+            "comment": "",
+            "id": 70,
+            "locked": false,
+            "name": "Wingdiver's Vehicle (B) Operation Controls Horn [0x56C - 0x56F]",
+            "region": {
+                "address": 1388,
+                "size": 4
+            }
+        },
+        {
+            "color": 3684736818,
+            "comment": "",
+            "id": 71,
+            "locked": false,
+            "name": "Wingdiver's Combat Vehicle Operation Controls Attack 1 [0x514 - 0x517]",
+            "region": {
+                "address": 1300,
+                "size": 4
+            }
+        },
+        {
+            "color": 4071934510,
+            "comment": "",
+            "id": 72,
+            "locked": false,
+            "name": "Wingdiver's Combat Vehicle Operation Controls Attack 2 [0x518 - 0x51B]",
+            "region": {
+                "address": 1304,
+                "size": 4
+            }
+        },
+        {
+            "color": 1304961693,
+            "comment": "",
+            "id": 73,
+            "locked": false,
+            "name": "Wingdiver's Combat Vehicle Operation Horn [0x51C - 0x51F]",
+            "region": {
+                "address": 1308,
+                "size": 4
+            }
+        },
+        {
+            "color": 4260469202,
+            "comment": "",
+            "id": 74,
+            "locked": false,
+            "name": "Wingdiver's Combat Frame Operation Controls Attack - Right Hand [0x520 - 0x523]",
+            "region": {
+                "address": 1312,
+                "size": 4
+            }
+        },
+        {
+            "color": 1618615340,
+            "comment": "",
+            "id": 75,
+            "locked": false,
+            "name": "Wingdiver's Combat Frame Operation Controls Attack - Left Hand [0x524 - 0x527]",
+            "region": {
+                "address": 1316,
+                "size": 4
+            }
+        },
+        {
+            "color": 3474940856,
+            "comment": "",
+            "id": 76,
+            "locked": false,
+            "name": "Wingdiver's Combat Frame Operation Controls Attack - Right Shoulder [0x528 - 0x52B]",
+            "region": {
+                "address": 1320,
+                "size": 4
+            }
+        },
+        {
+            "color": 929877450,
+            "comment": "",
+            "id": 77,
+            "locked": false,
+            "name": "Wingdiver's Combat Frame Operation Controls Attack - Left Shoulder [0x52C - 0x52F]",
+            "region": {
+                "address": 1324,
+                "size": 4
+            }
+        },
+        {
+            "color": 2710019239,
+            "comment": "",
+            "id": 78,
+            "locked": false,
+            "name": "Wingdiver's Combat Frame Operation Controls Jump [0x530 - 0x533]",
+            "region": {
+                "address": 1328,
+                "size": 4
+            }
+        },
+        {
+            "color": 2452912366,
+            "comment": "",
+            "id": 79,
+            "locked": false,
+            "name": "Wingdiver's Barga Operation Controls Punch - Right Hand [0x534 - 0x537]",
+            "region": {
+                "address": 1332,
+                "size": 4
+            }
+        },
+        {
+            "color": 111523074,
+            "comment": "",
+            "id": 80,
+            "locked": false,
+            "name": "Wingdiver's Barga Operation Controls Punch - Left Hand [0x538 - 0x53B]",
+            "region": {
+                "address": 1336,
+                "size": 4
+            }
+        },
+        {
+            "color": 1895052769,
+            "comment": "",
+            "id": 81,
+            "locked": false,
+            "name": "Wingdiver's Barga Operation Controls Stamp - Right Foot [0x53C - 0x53F]",
+            "region": {
+                "address": 1340,
+                "size": 4
+            }
+        },
+        {
+            "color": 234660383,
+            "comment": "",
+            "id": 82,
+            "locked": false,
+            "name": "Wingdiver's Barga Operation Controls Stamp - Left Foot [0x540 - 0x543]",
+            "region": {
+                "address": 1344,
+                "size": 4
+            }
+        },
+        {
+            "color": 1666081567,
+            "comment": "",
+            "id": 83,
+            "locked": false,
+            "name": "Wingdiver's Barga Operation Controls Special Pose [0x544 - 0x547]",
+            "region": {
+                "address": 1348,
+                "size": 4
+            }
+        },
+        {
+            "color": 2091158309,
+            "comment": "",
+            "id": 84,
+            "locked": false,
+            "name": "Wingdiver's Barga Operation Controls Special Attack [0x548 - 0x54B]",
+            "region": {
+                "address": 1352,
+                "size": 4
+            }
+        },
+        {
+            "color": 1143001345,
+            "comment": "",
+            "id": 85,
+            "locked": false,
+            "name": "Wingdiver's Depth Crawler Operation Controls Bombard - Right [0x54C - 0x54F]",
+            "region": {
+                "address": 1356,
+                "size": 4
+            }
+        },
+        {
+            "color": 3232530436,
+            "comment": "",
+            "id": 86,
+            "locked": false,
+            "name": "Wingdiver's Depth Crawler Operation Controls Bombard - Left [0x550 - 0x553]",
+            "region": {
+                "address": 1360,
+                "size": 4
+            }
+        },
+        {
+            "color": 712569332,
+            "comment": "",
+            "id": 87,
+            "locked": false,
+            "name": "Wingdiver's Depth Crawler Operation Controls Gatling [0x554 - 0x557]",
+            "region": {
+                "address": 1364,
+                "size": 4
+            }
+        },
+        {
+            "color": 2165270067,
+            "comment": "",
+            "id": 88,
+            "locked": false,
+            "name": "Wingdiver's Depth Crawler Operation Controls Emergency Avoidance [0x558 - 0x55B]",
+            "region": {
+                "address": 1368,
+                "size": 4
+            }
+        },
+        {
+            "color": 3579356211,
+            "comment": "",
+            "id": 89,
+            "locked": false,
+            "name": "Wingdiver's Depth Crawler Operation Controls Jump [0x55C - 0x55F]",
+            "region": {
+                "address": 1372,
+                "size": 4
+            }
+        },
+        {
+            "color": 182321046,
+            "comment": "",
+            "id": 90,
+            "locked": false,
+            "name": "Wingdiver's Helicopter Operation Controls Attack - Right [0x560 - 0x563]",
+            "region": {
+                "address": 1376,
+                "size": 4
+            }
+        },
+        {
+            "color": 3036435584,
+            "comment": "",
+            "id": 91,
+            "locked": false,
+            "name": "Wingdiver's Helicopter Operation Controls Attack - Left [0x564 - 0x567]",
+            "region": {
+                "address": 1380,
+                "size": 4
+            }
+        },
+        {
+            "color": 499906909,
+            "comment": "",
+            "id": 92,
+            "locked": false,
+            "name": "Wingdiver's Helicopter Operation Controls Fly [0x568 - 0x56B]",
+            "region": {
+                "address": 1384,
+                "size": 4
+            }
+        },
+        {
+            "color": 385187619,
+            "comment": "",
+            "id": 93,
+            "locked": false,
+            "name": "Spacer for Wingdiver's Controls [0x570 - 0x833]",
+            "region": {
+                "address": 1392,
+                "size": 708
+            }
+        },
+        {
+            "color": 2365136658,
+            "comment": "",
+            "id": 94,
+            "locked": false,
+            "name": "Air Raider's Operation Controls Attack [0x8BC - 0x8BF]",
+            "region": {
+                "address": 2236,
+                "size": 4
+            }
+        },
+        {
+            "color": 3358906615,
+            "comment": "",
+            "id": 95,
+            "locked": false,
+            "name": "Air Raider's Operation Controls Zoom / Activate [0x8C0 - 0x8C3]",
+            "region": {
+                "address": 2240,
+                "size": 4
+            }
+        },
+        {
+            "color": 4189856337,
+            "comment": "",
+            "id": 96,
+            "locked": false,
+            "name": "Air Raider's Operation Controls Jump [0x8C4 - 0x8C7]",
+            "region": {
+                "address": 2244,
+                "size": 4
+            }
+        },
+        {
+            "color": 1591705685,
+            "comment": "",
+            "id": 97,
+            "locked": false,
+            "name": "Air Raider's Operation Controls Switch Weapons [0x8C8 - 0x8CB]",
+            "region": {
+                "address": 2248,
+                "size": 4
+            }
+        },
+        {
+            "color": 903949660,
+            "comment": "",
+            "id": 98,
+            "locked": false,
+            "name": "Air Raider's Operation Controls Reload [0x8CC - 0x8CF]",
+            "region": {
+                "address": 2252,
+                "size": 4
+            }
+        },
+        {
+            "color": 1058578199,
+            "comment": "",
+            "id": 99,
+            "locked": false,
+            "name": "unknown [0x8D0 - 0x8D3]",
+            "region": {
+                "address": 2256,
+                "size": 4
+            }
+        },
+        {
+            "color": 3783181986,
+            "comment": "",
+            "id": 100,
+            "locked": false,
+            "name": "Air Raider's Operation Controls Call Vehicle Dropoff [0x8D4 - 0x8D7]",
+            "region": {
+                "address": 2260,
+                "size": 4
+            }
+        },
+        {
+            "color": 3708059042,
+            "comment": "",
+            "id": 101,
+            "locked": false,
+            "name": "Air Raider's Operation Controls Use Backpack Tools [0x8D8 - 0x8DB]",
+            "region": {
+                "address": 2264,
+                "size": 4
+            }
+        },
+        {
+            "color": 1716515250,
+            "comment": "",
+            "id": 102,
+            "locked": false,
+            "name": "unknown [0x8DC - 0x8DF]",
+            "region": {
+                "address": 2268,
+                "size": 4
+            }
+        },
+        {
+            "color": 542600314,
+            "comment": "",
+            "id": 103,
+            "locked": false,
+            "name": "unknown [0x8E0 - 0x8E3]",
+            "region": {
+                "address": 2272,
+                "size": 4
+            }
+        },
+        {
+            "color": 1180349,
+            "comment": "",
+            "id": 104,
+            "locked": false,
+            "name": "unknown [0x8E4 - 0x8E7]",
+            "region": {
+                "address": 2276,
+                "size": 4
+            }
+        },
+        {
+            "color": 724389902,
+            "comment": "",
+            "id": 105,
+            "locked": false,
+            "name": "unknown [0x8E8 - 0x8EB]",
+            "region": {
+                "address": 2280,
+                "size": 4
+            }
+        },
+        {
+            "color": 2132767130,
+            "comment": "",
+            "id": 106,
+            "locked": false,
+            "name": "unknown [0x8EC - 0x8EF]",
+            "region": {
+                "address": 2284,
+                "size": 4
+            }
+        },
+        {
+            "color": 4227827350,
+            "comment": "",
+            "id": 107,
+            "locked": false,
+            "name": "unknown [0x8F0 - 0x8F3]",
+            "region": {
+                "address": 2288,
+                "size": 4
+            }
+        },
+        {
+            "color": 2287738256,
+            "comment": "",
+            "id": 108,
+            "locked": false,
+            "name": "unknown [0x8F4 - 0x8F7]",
+            "region": {
+                "address": 2292,
+                "size": 4
+            }
+        },
+        {
+            "color": 3438696518,
+            "comment": "",
+            "id": 109,
+            "locked": false,
+            "name": "unknown [0x8F8 - 0x8FB]",
+            "region": {
+                "address": 2296,
+                "size": 4
+            }
+        },
+        {
+            "color": 1916820760,
+            "comment": "",
+            "id": 110,
+            "locked": false,
+            "name": "Air Raider's Vehicle (B) Operation Controls Accelerate [0x8FC - 0x8FF]",
+            "region": {
+                "address": 2300,
+                "size": 4
+            }
+        },
+        {
+            "color": 3864648018,
+            "comment": "",
+            "id": 111,
+            "locked": false,
+            "name": "Air Raider's Vehicle (B) Operation Controls Brake / Reverse [0x900 - 0x903]",
+            "region": {
+                "address": 2304,
+                "size": 4
+            }
+        },
+        {
+            "color": 1208494806,
+            "comment": "",
+            "id": 112,
+            "locked": false,
+            "name": "Air Raider's Vehicle (B) Operation Controls Handbrake [0x904 - 0x907]",
+            "region": {
+                "address": 2308,
+                "size": 4
+            }
+        },
+        {
+            "color": 3620121587,
+            "comment": "",
+            "id": 113,
+            "locked": false,
+            "name": "Air Raider's Vehicle (B) Operation Controls Attack 1 [0x908 - 0x90B]",
+            "region": {
+                "address": 2312,
+                "size": 4
+            }
+        },
+        {
+            "color": 1316673184,
+            "comment": "",
+            "id": 114,
+            "locked": false,
+            "name": "Air Raider's Vehicle (B) Operation Controls Attack 2 [0x90C - 0x90F]",
+            "region": {
+                "address": 2316,
+                "size": 4
+            }
+        },
+        {
+            "color": 749373801,
+            "comment": "",
+            "id": 115,
+            "locked": false,
+            "name": "Air Raider's Vehicle (B) Operation Controls Horn [0x968 - 0x96B]",
+            "region": {
+                "address": 2408,
+                "size": 4
+            }
+        },
+        {
+            "color": 2043542191,
+            "comment": "",
+            "id": 116,
+            "locked": false,
+            "name": "Air Raider's Combat Vehicle Operation Controls Attack 1 [0x910 - 0x913]",
+            "region": {
+                "address": 2320,
+                "size": 4
+            }
+        },
+        {
+            "color": 420566379,
+            "comment": "",
+            "id": 117,
+            "locked": false,
+            "name": "Air Raider's Combat Vehicle Operation Controls Attack 2 [0x914 - 0x917]",
+            "region": {
+                "address": 2324,
+                "size": 4
+            }
+        },
+        {
+            "color": 120732628,
+            "comment": "",
+            "id": 118,
+            "locked": false,
+            "name": "Air Raider's Combat Vehicle Operation Horn [0x918 - 0x91B]",
+            "region": {
+                "address": 2328,
+                "size": 4
+            }
+        },
+        {
+            "color": 656420847,
+            "comment": "",
+            "id": 119,
+            "locked": false,
+            "name": "Air Raider's Combat Frame Operation Controls Attack - Right Hand [0x91C - 0x91F]",
+            "region": {
+                "address": 2332,
+                "size": 4
+            }
+        },
+        {
+            "color": 3688386321,
+            "comment": "",
+            "id": 120,
+            "locked": false,
+            "name": "Air Raider's Combat Frame Operation Controls Attack - Left Hand [0x920 - 0x923]",
+            "region": {
+                "address": 2336,
+                "size": 4
+            }
+        },
+        {
+            "color": 3280425237,
+            "comment": "",
+            "id": 121,
+            "locked": false,
+            "name": "Air Raider's Combat Frame Operation Controls Attack - Right Shoulder [0x924 - 0x927]",
+            "region": {
+                "address": 2340,
+                "size": 4
+            }
+        },
+        {
+            "color": 1382032791,
+            "comment": "",
+            "id": 122,
+            "locked": false,
+            "name": "Air Raider's Combat Frame Operation Controls Attack - Left Shoulder [0x928 - 0x92B]",
+            "region": {
+                "address": 2344,
+                "size": 4
+            }
+        },
+        {
+            "color": 3837135128,
+            "comment": "",
+            "id": 123,
+            "locked": false,
+            "name": "Air Raider's Combat Frame Operation Controls Jump [0x92C - 0x92F]",
+            "region": {
+                "address": 2348,
+                "size": 4
+            }
+        },
+        {
+            "color": 1282891294,
+            "comment": "",
+            "id": 124,
+            "locked": false,
+            "name": "Air Raider's Barga Operation Controls Punch - Right Hand [0x930 - 0x933]",
+            "region": {
+                "address": 2352,
+                "size": 4
+            }
+        },
+        {
+            "color": 212608375,
+            "comment": "",
+            "id": 125,
+            "locked": false,
+            "name": "Air Raider's Barga Operation Controls Punch - Left Hand [0x934 - 0x937]",
+            "region": {
+                "address": 2356,
+                "size": 4
+            }
+        },
+        {
+            "color": 2759708058,
+            "comment": "",
+            "id": 126,
+            "locked": false,
+            "name": "Air Raider's Barga Operation Controls Stamp - Right Foot [0x938 - 0x93B]",
+            "region": {
+                "address": 2360,
+                "size": 4
+            }
+        },
+        {
+            "color": 1550729066,
+            "comment": "",
+            "id": 127,
+            "locked": false,
+            "name": "Air Raider's Barga Operation Controls Stamp - Left Foot [0x93C - 0x93F]",
+            "region": {
+                "address": 2364,
+                "size": 4
+            }
+        },
+        {
+            "color": 3743748551,
+            "comment": "",
+            "id": 128,
+            "locked": false,
+            "name": "Air Raider's Barga Operation Controls Special Pose [0x940 - 0x943]",
+            "region": {
+                "address": 2368,
+                "size": 4
+            }
+        },
+        {
+            "color": 3802806617,
+            "comment": "",
+            "id": 129,
+            "locked": false,
+            "name": "Air Raider's Barga Operation Controls Special Attack [0x944 - 0x947]",
+            "region": {
+                "address": 2372,
+                "size": 4
+            }
+        },
+        {
+            "color": 3344633037,
+            "comment": "",
+            "id": 130,
+            "locked": false,
+            "name": "Air Raider's Depth Crawler Operation Controls Bombard - Right [0x948 - 0x94B]",
+            "region": {
+                "address": 2376,
+                "size": 4
+            }
+        },
+        {
+            "color": 4276519154,
+            "comment": "",
+            "id": 131,
+            "locked": false,
+            "name": "Air Raider's Depth Crawler Operation Controls Bombard - Left [0x94C - 0x94F]",
+            "region": {
+                "address": 2380,
+                "size": 4
+            }
+        },
+        {
+            "color": 1981169286,
+            "comment": "",
+            "id": 132,
+            "locked": false,
+            "name": "Air Raider's Depth Crawler Operation Controls Gatling [0x950 - 0x953]",
+            "region": {
+                "address": 2384,
+                "size": 4
+            }
+        },
+        {
+            "color": 999033586,
+            "comment": "",
+            "id": 133,
+            "locked": false,
+            "name": "Air Raider's Depth Crawler Operation Controls Emergency Avoidance [0x954 - 0x957]",
+            "region": {
+                "address": 2388,
+                "size": 4
+            }
+        },
+        {
+            "color": 1098302838,
+            "comment": "",
+            "id": 134,
+            "locked": false,
+            "name": "Air Raider's Depth Crawler Operation Controls Jump [0x958 - 0x95B]",
+            "region": {
+                "address": 2392,
+                "size": 4
+            }
+        },
+        {
+            "color": 191457422,
+            "comment": "",
+            "id": 135,
+            "locked": false,
+            "name": "Air Raider's Helicopter Operation Controls Attack - Right [0x95C - 0x95F]",
+            "region": {
+                "address": 2396,
+                "size": 4
+            }
+        },
+        {
+            "color": 1662208204,
+            "comment": "",
+            "id": 136,
+            "locked": false,
+            "name": "Air Raider's Helicopter Operation Controls Attack - Left [0x960 - 0x963]",
+            "region": {
+                "address": 2400,
+                "size": 4
+            }
+        },
+        {
+            "color": 2614929618,
+            "comment": "",
+            "id": 137,
+            "locked": false,
+            "name": "Air Raider's Helicopter Operation Controls Fly [0x964 - 0x967]",
+            "region": {
+                "address": 2404,
+                "size": 4
+            }
+        },
+        {
+            "color": 2693456635,
+            "comment": "",
+            "id": 138,
+            "locked": false,
+            "name": "Spacer for Air Raider's Controls [0x96C - 0xC2F]",
+            "region": {
+                "address": 2412,
+                "size": 708
+            }
+        },
+        {
+            "color": 270909361,
+            "comment": "",
+            "id": 139,
+            "locked": false,
+            "name": "Fencer's Controls Attack - Right Hand [0xCD8 - 0xCDB]",
+            "region": {
+                "address": 3288,
+                "size": 4
+            }
+        },
+        {
+            "color": 1558242277,
+            "comment": "",
+            "id": 140,
+            "locked": false,
+            "name": "Fencer's Controls Attack - Left Hand [0xCDC - 0xCDF]",
+            "region": {
+                "address": 3292,
+                "size": 4
+            }
+        },
+        {
+            "color": 3212946178,
+            "comment": "",
+            "id": 141,
+            "locked": false,
+            "name": "Fencer's Controls Use Equipment - Right Hand [0xCE0 - 0xCE3]",
+            "region": {
+                "address": 3296,
+                "size": 4
+            }
+        },
+        {
+            "color": 808662315,
+            "comment": "",
+            "id": 142,
+            "locked": false,
+            "name": "Fencer's Controls Use Equipment - Left Hand [0xCE4 - 0xCE7]",
+            "region": {
+                "address": 3300,
+                "size": 4
+            }
+        },
+        {
+            "color": 2758116338,
+            "comment": "",
+            "id": 143,
+            "locked": false,
+            "name": "Fencer's Controls Jump [0xCE8 - 0xCEB]",
+            "region": {
+                "address": 3304,
+                "size": 4
+            }
+        },
+        {
+            "color": 864852409,
+            "comment": "",
+            "id": 144,
+            "locked": false,
+            "name": "Fencer's Controls Switch Weapons [0xCEC - 0xCEF]",
+            "region": {
+                "address": 3308,
+                "size": 4
+            }
+        },
+        {
+            "color": 2319498103,
+            "comment": "",
+            "id": 145,
+            "locked": false,
+            "name": "Fencer's Controls Reload [0xCF0 - 0xCF3]",
+            "region": {
+                "address": 3312,
+                "size": 4
+            }
+        },
+        {
+            "color": 2430494570,
+            "comment": "",
+            "id": 146,
+            "locked": false,
+            "name": "Fencer's Controls Reload Shield [0xCF4 - 0xCF7]",
+            "region": {
+                "address": 3316,
+                "size": 4
+            }
+        },
+        {
+            "color": 817848316,
+            "comment": "",
+            "id": 147,
+            "locked": false,
+            "name": "Fencer's Vehicle (B) Operation Controls Accelerate [0xCF8 - 0xCFB]",
+            "region": {
+                "address": 3320,
+                "size": 4
+            }
+        },
+        {
+            "color": 2720710688,
+            "comment": "",
+            "id": 148,
+            "locked": false,
+            "name": "Fencer's Vehicle (B) Operation Controls Brake / Reverse [0xCFC - 0xCFF]",
+            "region": {
+                "address": 3324,
+                "size": 4
+            }
+        },
+        {
+            "color": 3213706415,
+            "comment": "",
+            "id": 149,
+            "locked": false,
+            "name": "Fencer's Vehicle (B) Operation Controls Handbrake [0xD00 - 0xD03]",
+            "region": {
+                "address": 3328,
+                "size": 4
+            }
+        },
+        {
+            "color": 2405031288,
+            "comment": "",
+            "id": 150,
+            "locked": false,
+            "name": "Fencer's Vehicle (B) Operation Controls Attack 1 [0xD04 - 0xD07]",
+            "region": {
+                "address": 3332,
+                "size": 4
+            }
+        },
+        {
+            "color": 681787800,
+            "comment": "",
+            "id": 151,
+            "locked": false,
+            "name": "Fencer's Vehicle (B) Operation Controls Attack 2 [0xD08 - 0xD0B]",
+            "region": {
+                "address": 3336,
+                "size": 4
+            }
+        },
+        {
+            "color": 989151614,
+            "comment": "",
+            "id": 152,
+            "locked": false,
+            "name": "Fencer's Vehicle (B) Operation Controls Horn [0xD64 - 0xD67]",
+            "region": {
+                "address": 3428,
+                "size": 4
+            }
+        },
+        {
+            "color": 1905287691,
+            "comment": "",
+            "id": 153,
+            "locked": false,
+            "name": "Fencer's Combat Vehicle Operation Controls Attack 1 [0xD0C - 0xD0F]",
+            "region": {
+                "address": 3340,
+                "size": 4
+            }
+        },
+        {
+            "color": 1193180239,
+            "comment": "",
+            "id": 154,
+            "locked": false,
+            "name": "Fencer's Combat Vehicle Operation Controls Attack 2 [0xD10 - 0xD13]",
+            "region": {
+                "address": 3344,
+                "size": 4
+            }
+        },
+        {
+            "color": 340411267,
+            "comment": "",
+            "id": 155,
+            "locked": false,
+            "name": "Fencer's Combat Vehicle Operation Horn [0xD14 - 0xD17]",
+            "region": {
+                "address": 3348,
+                "size": 4
+            }
+        },
+        {
+            "color": 3410120479,
+            "comment": "",
+            "id": 156,
+            "locked": false,
+            "name": "Fencer's Combat Frame Operation Controls Attack - Right Hand [0xD18 - 0xD1B]",
+            "region": {
+                "address": 3352,
+                "size": 4
+            }
+        },
+        {
+            "color": 3156996804,
+            "comment": "",
+            "id": 157,
+            "locked": false,
+            "name": "Fencer's Combat Frame Operation Controls Attack - Left Hand [0xD1C - 0xD1F]",
+            "region": {
+                "address": 3356,
+                "size": 4
+            }
+        },
+        {
+            "color": 3600246647,
+            "comment": "",
+            "id": 158,
+            "locked": false,
+            "name": "Fencer's Combat Frame Operation Controls Attack - Right Shoulder [0xD20 - 0xD23]",
+            "region": {
+                "address": 3360,
+                "size": 4
+            }
+        },
+        {
+            "color": 1953337573,
+            "comment": "",
+            "id": 159,
+            "locked": false,
+            "name": "Fencer's Combat Frame Operation Controls Attack - Left Shoulder [0xD24 - 0xD27]",
+            "region": {
+                "address": 3364,
+                "size": 4
+            }
+        },
+        {
+            "color": 134453908,
+            "comment": "",
+            "id": 160,
+            "locked": false,
+            "name": "Fencer's Combat Frame Operation Controls Jump [0xD28 - 0xD2B]",
+            "region": {
+                "address": 3368,
+                "size": 4
+            }
+        },
+        {
+            "color": 3221598165,
+            "comment": "",
+            "id": 161,
+            "locked": false,
+            "name": "Fencer's Barga Operation Controls Punch - Right Hand [0xD2C - 0xD2F]",
+            "region": {
+                "address": 3372,
+                "size": 4
+            }
+        },
+        {
+            "color": 537256260,
+            "comment": "",
+            "id": 162,
+            "locked": false,
+            "name": "Fencer's Barga Operation Controls Punch - Left Hand [0xD30 - 0xD33]",
+            "region": {
+                "address": 3376,
+                "size": 4
+            }
+        },
+        {
+            "color": 3031135120,
+            "comment": "",
+            "id": 163,
+            "locked": false,
+            "name": "Fencer's Barga Operation Controls Stamp - Right Foot [0xD34 - 0xD37]",
+            "region": {
+                "address": 3380,
+                "size": 4
+            }
+        },
+        {
+            "color": 981640732,
+            "comment": "",
+            "id": 164,
+            "locked": false,
+            "name": "Fencer's Barga Operation Controls Stamp - Left Foot [0xD38 - 0xD3B]",
+            "region": {
+                "address": 3384,
+                "size": 4
+            }
+        },
+        {
+            "color": 1354868933,
+            "comment": "",
+            "id": 165,
+            "locked": false,
+            "name": "Fencer's Barga Operation Controls Special Pose [0xD3C - 0xD3F]",
+            "region": {
+                "address": 3388,
+                "size": 4
+            }
+        },
+        {
+            "color": 3748642403,
+            "comment": "",
+            "id": 166,
+            "locked": false,
+            "name": "Fencer's Barga Operation Controls Special Attack [0xD40 - 0xD43]",
+            "region": {
+                "address": 3392,
+                "size": 4
+            }
+        },
+        {
+            "color": 581151429,
+            "comment": "",
+            "id": 167,
+            "locked": false,
+            "name": "Fencer's Depth Crawler Operation Controls Bombard - Right [0xD44 - 0xD47]",
+            "region": {
+                "address": 3396,
+                "size": 4
+            }
+        },
+        {
+            "color": 2552824216,
+            "comment": "",
+            "id": 168,
+            "locked": false,
+            "name": "Fencer's Depth Crawler Operation Controls Bombard - Left [0xD48 - 0xD4B]",
+            "region": {
+                "address": 3400,
+                "size": 4
+            }
+        },
+        {
+            "color": 1746319260,
+            "comment": "",
+            "id": 169,
+            "locked": false,
+            "name": "Fencer's Depth Crawler Operation Controls Gatling [0xD4C - 0xD4F]",
+            "region": {
+                "address": 3404,
+                "size": 4
+            }
+        },
+        {
+            "color": 429616604,
+            "comment": "",
+            "id": 170,
+            "locked": false,
+            "name": "Fencer's Depth Crawler Operation Controls Emergency Avoidance [0xD50 - 0xD53]",
+            "region": {
+                "address": 3408,
+                "size": 4
+            }
+        },
+        {
+            "color": 2936362949,
+            "comment": "",
+            "id": 171,
+            "locked": false,
+            "name": "Fencer's Depth Crawler Operation Controls Jump [0xD54 - 0xD57]",
+            "region": {
+                "address": 3412,
+                "size": 4
+            }
+        },
+        {
+            "color": 2650472406,
+            "comment": "",
+            "id": 172,
+            "locked": false,
+            "name": "Fencer's Helicopter Operation Controls Attack - Right [0xD58 - 0xD5B]",
+            "region": {
+                "address": 3416,
+                "size": 4
+            }
+        },
+        {
+            "color": 1583227417,
+            "comment": "",
+            "id": 173,
+            "locked": false,
+            "name": "Fencer's Helicopter Operation Controls Attack - Left [0xD5C - 0xD5F]",
+            "region": {
+                "address": 3420,
+                "size": 4
+            }
+        },
+        {
+            "color": 3858584856,
+            "comment": "",
+            "id": 174,
+            "locked": false,
+            "name": "Fencer's Helicopter Operation Controls Fly [0xD60 - 0xD63]",
+            "region": {
+                "address": 3424,
+                "size": 4
+            }
+        },
+        {
+            "color": 4228296226,
+            "comment": "",
+            "id": 175,
+            "locked": false,
+            "name": "Spacer for Fencer's Controls [0xD68 - 0x102B]",
+            "region": {
+                "address": 3432,
+                "size": 708
+            }
+        },
+        {
+            "color": 2563539384,
+            "comment": "",
+            "id": 176,
+            "locked": false,
+            "name": "unknown structure [0x102C - 0x10F3]",
+            "region": {
+                "address": 4140,
+                "size": 200
+            }
+        },
+        {
+            "color": 145219235,
+            "comment": "",
+            "id": 177,
+            "locked": false,
+            "name": "unknown structure padding [0x10F4 - 0x1427]",
+            "region": {
+                "address": 4340,
+                "size": 820
+            }
+        },
+        {
+            "color": 1682577730,
+            "comment": "",
+            "id": 178,
+            "locked": false,
+            "name": "unknown structure 2 [0x1428 - 0x14EF]",
+            "region": {
+                "address": 5160,
+                "size": 200
+            }
+        },
+        {
+            "color": 3717038342,
+            "comment": "",
+            "id": 179,
+            "locked": false,
+            "name": "unknown structure 2 padding [0x14F0 - 0x1823]",
+            "region": {
+                "address": 5360,
+                "size": 820
+            }
+        },
+        {
+            "color": 3729221576,
+            "comment": "",
+            "id": 180,
+            "locked": false,
+            "name": "unknown structure 3 [0x1824 - 0x18EB]",
+            "region": {
+                "address": 6180,
+                "size": 200
+            }
+        },
+        {
+            "color": 3668234779,
+            "comment": "",
+            "id": 181,
+            "locked": false,
+            "name": "unknown structure 3 padding [0x18EC - 0x1C1F]",
+            "region": {
+                "address": 6380,
+                "size": 820
+            }
+        },
+        {
+            "color": 2395562497,
+            "comment": "",
+            "id": 182,
+            "locked": false,
+            "name": "unknown structure 4 [0x1C20 - 0x1CE7]",
+            "region": {
+                "address": 7200,
+                "size": 200
+            }
+        },
+        {
+            "color": 1066678440,
+            "comment": "",
+            "id": 183,
+            "locked": false,
+            "name": "unknown structure 4 padding [0x1CE8 - 0x201B]",
+            "region": {
+                "address": 7400,
+                "size": 820
+            }
+        },
+        {
+            "color": 2212372054,
+            "comment": "",
+            "id": 184,
+            "locked": false,
+            "name": "unknown structure 5 header [0x2014 - 0x20E3]",
+            "region": {
+                "address": 8212,
+                "size": 208
+            }
+        },
+        {
+            "color": 2213303807,
+            "comment": "",
+            "id": 185,
+            "locked": false,
+            "name": "unknown structure 5 padding [0x20E4 - 0x2417]",
+            "region": {
+                "address": 8420,
+                "size": 820
+            }
+        },
+        {
+            "color": 383784646,
+            "comment": "",
+            "id": 186,
+            "locked": false,
+            "name": "unknown structure 6 header [0x2418 - 0x24DF]",
+            "region": {
+                "address": 9240,
+                "size": 200
+            }
+        },
+        {
+            "color": 667692803,
+            "comment": "",
+            "id": 187,
+            "locked": false,
+            "name": "unknown structure 6 padding [0x24E0 - 0x2813]",
+            "region": {
+                "address": 9440,
+                "size": 820
+            }
+        },
+        {
+            "color": 1650856532,
+            "comment": "",
+            "id": 188,
+            "locked": false,
+            "name": "Default Settings for all Classes Body [0x2814 - 0x5013]",
+            "region": {
+                "address": 10260,
+                "size": 10240
+            }
+        },
+        {
+            "color": 3147324833,
+            "comment": "Processed value with possible note",
+            "id": 189,
+            "locked": false,
+            "name": "Save Profile Name [0x5014 - 0x5033]",
+            "region": {
+                "address": 20500,
+                "size": 32
+            }
+        },
+        {
+            "color": 1415825414,
+            "comment": "",
+            "id": 190,
+            "locked": false,
+            "name": "Save name spacer [0x5034 - 0x5037]",
+            "region": {
+                "address": 20532,
+                "size": 4
+            }
+        },
+        {
+            "color": 3272519934,
+            "comment": "",
+            "id": 191,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North Menu 1 [0x5038 - 0x503B]",
+            "region": {
+                "address": 20536,
+                "size": 4
+            }
+        },
+        {
+            "color": 339930840,
+            "comment": "",
+            "id": 192,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North Menu 2 [0x503C - 0x503F]",
+            "region": {
+                "address": 20540,
+                "size": 4
+            }
+        },
+        {
+            "color": 2822002230,
+            "comment": "",
+            "id": 193,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North Menu 3 [0x5040 - 0x5043]",
+            "region": {
+                "address": 20544,
+                "size": 4
+            }
+        },
+        {
+            "color": 577430985,
+            "comment": "Processed value with possible note",
+            "id": 194,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North Menu Custom Value [0x5044 - 0x5083]",
+            "region": {
+                "address": 20548,
+                "size": 64
+            }
+        },
+        {
+            "color": 1360058370,
+            "comment": "",
+            "id": 195,
+            "locked": false,
+            "name": "Spacer for North to North East [0x5084 - 0x50C3]",
+            "region": {
+                "address": 20612,
+                "size": 64
+            }
+        },
+        {
+            "color": 967651485,
+            "comment": "",
+            "id": 196,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North East Menu 1 [0x50C4 - 0x50C7]",
+            "region": {
+                "address": 20676,
+                "size": 4
+            }
+        },
+        {
+            "color": 2219972517,
+            "comment": "",
+            "id": 197,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North East Menu 2 [0x50C8 - 0x50CB]",
+            "region": {
+                "address": 20680,
+                "size": 4
+            }
+        },
+        {
+            "color": 4174814602,
+            "comment": "",
+            "id": 198,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North East Menu 3 [0x50CC - 0x50CF]",
+            "region": {
+                "address": 20684,
+                "size": 4
+            }
+        },
+        {
+            "color": 4100340863,
+            "comment": "Processed value with possible note",
+            "id": 199,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North East Menu Custom Value [0x50D0 - 0x510F]",
+            "region": {
+                "address": 20688,
+                "size": 64
+            }
+        },
+        {
+            "color": 823457569,
+            "comment": "",
+            "id": 200,
+            "locked": false,
+            "name": "Spacer for North East to East [0x5110 - 0x514F]",
+            "region": {
+                "address": 20752,
+                "size": 64
+            }
+        },
+        {
+            "color": 3862449063,
+            "comment": "",
+            "id": 201,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass East Menu 1 [0x5150 - 0x5153]",
+            "region": {
+                "address": 20816,
+                "size": 4
+            }
+        },
+        {
+            "color": 3241137048,
+            "comment": "",
+            "id": 202,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass East Menu 2 [0x5154 - 0x5157]",
+            "region": {
+                "address": 20820,
+                "size": 4
+            }
+        },
+        {
+            "color": 421466594,
+            "comment": "",
+            "id": 203,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass East Menu 3 [0x5158 - 0x515B]",
+            "region": {
+                "address": 20824,
+                "size": 4
+            }
+        },
+        {
+            "color": 783315837,
+            "comment": "Processed value with possible note",
+            "id": 204,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass East Menu Custom Value [0x515C - 0x519B]",
+            "region": {
+                "address": 20828,
+                "size": 64
+            }
+        },
+        {
+            "color": 37549113,
+            "comment": "",
+            "id": 205,
+            "locked": false,
+            "name": "Spacer for East to South East [0x519C - 0x51DB]",
+            "region": {
+                "address": 20892,
+                "size": 64
+            }
+        },
+        {
+            "color": 2128797608,
+            "comment": "",
+            "id": 206,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South East Menu 1 [0x51DC - 0x51DF]",
+            "region": {
+                "address": 20956,
+                "size": 4
+            }
+        },
+        {
+            "color": 3745057017,
+            "comment": "",
+            "id": 207,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South East Menu 2 [0x51E0 - 0x51E3]",
+            "region": {
+                "address": 20960,
+                "size": 4
+            }
+        },
+        {
+            "color": 1074871198,
+            "comment": "",
+            "id": 208,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South East Menu 3 [0x51E4 - 0x51E7]",
+            "region": {
+                "address": 20964,
+                "size": 4
+            }
+        },
+        {
+            "color": 3719865900,
+            "comment": "Processed value with possible note",
+            "id": 209,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South East Menu Custom Value [0x51E8 - 0x5227]",
+            "region": {
+                "address": 20968,
+                "size": 64
+            }
+        },
+        {
+            "color": 3601247632,
+            "comment": "",
+            "id": 210,
+            "locked": false,
+            "name": "Spacer for South East to South [0x5228 - 0x5267]",
+            "region": {
+                "address": 21032,
+                "size": 64
+            }
+        },
+        {
+            "color": 4165626833,
+            "comment": "",
+            "id": 211,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South Menu 1 [0x5268 - 0x526B]",
+            "region": {
+                "address": 21096,
+                "size": 4
+            }
+        },
+        {
+            "color": 1513842547,
+            "comment": "",
+            "id": 212,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South Menu 2 [0x526C - 0x526F]",
+            "region": {
+                "address": 21100,
+                "size": 4
+            }
+        },
+        {
+            "color": 4186817331,
+            "comment": "",
+            "id": 213,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South Menu 3 [0x5270 - 0x5273]",
+            "region": {
+                "address": 21104,
+                "size": 4
+            }
+        },
+        {
+            "color": 2933703422,
+            "comment": "Processed value with possible note",
+            "id": 214,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South Menu Custom Value [0x5274 - 0x52B3]",
+            "region": {
+                "address": 21108,
+                "size": 64
+            }
+        },
+        {
+            "color": 1924645962,
+            "comment": "",
+            "id": 215,
+            "locked": false,
+            "name": "Spacer for South to South West [0x52B4 - 0x52F3]",
+            "region": {
+                "address": 21172,
+                "size": 64
+            }
+        },
+        {
+            "color": 686538100,
+            "comment": "",
+            "id": 216,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South West Menu 1 [0x52F4 - 0x52F7]",
+            "region": {
+                "address": 21236,
+                "size": 4
+            }
+        },
+        {
+            "color": 4221953675,
+            "comment": "",
+            "id": 217,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South West Menu 2 [0x52F8 - 0x52FB]",
+            "region": {
+                "address": 21240,
+                "size": 4
+            }
+        },
+        {
+            "color": 359342335,
+            "comment": "",
+            "id": 218,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South West Menu 3 [0x52FC - 0x52FF]",
+            "region": {
+                "address": 21244,
+                "size": 4
+            }
+        },
+        {
+            "color": 1723776420,
+            "comment": "Processed value with possible note",
+            "id": 219,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass South West Menu Custom Value [0x5300 - 0x533F]",
+            "region": {
+                "address": 21248,
+                "size": 64
+            }
+        },
+        {
+            "color": 259175854,
+            "comment": "",
+            "id": 220,
+            "locked": false,
+            "name": "Spacer for South West to West [0x5340 - 0x537F]",
+            "region": {
+                "address": 21312,
+                "size": 64
+            }
+        },
+        {
+            "color": 850136279,
+            "comment": "",
+            "id": 221,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass West Menu 1 [0x5380 - 0x5383]",
+            "region": {
+                "address": 21376,
+                "size": 4
+            }
+        },
+        {
+            "color": 1987754532,
+            "comment": "",
+            "id": 222,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass West Menu 2 [0x5384 - 0x5387]",
+            "region": {
+                "address": 21380,
+                "size": 4
+            }
+        },
+        {
+            "color": 1879915407,
+            "comment": "",
+            "id": 223,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass West Menu 3 [0x5388 - 0x538B]",
+            "region": {
+                "address": 21384,
+                "size": 4
+            }
+        },
+        {
+            "color": 329926109,
+            "comment": "Processed value with possible note",
+            "id": 224,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass West Menu Custom Value [0x538C - 0x53CB]",
+            "region": {
+                "address": 21388,
+                "size": 64
+            }
+        },
+        {
+            "color": 259927961,
+            "comment": "",
+            "id": 225,
+            "locked": false,
+            "name": "Spacer for West to North West [0x53CC - 0x540B]",
+            "region": {
+                "address": 21452,
+                "size": 64
+            }
+        },
+        {
+            "color": 155647251,
+            "comment": "",
+            "id": 226,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North West Menu 1 [0x540C - 0x540F]",
+            "region": {
+                "address": 21516,
+                "size": 4
+            }
+        },
+        {
+            "color": 892147766,
+            "comment": "",
+            "id": 227,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North West Menu 2 [0x5410 - 0x5413]",
+            "region": {
+                "address": 21520,
+                "size": 4
+            }
+        },
+        {
+            "color": 2328081744,
+            "comment": "",
+            "id": 228,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North West Menu 3 [0x5414 - 0x5417]",
+            "region": {
+                "address": 21524,
+                "size": 4
+            }
+        },
+        {
+            "color": 3743413025,
+            "comment": "Processed value with possible note",
+            "id": 229,
+            "locked": false,
+            "name": "Emote Wheel Slot Compass North West Menu Custom Value [0x5418 - 0x5457]",
+            "region": {
+                "address": 21528,
+                "size": 64
+            }
+        },
+        {
+            "color": 3192525597,
+            "comment": "",
+            "id": 230,
+            "locked": false,
+            "name": "Spacer for North West to End of file flags [0x5458 - 0x5497]",
+            "region": {
+                "address": 21592,
+                "size": 64
+            }
+        },
+        {
+            "color": 3263076524,
+            "comment": "Processed value with possible note",
+            "id": 231,
+            "locked": false,
+            "name": "Camera Effects [0x5499 - 0x5499]",
+            "region": {
+                "address": 21657,
+                "size": 1
+            }
+        },
+        {
+            "color": 2010476650,
+            "comment": "",
+            "id": 232,
+            "locked": false,
+            "name": "End of CFG File [0x549C - 0x549F]",
+            "region": {
+                "address": 21660,
+                "size": 4
+            }
+        }
+    ]
+}

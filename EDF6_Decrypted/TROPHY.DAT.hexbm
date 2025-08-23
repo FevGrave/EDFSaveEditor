@@ -1,0 +1,1104 @@
+{
+    "bookmarks": [
+        {
+            "color": 497457928,
+            "comment": "",
+            "id": 1,
+            "locked": false,
+            "name": "Header (should be MDB0) [0x0 - 0x3]",
+            "region": {
+                "address": 0,
+                "size": 4
+            }
+        },
+        {
+            "color": 99417510,
+            "comment": "",
+            "id": 2,
+            "locked": false,
+            "name": "File Version [0x4 - 0x7]",
+            "region": {
+                "address": 4,
+                "size": 4
+            }
+        },
+        {
+            "color": 517271217,
+            "comment": "",
+            "id": 3,
+            "locked": false,
+            "name": "unknown [0x8 - 0xB]",
+            "region": {
+                "address": 8,
+                "size": 4
+            }
+        },
+        {
+            "color": 3345700120,
+            "comment": "",
+            "id": 4,
+            "locked": false,
+            "name": "CRC32 Checksum [0xC - 0xF]",
+            "region": {
+                "address": 12,
+                "size": 4
+            }
+        },
+        {
+            "color": 2645668557,
+            "comment": "",
+            "id": 5,
+            "locked": false,
+            "name": "unknown [0x10 - 0x13]",
+            "region": {
+                "address": 16,
+                "size": 4
+            }
+        },
+        {
+            "color": 5173013,
+            "comment": "",
+            "id": 6,
+            "locked": false,
+            "name": "Progress achievement flags 00 for not unlocked 01 unlocked, 5% to 100% in order [0x14 - 0x33]",
+            "region": {
+                "address": 20,
+                "size": 32
+            }
+        },
+        {
+            "color": 150855652,
+            "comment": "",
+            "id": 7,
+            "locked": false,
+            "name": "Other achievement flags 00 for not unlocked 01 unlocked, rescue and AP level reached [0x34 - 0x3B]",
+            "region": {
+                "address": 52,
+                "size": 8
+            }
+        },
+        {
+            "color": 70336504,
+            "comment": "",
+            "id": 8,
+            "locked": false,
+            "name": "Achievements Padding [0x3C - 0xDB]",
+            "region": {
+                "address": 60,
+                "size": 160
+            }
+        },
+        {
+            "color": 1955273692,
+            "comment": "",
+            "id": 9,
+            "locked": false,
+            "name": "unknown [0xDC - 0xDF]",
+            "region": {
+                "address": 220,
+                "size": 4
+            }
+        },
+        {
+            "color": 790198600,
+            "comment": "",
+            "id": 10,
+            "locked": false,
+            "name": "unknown [0xE0 - 0xE3]",
+            "region": {
+                "address": 224,
+                "size": 4
+            }
+        },
+        {
+            "color": 2449350775,
+            "comment": "",
+            "id": 11,
+            "locked": false,
+            "name": "unknown [0xE4 - 0xE7]",
+            "region": {
+                "address": 228,
+                "size": 4
+            }
+        },
+        {
+            "color": 3618942907,
+            "comment": "",
+            "id": 12,
+            "locked": false,
+            "name": "unknown [0xE8 - 0xEB]",
+            "region": {
+                "address": 232,
+                "size": 4
+            }
+        },
+        {
+            "color": 2921783894,
+            "comment": "",
+            "id": 13,
+            "locked": false,
+            "name": "Game's Player has started [0xEC - 0xEF]",
+            "region": {
+                "address": 236,
+                "size": 4
+            }
+        },
+        {
+            "color": 2483485825,
+            "comment": "",
+            "id": 14,
+            "locked": false,
+            "name": "unknown [0xF0 - 0xF3]",
+            "region": {
+                "address": 240,
+                "size": 4
+            }
+        },
+        {
+            "color": 2436386652,
+            "comment": "",
+            "id": 15,
+            "locked": false,
+            "name": "Missions Played as Air Raider [0xF4 - 0xF7]",
+            "region": {
+                "address": 244,
+                "size": 4
+            }
+        },
+        {
+            "color": 1374274368,
+            "comment": "",
+            "id": 16,
+            "locked": false,
+            "name": "unknown777777777 [0xF8 - 0xFB]",
+            "region": {
+                "address": 248,
+                "size": 4
+            }
+        },
+        {
+            "color": 2177091131,
+            "comment": "",
+            "id": 17,
+            "locked": false,
+            "name": "Teleport Device Kills [0xFC - 0xFF]",
+            "region": {
+                "address": 252,
+                "size": 4
+            }
+        },
+        {
+            "color": 3774052970,
+            "comment": "",
+            "id": 18,
+            "locked": false,
+            "name": "Total Armor Points Acquired [0x100 - 0x103]",
+            "region": {
+                "address": 256,
+                "size": 4
+            }
+        },
+        {
+            "color": 3215081321,
+            "comment": "",
+            "id": 19,
+            "locked": false,
+            "name": "Android Kills [0x104 - 0x107]",
+            "region": {
+                "address": 260,
+                "size": 4
+            }
+        },
+        {
+            "color": 1212691511,
+            "comment": "",
+            "id": 20,
+            "locked": false,
+            "name": "Super Android Kills [0x108 - 0x10B]",
+            "region": {
+                "address": 264,
+                "size": 4
+            }
+        },
+        {
+            "color": 3046386132,
+            "comment": "",
+            "id": 21,
+            "locked": false,
+            "name": "High Mobility Android Kills [0x10C - 0x10F]",
+            "region": {
+                "address": 268,
+                "size": 4
+            }
+        },
+        {
+            "color": 1027306253,
+            "comment": "",
+            "id": 22,
+            "locked": false,
+            "name": "Grenadier Kills [0x110 - 0x113]",
+            "region": {
+                "address": 272,
+                "size": 4
+            }
+        },
+        {
+            "color": 3154389246,
+            "comment": "",
+            "id": 23,
+            "locked": false,
+            "name": "Cyclops Kills [0x114 - 0x117]",
+            "region": {
+                "address": 276,
+                "size": 4
+            }
+        },
+        {
+            "color": 121995509,
+            "comment": "",
+            "id": 24,
+            "locked": false,
+            "name": "Giant Grenadier Kills [0x118 - 0x11B]",
+            "region": {
+                "address": 280,
+                "size": 4
+            }
+        },
+        {
+            "color": 1976143163,
+            "comment": "",
+            "id": 25,
+            "locked": false,
+            "name": "Giant Android Kills [0x11C - 0x11F]",
+            "region": {
+                "address": 284,
+                "size": 4
+            }
+        },
+        {
+            "color": 3253576457,
+            "comment": "",
+            "id": 26,
+            "locked": false,
+            "name": "King Kills [0x120 - 0x123]",
+            "region": {
+                "address": 288,
+                "size": 4
+            }
+        },
+        {
+            "color": 847767555,
+            "comment": "",
+            "id": 27,
+            "locked": false,
+            "name": "Unallocated Memory ? [0x124 - 0x127]",
+            "region": {
+                "address": 292,
+                "size": 4
+            }
+        },
+        {
+            "color": 3468376607,
+            "comment": "",
+            "id": 28,
+            "locked": false,
+            "name": "Teleport Ship Kills [0x128 - 0x12B]",
+            "region": {
+                "address": 296,
+                "size": 4
+            }
+        },
+        {
+            "color": 2982490436,
+            "comment": "",
+            "id": 29,
+            "locked": false,
+            "name": "Gamma Kills [0x12C - 0x12F]",
+            "region": {
+                "address": 300,
+                "size": 4
+            }
+        },
+        {
+            "color": 977127077,
+            "comment": "",
+            "id": 30,
+            "locked": false,
+            "name": "Deroys Kills [0x130 - 0x133]",
+            "region": {
+                "address": 304,
+                "size": 4
+            }
+        },
+        {
+            "color": 2434137030,
+            "comment": "",
+            "id": 31,
+            "locked": false,
+            "name": "Giant Tadpole Kills [0x134 - 0x137]",
+            "region": {
+                "address": 308,
+                "size": 4
+            }
+        },
+        {
+            "color": 673202413,
+            "comment": "",
+            "id": 32,
+            "locked": false,
+            "name": "Tadpole Kills [0x138 - 0x13B]",
+            "region": {
+                "address": 312,
+                "size": 4
+            }
+        },
+        {
+            "color": 3988457889,
+            "comment": "",
+            "id": 33,
+            "locked": false,
+            "name": "unknown777777777 [0x13C - 0x13F]",
+            "region": {
+                "address": 316,
+                "size": 4
+            }
+        },
+        {
+            "color": 573737391,
+            "comment": "",
+            "id": 34,
+            "locked": false,
+            "name": "unknown777777777 [0x140 - 0x143]",
+            "region": {
+                "address": 320,
+                "size": 4
+            }
+        },
+        {
+            "color": 1292327305,
+            "comment": "",
+            "id": 35,
+            "locked": false,
+            "name": "unknown [0x144 - 0x147]",
+            "region": {
+                "address": 324,
+                "size": 4
+            }
+        },
+        {
+            "color": 2687076413,
+            "comment": "",
+            "id": 36,
+            "locked": false,
+            "name": "unknown [0x148 - 0x14B]",
+            "region": {
+                "address": 328,
+                "size": 4
+            }
+        },
+        {
+            "color": 3595426497,
+            "comment": "",
+            "id": 37,
+            "locked": false,
+            "name": "unknown [0x14C - 0x14F]",
+            "region": {
+                "address": 332,
+                "size": 4
+            }
+        },
+        {
+            "color": 1054233519,
+            "comment": "",
+            "id": 38,
+            "locked": false,
+            "name": "unknown [0x150 - 0x153]",
+            "region": {
+                "address": 336,
+                "size": 4
+            }
+        },
+        {
+            "color": 234478665,
+            "comment": "",
+            "id": 39,
+            "locked": false,
+            "name": "unknown [0x154 - 0x157]",
+            "region": {
+                "address": 340,
+                "size": 4
+            }
+        },
+        {
+            "color": 3470301933,
+            "comment": "",
+            "id": 40,
+            "locked": false,
+            "name": "Missions Played as Fencer [0x158 - 0x15B]",
+            "region": {
+                "address": 344,
+                "size": 4
+            }
+        },
+        {
+            "color": 4281462404,
+            "comment": "",
+            "id": 41,
+            "locked": false,
+            "name": "Mobile Base, Mothership Kills ???????????? [0x15C - 0x15F]",
+            "region": {
+                "address": 348,
+                "size": 4
+            }
+        },
+        {
+            "color": 3286674761,
+            "comment": "Processed value with possible note",
+            "id": 42,
+            "locked": false,
+            "name": "TOTAL TIME PLAYED ON THIS SAVE [0x160 - 0x163]",
+            "region": {
+                "address": 352,
+                "size": 4
+            }
+        },
+        {
+            "color": 591816223,
+            "comment": "",
+            "id": 43,
+            "locked": false,
+            "name": "Colonists Kills [0x164 - 0x167]",
+            "region": {
+                "address": 356,
+                "size": 4
+            }
+        },
+        {
+            "color": 3421019444,
+            "comment": "",
+            "id": 44,
+            "locked": false,
+            "name": "Species Alpha kills [0x168 - 0x16B]",
+            "region": {
+                "address": 360,
+                "size": 4
+            }
+        },
+        {
+            "color": 2339719695,
+            "comment": "",
+            "id": 45,
+            "locked": false,
+            "name": "Mother Monster kills [0x16C - 0x16F]",
+            "region": {
+                "address": 364,
+                "size": 4
+            }
+        },
+        {
+            "color": 4199144375,
+            "comment": "",
+            "id": 46,
+            "locked": false,
+            "name": "Flying Aggressors kills [0x170 - 0x173]",
+            "region": {
+                "address": 368,
+                "size": 4
+            }
+        },
+        {
+            "color": 2123217538,
+            "comment": "",
+            "id": 47,
+            "locked": false,
+            "name": "Queen kills [0x174 - 0x177]",
+            "region": {
+                "address": 372,
+                "size": 4
+            }
+        },
+        {
+            "color": 1447950047,
+            "comment": "",
+            "id": 48,
+            "locked": false,
+            "name": "Beta Kills [0x178 - 0x17B]",
+            "region": {
+                "address": 376,
+                "size": 4
+            }
+        },
+        {
+            "color": 3689914304,
+            "comment": "",
+            "id": 49,
+            "locked": false,
+            "name": "High Grade Drone kills [0x17C - 0x17F]",
+            "region": {
+                "address": 380,
+                "size": 4
+            }
+        },
+        {
+            "color": 473907214,
+            "comment": "",
+            "id": 50,
+            "locked": false,
+            "name": "Drone kills [0x180 - 0x183]",
+            "region": {
+                "address": 384,
+                "size": 4
+            }
+        },
+        {
+            "color": 1035946164,
+            "comment": "",
+            "id": 51,
+            "locked": false,
+            "name": "Cosmonaut kills [0x184 - 0x187]",
+            "region": {
+                "address": 388,
+                "size": 4
+            }
+        },
+        {
+            "color": 1837118157,
+            "comment": "",
+            "id": 52,
+            "locked": false,
+            "name": "unknown [0x188 - 0x18B]",
+            "region": {
+                "address": 392,
+                "size": 4
+            }
+        },
+        {
+            "color": 3383734961,
+            "comment": "",
+            "id": 53,
+            "locked": false,
+            "name": "unknown [0x18C - 0x18F]",
+            "region": {
+                "address": 396,
+                "size": 4
+            }
+        },
+        {
+            "color": 4027568715,
+            "comment": "",
+            "id": 54,
+            "locked": false,
+            "name": "unknown [0x190 - 0x193]",
+            "region": {
+                "address": 400,
+                "size": 4
+            }
+        },
+        {
+            "color": 3779893569,
+            "comment": "",
+            "id": 55,
+            "locked": false,
+            "name": "unknown [0x194 - 0x197]",
+            "region": {
+                "address": 404,
+                "size": 4
+            }
+        },
+        {
+            "color": 1331809314,
+            "comment": "",
+            "id": 56,
+            "locked": false,
+            "name": "unknown [0x198 - 0x19B]",
+            "region": {
+                "address": 408,
+                "size": 4
+            }
+        },
+        {
+            "color": 3977018428,
+            "comment": "",
+            "id": 57,
+            "locked": false,
+            "name": "Small Hive Kills [0x19C - 0x19F]",
+            "region": {
+                "address": 412,
+                "size": 4
+            }
+        },
+        {
+            "color": 641575450,
+            "comment": "",
+            "id": 58,
+            "locked": false,
+            "name": "Imperial Drone Kills [0x1A0 - 0x1A3]",
+            "region": {
+                "address": 416,
+                "size": 4
+            }
+        },
+        {
+            "color": 3423093523,
+            "comment": "",
+            "id": 59,
+            "locked": false,
+            "name": "Tier 2 Drone Kills [0x1A4 - 0x1A7]",
+            "region": {
+                "address": 420,
+                "size": 4
+            }
+        },
+        {
+            "color": 2393514079,
+            "comment": "",
+            "id": 60,
+            "locked": false,
+            "name": "unknown [0x1A8 - 0x1AB]",
+            "region": {
+                "address": 424,
+                "size": 4
+            }
+        },
+        {
+            "color": 3080689286,
+            "comment": "",
+            "id": 61,
+            "locked": false,
+            "name": "Primer Kills [0x1AC - 0x1AF]",
+            "region": {
+                "address": 428,
+                "size": 4
+            }
+        },
+        {
+            "color": 2360618359,
+            "comment": "",
+            "id": 62,
+            "locked": false,
+            "name": "Kruuls Kills [0x1B0 - 0x1B3]",
+            "region": {
+                "address": 432,
+                "size": 4
+            }
+        },
+        {
+            "color": 1356123756,
+            "comment": "",
+            "id": 63,
+            "locked": false,
+            "name": "Scylla Kills [0x1B4 - 0x1B7]",
+            "region": {
+                "address": 436,
+                "size": 4
+            }
+        },
+        {
+            "color": 3293335539,
+            "comment": "",
+            "id": 64,
+            "locked": false,
+            "name": "Erginues Kills [0x1B8 - 0x1BB]",
+            "region": {
+                "address": 440,
+                "size": 4
+            }
+        },
+        {
+            "color": 2371638616,
+            "comment": "",
+            "id": 65,
+            "locked": false,
+            "name": "Archeluses Kills [0x1BC - 0x1BF]",
+            "region": {
+                "address": 444,
+                "size": 4
+            }
+        },
+        {
+            "color": 1830946144,
+            "comment": "",
+            "id": 66,
+            "locked": false,
+            "name": "Mobile Base, Mothership Kills ???????????? [0x1C0 - 0x1C3]",
+            "region": {
+                "address": 448,
+                "size": 4
+            }
+        },
+        {
+            "color": 1023470408,
+            "comment": "",
+            "id": 67,
+            "locked": false,
+            "name": "Arnea Kills [0x1C4 - 0x1C7]",
+            "region": {
+                "address": 452,
+                "size": 4
+            }
+        },
+        {
+            "color": 877659826,
+            "comment": "",
+            "id": 68,
+            "locked": false,
+            "name": "unknown [0x1C8 - 0x1CB]",
+            "region": {
+                "address": 456,
+                "size": 4
+            }
+        },
+        {
+            "color": 4239363493,
+            "comment": "",
+            "id": 69,
+            "locked": false,
+            "name": "Offline Games Started [0x1CC - 0x1CF]",
+            "region": {
+                "address": 460,
+                "size": 4
+            }
+        },
+        {
+            "color": 2301647320,
+            "comment": "",
+            "id": 70,
+            "locked": false,
+            "name": "Online Games Started [0x1D0 - 0x1D3]",
+            "region": {
+                "address": 464,
+                "size": 4
+            }
+        },
+        {
+            "color": 855069828,
+            "comment": "",
+            "id": 71,
+            "locked": false,
+            "name": "unknown [0x1D4 - 0x1D7]",
+            "region": {
+                "address": 468,
+                "size": 4
+            }
+        },
+        {
+            "color": 3691517872,
+            "comment": "",
+            "id": 72,
+            "locked": false,
+            "name": "unknown [0x1D8 - 0x1DB]",
+            "region": {
+                "address": 472,
+                "size": 4
+            }
+        },
+        {
+            "color": 3767075233,
+            "comment": "",
+            "id": 73,
+            "locked": false,
+            "name": "unknown [0x1DC - 0x1DF]",
+            "region": {
+                "address": 476,
+                "size": 4
+            }
+        },
+        {
+            "color": 1225800710,
+            "comment": "",
+            "id": 74,
+            "locked": false,
+            "name": "unknown [0x1E0 - 0x1E3]",
+            "region": {
+                "address": 480,
+                "size": 4
+            }
+        },
+        {
+            "color": 2751035384,
+            "comment": "",
+            "id": 75,
+            "locked": false,
+            "name": "unknown [0x1E4 - 0x1E7]",
+            "region": {
+                "address": 484,
+                "size": 4
+            }
+        },
+        {
+            "color": 480836348,
+            "comment": "",
+            "id": 76,
+            "locked": false,
+            "name": "unknown [0x1E8 - 0x1EB]",
+            "region": {
+                "address": 488,
+                "size": 4
+            }
+        },
+        {
+            "color": 964862483,
+            "comment": "",
+            "id": 77,
+            "locked": false,
+            "name": "unknown [0x1EC - 0x1EF]",
+            "region": {
+                "address": 492,
+                "size": 4
+            }
+        },
+        {
+            "color": 2231640702,
+            "comment": "",
+            "id": 78,
+            "locked": false,
+            "name": "unknown [0x1F0 - 0x1F3]",
+            "region": {
+                "address": 496,
+                "size": 4
+            }
+        },
+        {
+            "color": 674938013,
+            "comment": "",
+            "id": 79,
+            "locked": false,
+            "name": "Missions Played as Ranger [0x1F4 - 0x1F7]",
+            "region": {
+                "address": 500,
+                "size": 4
+            }
+        },
+        {
+            "color": 419660956,
+            "comment": "",
+            "id": 80,
+            "locked": false,
+            "name": "Rescues Done [0x1F8 - 0x1FB]",
+            "region": {
+                "address": 504,
+                "size": 4
+            }
+        },
+        {
+            "color": 2028631787,
+            "comment": "",
+            "id": 81,
+            "locked": false,
+            "name": "Ring Kills [0x1FC - 0x1FF]",
+            "region": {
+                "address": 508,
+                "size": 4
+            }
+        },
+        {
+            "color": 3437594713,
+            "comment": "",
+            "id": 82,
+            "locked": false,
+            "name": "High Grade Excavators Kills [0x200 - 0x203]",
+            "region": {
+                "address": 512,
+                "size": 4
+            }
+        },
+        {
+            "color": 2818484184,
+            "comment": "",
+            "id": 83,
+            "locked": false,
+            "name": "Excavators Kills [0x204 - 0x207]",
+            "region": {
+                "address": 516,
+                "size": 4
+            }
+        },
+        {
+            "color": 2757628285,
+            "comment": "",
+            "id": 84,
+            "locked": false,
+            "name": "Shield Bearer Kills [0x208 - 0x20B]",
+            "region": {
+                "address": 520,
+                "size": 4
+            }
+        },
+        {
+            "color": 1932568664,
+            "comment": "",
+            "id": 85,
+            "locked": false,
+            "name": "High Grade Tier 3 Drone Kills [0x20C - 0x20F]",
+            "region": {
+                "address": 524,
+                "size": 4
+            }
+        },
+        {
+            "color": 2149765447,
+            "comment": "",
+            "id": 86,
+            "locked": false,
+            "name": "Tier 3 Drone Kills [0x210 - 0x213]",
+            "region": {
+                "address": 528,
+                "size": 4
+            }
+        },
+        {
+            "color": 2124389365,
+            "comment": "",
+            "id": 87,
+            "locked": false,
+            "name": "Haze Kills [0x214 - 0x217]",
+            "region": {
+                "address": 532,
+                "size": 4
+            }
+        },
+        {
+            "color": 533147898,
+            "comment": "",
+            "id": 88,
+            "locked": false,
+            "name": "Teleport Anchor Kills [0x218 - 0x21B]",
+            "region": {
+                "address": 536,
+                "size": 4
+            }
+        },
+        {
+            "color": 1764523251,
+            "comment": "",
+            "id": 89,
+            "locked": false,
+            "name": "Tail Anchor Kills [0x21C - 0x21F]",
+            "region": {
+                "address": 540,
+                "size": 4
+            }
+        },
+        {
+            "color": 58585266,
+            "comment": "",
+            "id": 90,
+            "locked": false,
+            "name": "Kraken Kills [0x220 - 0x223]",
+            "region": {
+                "address": 544,
+                "size": 4
+            }
+        },
+        {
+            "color": 2421199306,
+            "comment": "",
+            "id": 91,
+            "locked": false,
+            "name": "Weapon's Collected Out of 1572 for EDF 6 [0x224 - 0x227]",
+            "region": {
+                "address": 548,
+                "size": 4
+            }
+        },
+        {
+            "color": 2654961817,
+            "comment": "",
+            "id": 92,
+            "locked": false,
+            "name": "unknown [0x228 - 0x22B]",
+            "region": {
+                "address": 552,
+                "size": 4
+            }
+        },
+        {
+            "color": 3164026521,
+            "comment": "",
+            "id": 93,
+            "locked": false,
+            "name": "unknown [0x22C - 0x22F]",
+            "region": {
+                "address": 556,
+                "size": 4
+            }
+        },
+        {
+            "color": 315316451,
+            "comment": "",
+            "id": 94,
+            "locked": false,
+            "name": "unknown [0x230 - 0x233]",
+            "region": {
+                "address": 560,
+                "size": 4
+            }
+        },
+        {
+            "color": 4040941991,
+            "comment": "",
+            "id": 95,
+            "locked": false,
+            "name": "unknown [0x234 - 0x237]",
+            "region": {
+                "address": 564,
+                "size": 4
+            }
+        },
+        {
+            "color": 669952074,
+            "comment": "",
+            "id": 96,
+            "locked": false,
+            "name": "unknown [0x238 - 0x23B]",
+            "region": {
+                "address": 568,
+                "size": 4
+            }
+        },
+        {
+            "color": 2411145957,
+            "comment": "",
+            "id": 97,
+            "locked": false,
+            "name": "unknown [0x23C - 0x23F]",
+            "region": {
+                "address": 572,
+                "size": 4
+            }
+        },
+        {
+            "color": 2171488640,
+            "comment": "",
+            "id": 98,
+            "locked": false,
+            "name": "unknown [0x240 - 0x243]",
+            "region": {
+                "address": 576,
+                "size": 4
+            }
+        },
+        {
+            "color": 2388120483,
+            "comment": "",
+            "id": 99,
+            "locked": false,
+            "name": "Missions Played as Wingdiver [0x244 - 0x247]",
+            "region": {
+                "address": 580,
+                "size": 4
+            }
+        },
+        {
+            "color": 1788924968,
+            "comment": "",
+            "id": 100,
+            "locked": false,
+            "name": "Unallocated Memory [0x248 - 0x3FB]",
+            "region": {
+                "address": 584,
+                "size": 436
+            }
+        }
+    ]
+}

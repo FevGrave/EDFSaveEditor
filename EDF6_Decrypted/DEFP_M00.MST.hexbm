@@ -1,0 +1,400 @@
+{
+    "bookmarks": [
+        {
+            "color": 1671848978,
+            "comment": "",
+            "id": 1,
+            "locked": false,
+            "name": "Header (should be MDB0) [0x0 - 0x3]",
+            "region": {
+                "address": 0,
+                "size": 4
+            }
+        },
+        {
+            "color": 196048541,
+            "comment": "",
+            "id": 2,
+            "locked": false,
+            "name": "MST Version (EDF6=3?) [0x4 - 0x7]",
+            "region": {
+                "address": 4,
+                "size": 4
+            }
+        },
+        {
+            "color": 3495233252,
+            "comment": "",
+            "id": 3,
+            "locked": false,
+            "name": "unknown [0x8 - 0xB]",
+            "region": {
+                "address": 8,
+                "size": 4
+            }
+        },
+        {
+            "color": 3628789177,
+            "comment": "",
+            "id": 4,
+            "locked": false,
+            "name": "CRC32 Checksum [0xC - 0xF]",
+            "region": {
+                "address": 12,
+                "size": 4
+            }
+        },
+        {
+            "color": 1170114928,
+            "comment": "",
+            "id": 5,
+            "locked": false,
+            "name": "Spacer [0x10 - 0x13]",
+            "region": {
+                "address": 16,
+                "size": 4
+            }
+        },
+        {
+            "color": 632887149,
+            "comment": "",
+            "id": 6,
+            "locked": false,
+            "name": "Mission Currently On [0x14 - 0x17]",
+            "region": {
+                "address": 20,
+                "size": 4
+            }
+        },
+        {
+            "color": 2395172977,
+            "comment": "",
+            "id": 7,
+            "locked": false,
+            "name": "Difficulty Currently On [0x18 - 0x1B]",
+            "region": {
+                "address": 24,
+                "size": 4
+            }
+        },
+        {
+            "color": 3282733739,
+            "comment": "Processed value with possible note",
+            "id": 8,
+            "locked": false,
+            "name": "Ranger Mission Save Table [0x1C - 0x21B]",
+            "region": {
+                "address": 28,
+                "size": 512
+            }
+        },
+        {
+            "color": 634176815,
+            "comment": "Processed value with possible note",
+            "id": 9,
+            "locked": false,
+            "name": "Wing Diver Mission Save Table [0x21C - 0x41B]",
+            "region": {
+                "address": 540,
+                "size": 512
+            }
+        },
+        {
+            "color": 1320393991,
+            "comment": "Processed value with possible note",
+            "id": 10,
+            "locked": false,
+            "name": "Air Raider Mission Save Table [0x41C - 0x61B]",
+            "region": {
+                "address": 1052,
+                "size": 512
+            }
+        },
+        {
+            "color": 371480808,
+            "comment": "Processed value with possible note",
+            "id": 11,
+            "locked": false,
+            "name": "Fencer Mission Save Table [0x61C - 0x81B]",
+            "region": {
+                "address": 1564,
+                "size": 512
+            }
+        },
+        {
+            "color": 3321287956,
+            "comment": "",
+            "id": 12,
+            "locked": false,
+            "name": "Spacer [0x81C - 0xA1B]",
+            "region": {
+                "address": 2076,
+                "size": 512
+            }
+        },
+        {
+            "color": 2872148412,
+            "comment": "",
+            "id": 13,
+            "locked": false,
+            "name": "Default Mission tables [0xA1C - 0x121B]",
+            "region": {
+                "address": 2588,
+                "size": 2048
+            }
+        },
+        {
+            "color": 1738768261,
+            "comment": "",
+            "id": 14,
+            "locked": false,
+            "name": "Spacer [0x121C - 0x141B]",
+            "region": {
+                "address": 4636,
+                "size": 512
+            }
+        },
+        {
+            "color": 1777911915,
+            "comment": "Processed value with possible note",
+            "id": 15,
+            "locked": false,
+            "name": "Lobby Name [0x141C - 0x1443]",
+            "region": {
+                "address": 5148,
+                "size": 40
+            }
+        },
+        {
+            "color": 1129957821,
+            "comment": "",
+            "id": 16,
+            "locked": false,
+            "name": "Spacer [0x1444 - 0x1445]",
+            "region": {
+                "address": 5188,
+                "size": 2
+            }
+        },
+        {
+            "color": 3646347137,
+            "comment": "Processed value with possible note",
+            "id": 17,
+            "locked": false,
+            "name": "Open Message Input [0x1446 - 0x1475]",
+            "region": {
+                "address": 5190,
+                "size": 48
+            }
+        },
+        {
+            "color": 903962372,
+            "comment": "",
+            "id": 18,
+            "locked": false,
+            "name": "Spacer [0x1476 - 0x1477]",
+            "region": {
+                "address": 5238,
+                "size": 2
+            }
+        },
+        {
+            "color": 2259694046,
+            "comment": "",
+            "id": 19,
+            "locked": false,
+            "name": "Select Set Phrase 1 Category [0x1478 - 0x147B]",
+            "region": {
+                "address": 5240,
+                "size": 4
+            }
+        },
+        {
+            "color": 400513435,
+            "comment": "",
+            "id": 20,
+            "locked": false,
+            "name": "Select Set Phrase 1 Contents [0x147C - 0x147F]",
+            "region": {
+                "address": 5244,
+                "size": 4
+            }
+        },
+        {
+            "color": 3265289664,
+            "comment": "",
+            "id": 21,
+            "locked": false,
+            "name": "Select Set Phrase 2 Contents [0x1480 - 0x1483]",
+            "region": {
+                "address": 5248,
+                "size": 4
+            }
+        },
+        {
+            "color": 3298044348,
+            "comment": "",
+            "id": 22,
+            "locked": false,
+            "name": "Select Set Phrase 2 Contents [0x1484 - 0x1487]",
+            "region": {
+                "address": 5252,
+                "size": 4
+            }
+        },
+        {
+            "color": 550959987,
+            "comment": "",
+            "id": 23,
+            "locked": false,
+            "name": "Default 1 [0x1488 - 0x148B]",
+            "region": {
+                "address": 5256,
+                "size": 4
+            }
+        },
+        {
+            "color": 3907828246,
+            "comment": "",
+            "id": 24,
+            "locked": false,
+            "name": "Default 1 [0x148C - 0x148F]",
+            "region": {
+                "address": 5260,
+                "size": 4
+            }
+        },
+        {
+            "color": 2918474298,
+            "comment": "",
+            "id": 25,
+            "locked": false,
+            "name": "unknown [0x1490 - 0x1493]",
+            "region": {
+                "address": 5264,
+                "size": 4
+            }
+        },
+        {
+            "color": 3541759525,
+            "comment": "",
+            "id": 26,
+            "locked": false,
+            "name": "Default 3? [0x1494 - 0x1497]",
+            "region": {
+                "address": 5268,
+                "size": 4
+            }
+        },
+        {
+            "color": 1682424248,
+            "comment": "",
+            "id": 27,
+            "locked": false,
+            "name": "0=Everyone, 1=Friends of Participants / Invite Only, 1=Invite Only, 2=Password, 3=RoomNameOnly [0x1498 - 0x149B]",
+            "region": {
+                "address": 5272,
+                "size": 4
+            }
+        },
+        {
+            "color": 3097580712,
+            "comment": "Processed value with possible note",
+            "id": 28,
+            "locked": false,
+            "name": "Password [0x149C - 0x14A3]",
+            "region": {
+                "address": 5276,
+                "size": 8
+            }
+        },
+        {
+            "color": 2884756026,
+            "comment": "",
+            "id": 29,
+            "locked": false,
+            "name": "unknown [0x14A4 - 0x14A7]",
+            "region": {
+                "address": 5284,
+                "size": 4
+            }
+        },
+        {
+            "color": 475124946,
+            "comment": "",
+            "id": 30,
+            "locked": false,
+            "name": "0=Everyone, 2=Friends of Participants / Invite Only, 3=Invite Only, 0=Password, 0=RoomNameOnly [0x14A8 - 0x14AB]",
+            "region": {
+                "address": 5288,
+                "size": 4
+            }
+        },
+        {
+            "color": 765797526,
+            "comment": "",
+            "id": 31,
+            "locked": false,
+            "name": "Default 2? [0x14AC - 0x14AF]",
+            "region": {
+                "address": 5292,
+                "size": 4
+            }
+        },
+        {
+            "color": 2345721551,
+            "comment": "",
+            "id": 32,
+            "locked": false,
+            "name": "Tail Spacer [0x14B0 - 0x16C7]",
+            "region": {
+                "address": 5296,
+                "size": 536
+            }
+        },
+        {
+            "color": 2819249831,
+            "comment": "",
+            "id": 33,
+            "locked": false,
+            "name": "TailFlagA (observed 0x01, or 0x0101) [0x16C8 - 0x16CB]",
+            "region": {
+                "address": 5832,
+                "size": 4
+            }
+        },
+        {
+            "color": 506143705,
+            "comment": "",
+            "id": 34,
+            "locked": false,
+            "name": "TailFlagB1 (observed 0x0101) [0x16CC - 0x16CD]",
+            "region": {
+                "address": 5836,
+                "size": 2
+            }
+        },
+        {
+            "color": 1779182915,
+            "comment": "",
+            "id": 35,
+            "locked": false,
+            "name": "DLC Variant Value (M00=0x9CC9 DLC1=0x7DFB DLC2=0x2BF4) [0x16CE - 0x16CF]",
+            "region": {
+                "address": 5838,
+                "size": 2
+            }
+        },
+        {
+            "color": 2486444680,
+            "comment": "",
+            "id": 36,
+            "locked": false,
+            "name": "Tail Padding / End [0x16D0 - 0x16D7]",
+            "region": {
+                "address": 5840,
+                "size": 8
+            }
+        }
+    ]
+}

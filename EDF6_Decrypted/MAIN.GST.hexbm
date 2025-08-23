@@ -1,0 +1,5119 @@
+{
+    "bookmarks": [
+        {
+            "color": 181491871,
+            "comment": "",
+            "id": 1,
+            "locked": false,
+            "name": "Header (should be MDB0) [0x0 - 0x3]",
+            "region": {
+                "address": 0,
+                "size": 4
+            }
+        },
+        {
+            "color": 2179311086,
+            "comment": "",
+            "id": 2,
+            "locked": false,
+            "name": "File Version [0x4 - 0x7]",
+            "region": {
+                "address": 4,
+                "size": 4
+            }
+        },
+        {
+            "color": 536262685,
+            "comment": "",
+            "id": 3,
+            "locked": false,
+            "name": "unknown? [0x8 - 0xB]",
+            "region": {
+                "address": 8,
+                "size": 4
+            }
+        },
+        {
+            "color": 3794653712,
+            "comment": "",
+            "id": 4,
+            "locked": false,
+            "name": "CRC32 Checksum [0xC - 0xF]",
+            "region": {
+                "address": 12,
+                "size": 4
+            }
+        },
+        {
+            "color": 2012765878,
+            "comment": "",
+            "id": 5,
+            "locked": false,
+            "name": "unknown? [0x10 - 0x13]",
+            "region": {
+                "address": 16,
+                "size": 4
+            }
+        },
+        {
+            "color": 3550332528,
+            "comment": "Processed value with possible note",
+            "id": 6,
+            "locked": false,
+            "name": "Ranger Armor [0x14 - 0x17]",
+            "region": {
+                "address": 20,
+                "size": 4
+            }
+        },
+        {
+            "color": 1719628528,
+            "comment": "Processed value with possible note",
+            "id": 7,
+            "locked": false,
+            "name": "Wingdiver Armor [0x18 - 0x1B]",
+            "region": {
+                "address": 24,
+                "size": 4
+            }
+        },
+        {
+            "color": 4053380466,
+            "comment": "Processed value with possible note",
+            "id": 8,
+            "locked": false,
+            "name": "Air Raider Armor [0x1C - 0x1F]",
+            "region": {
+                "address": 28,
+                "size": 4
+            }
+        },
+        {
+            "color": 3987508261,
+            "comment": "Processed value with possible note",
+            "id": 9,
+            "locked": false,
+            "name": "Fencer Armor [0x20 - 0x23]",
+            "region": {
+                "address": 32,
+                "size": 4
+            }
+        },
+        {
+            "color": 1926377157,
+            "comment": "",
+            "id": 10,
+            "locked": false,
+            "name": "unknown [0x24 - 0x27]",
+            "region": {
+                "address": 36,
+                "size": 4
+            }
+        },
+        {
+            "color": 4274919642,
+            "comment": "",
+            "id": 11,
+            "locked": false,
+            "name": "Spacer [0x28 - 0x3B]",
+            "region": {
+                "address": 40,
+                "size": 20
+            }
+        },
+        {
+            "color": 3210136718,
+            "comment": "Processed value with possible note",
+            "id": 12,
+            "locked": false,
+            "name": "Current Player Class [0x3C - 0x3C]",
+            "region": {
+                "address": 60,
+                "size": 1
+            }
+        },
+        {
+            "color": 1219637724,
+            "comment": "",
+            "id": 13,
+            "locked": false,
+            "name": "Current Player Class Spacer [0x3D - 0x3F]",
+            "region": {
+                "address": 61,
+                "size": 3
+            }
+        },
+        {
+            "color": 2828722501,
+            "comment": "Processed value with possible note",
+            "id": 14,
+            "locked": false,
+            "name": "Current Player SKIN [0x40 - 0x43]",
+            "region": {
+                "address": 64,
+                "size": 4
+            }
+        },
+        {
+            "color": 3226099143,
+            "comment": "",
+            "id": 15,
+            "locked": false,
+            "name": "Current Ranger Primary Weapon ID [0x44 - 0x47]",
+            "region": {
+                "address": 68,
+                "size": 4
+            }
+        },
+        {
+            "color": 2957068919,
+            "comment": "",
+            "id": 16,
+            "locked": false,
+            "name": "Current Ranger Secondary Weapon ID [0x48 - 0x4B]",
+            "region": {
+                "address": 72,
+                "size": 4
+            }
+        },
+        {
+            "color": 3256808702,
+            "comment": "",
+            "id": 17,
+            "locked": false,
+            "name": "Current Ranger Backpack Equipment ID [0x4C - 0x4F]",
+            "region": {
+                "address": 76,
+                "size": 4
+            }
+        },
+        {
+            "color": 1743239851,
+            "comment": "",
+            "id": 18,
+            "locked": false,
+            "name": "Current Ranger Support Equipment ID [0x50 - 0x53]",
+            "region": {
+                "address": 80,
+                "size": 4
+            }
+        },
+        {
+            "color": 1099093054,
+            "comment": "",
+            "id": 19,
+            "locked": false,
+            "name": "Unused Ranger Slot [0x54 - 0x57]",
+            "region": {
+                "address": 84,
+                "size": 4
+            }
+        },
+        {
+            "color": 2512169031,
+            "comment": "",
+            "id": 20,
+            "locked": false,
+            "name": "Unused Ranger Slot [0x58 - 0x5B]",
+            "region": {
+                "address": 88,
+                "size": 4
+            }
+        },
+        {
+            "color": 1320371377,
+            "comment": "",
+            "id": 21,
+            "locked": false,
+            "name": "Current Wingdiver Primary Weapon ID [0x5C - 0x5F]",
+            "region": {
+                "address": 92,
+                "size": 4
+            }
+        },
+        {
+            "color": 2064881856,
+            "comment": "",
+            "id": 22,
+            "locked": false,
+            "name": "Current Wingdiver Secondary Weapon ID [0x60 - 0x63]",
+            "region": {
+                "address": 96,
+                "size": 4
+            }
+        },
+        {
+            "color": 1460815549,
+            "comment": "",
+            "id": 23,
+            "locked": false,
+            "name": "Current Wingdiver Independently Operated Equipment ID [0x64 - 0x67]",
+            "region": {
+                "address": 100,
+                "size": 4
+            }
+        },
+        {
+            "color": 843778035,
+            "comment": "",
+            "id": 24,
+            "locked": false,
+            "name": "Current Wingdiver Plasma Core ID [0x68 - 0x6B]",
+            "region": {
+                "address": 104,
+                "size": 4
+            }
+        },
+        {
+            "color": 3153298415,
+            "comment": "",
+            "id": 25,
+            "locked": false,
+            "name": "Unused Wingdiver Slot [0x6C - 0x6F]",
+            "region": {
+                "address": 108,
+                "size": 4
+            }
+        },
+        {
+            "color": 4111343091,
+            "comment": "",
+            "id": 26,
+            "locked": false,
+            "name": "Unused Wingdiver Slot [0x70 - 0x73]",
+            "region": {
+                "address": 112,
+                "size": 4
+            }
+        },
+        {
+            "color": 520639515,
+            "comment": "",
+            "id": 27,
+            "locked": false,
+            "name": "Current Air Raider Primary Weapon ID [0x74 - 0x77]",
+            "region": {
+                "address": 116,
+                "size": 4
+            }
+        },
+        {
+            "color": 1074740510,
+            "comment": "",
+            "id": 28,
+            "locked": false,
+            "name": "Current Air Raider Secondary Weapon ID [0x78 - 0x7B]",
+            "region": {
+                "address": 120,
+                "size": 4
+            }
+        },
+        {
+            "color": 1380665590,
+            "comment": "",
+            "id": 29,
+            "locked": false,
+            "name": "Current Air Raider Tertiary Weapon ID [0x7C - 0x7F]",
+            "region": {
+                "address": 124,
+                "size": 4
+            }
+        },
+        {
+            "color": 3180328771,
+            "comment": "",
+            "id": 30,
+            "locked": false,
+            "name": "Current Air Raider Backpack Equipment ID [0x80 - 0x83]",
+            "region": {
+                "address": 128,
+                "size": 4
+            }
+        },
+        {
+            "color": 3061223204,
+            "comment": "",
+            "id": 31,
+            "locked": false,
+            "name": "Current Air Raider Vehicle Equipment ID [0x84 - 0x87]",
+            "region": {
+                "address": 132,
+                "size": 4
+            }
+        },
+        {
+            "color": 2971139597,
+            "comment": "",
+            "id": 32,
+            "locked": false,
+            "name": "Unused Air Raider Slot [0x88 - 0x8B]",
+            "region": {
+                "address": 136,
+                "size": 4
+            }
+        },
+        {
+            "color": 4136892384,
+            "comment": "",
+            "id": 33,
+            "locked": false,
+            "name": "Current Fencer L. Hand Primary Weapon ID [0x8C - 0x8F]",
+            "region": {
+                "address": 140,
+                "size": 4
+            }
+        },
+        {
+            "color": 353743760,
+            "comment": "",
+            "id": 34,
+            "locked": false,
+            "name": "Current Fencer R. Hand Secondary Weapon ID [0x90 - 0x93]",
+            "region": {
+                "address": 144,
+                "size": 4
+            }
+        },
+        {
+            "color": 845644042,
+            "comment": "",
+            "id": 35,
+            "locked": false,
+            "name": "Current Fencer L. Hand Tertiary Weapon ID [0x94 - 0x97]",
+            "region": {
+                "address": 148,
+                "size": 4
+            }
+        },
+        {
+            "color": 4088380162,
+            "comment": "",
+            "id": 36,
+            "locked": false,
+            "name": "Current Fencer R. Hand Quaternary Weapon ID [0x98 - 0x9B]",
+            "region": {
+                "address": 152,
+                "size": 4
+            }
+        },
+        {
+            "color": 202339243,
+            "comment": "",
+            "id": 37,
+            "locked": false,
+            "name": "Current Fencer Reinforced Parts Primary Color ID [0x9C - 0x9F]",
+            "region": {
+                "address": 156,
+                "size": 4
+            }
+        },
+        {
+            "color": 53397906,
+            "comment": "",
+            "id": 38,
+            "locked": false,
+            "name": "Current Fencer Reinforced Parts Secondary ID [0xA0 - 0xA3]",
+            "region": {
+                "address": 160,
+                "size": 4
+            }
+        },
+        {
+            "color": 997786239,
+            "comment": "",
+            "id": 39,
+            "locked": false,
+            "name": "unknown [0xA4 - 0xA7]",
+            "region": {
+                "address": 164,
+                "size": 4
+            }
+        },
+        {
+            "color": 2012229958,
+            "comment": "",
+            "id": 40,
+            "locked": false,
+            "name": "FF Spacer [0xA8 - 0x133]",
+            "region": {
+                "address": 168,
+                "size": 140
+            }
+        },
+        {
+            "color": 834615856,
+            "comment": "Processed value with possible note",
+            "id": 41,
+            "locked": false,
+            "name": "Ranger Max Armor [0x134 - 0x137]",
+            "region": {
+                "address": 308,
+                "size": 4
+            }
+        },
+        {
+            "color": 221033864,
+            "comment": "Processed value with possible note",
+            "id": 42,
+            "locked": false,
+            "name": "Wingdiver Max Armor [0x138 - 0x13B]",
+            "region": {
+                "address": 312,
+                "size": 4
+            }
+        },
+        {
+            "color": 1837065998,
+            "comment": "Processed value with possible note",
+            "id": 43,
+            "locked": false,
+            "name": "Air Raider Max Armor [0x13C - 0x13F]",
+            "region": {
+                "address": 316,
+                "size": 4
+            }
+        },
+        {
+            "color": 1519515435,
+            "comment": "Processed value with possible note",
+            "id": 44,
+            "locked": false,
+            "name": "Fencer Max Armor [0x140 - 0x143]",
+            "region": {
+                "address": 320,
+                "size": 4
+            }
+        },
+        {
+            "color": 2548956514,
+            "comment": "",
+            "id": 45,
+            "locked": false,
+            "name": "Max Armor Spacer Into Color Pallets [0x144 - 0x15B]",
+            "region": {
+                "address": 324,
+                "size": 24
+            }
+        },
+        {
+            "color": 31834966,
+            "comment": "",
+            "id": 46,
+            "locked": false,
+            "name": "Unused Color Pallets [0x19DC - 0x3E97]",
+            "region": {
+                "address": 6620,
+                "size": 9404
+            }
+        },
+        {
+            "color": 3297563525,
+            "comment": "",
+            "id": 47,
+            "locked": false,
+            "name": "Default Settings for all Classes Head [0x3E98 - 0x3FBB]",
+            "region": {
+                "address": 16024,
+                "size": 292
+            }
+        },
+        {
+            "color": 681846144,
+            "comment": "",
+            "id": 48,
+            "locked": false,
+            "name": "Default Settings for all Classes Color Pallets [0x3FBC - 0x7CF7]",
+            "region": {
+                "address": 16316,
+                "size": 15676
+            }
+        },
+        {
+            "color": 3565648023,
+            "comment": "Processed value with possible note",
+            "id": 49,
+            "locked": false,
+            "name": "Weapon Table [0x7CFC - 0xDCFB]",
+            "region": {
+                "address": 31996,
+                "size": 24576
+            }
+        },
+        {
+            "color": 4140643477,
+            "comment": "",
+            "id": 50,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 0 [0x15C - 0x16B]",
+            "region": {
+                "address": 348,
+                "size": 16
+            }
+        },
+        {
+            "color": 767694338,
+            "comment": "",
+            "id": 51,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 1 [0x16C - 0x17B]",
+            "region": {
+                "address": 364,
+                "size": 16
+            }
+        },
+        {
+            "color": 4251691079,
+            "comment": "",
+            "id": 52,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 2 [0x17C - 0x18B]",
+            "region": {
+                "address": 380,
+                "size": 16
+            }
+        },
+        {
+            "color": 2471856240,
+            "comment": "",
+            "id": 53,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 3 [0x18C - 0x19B]",
+            "region": {
+                "address": 396,
+                "size": 16
+            }
+        },
+        {
+            "color": 3681904223,
+            "comment": "",
+            "id": 54,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 4 [0x19C - 0x1AB]",
+            "region": {
+                "address": 412,
+                "size": 16
+            }
+        },
+        {
+            "color": 3785316901,
+            "comment": "",
+            "id": 55,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 5 [0x1AC - 0x1BB]",
+            "region": {
+                "address": 428,
+                "size": 16
+            }
+        },
+        {
+            "color": 143246049,
+            "comment": "",
+            "id": 56,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 6 [0x1BC - 0x1CB]",
+            "region": {
+                "address": 444,
+                "size": 16
+            }
+        },
+        {
+            "color": 3992055,
+            "comment": "",
+            "id": 57,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 7 [0x1CC - 0x1DB]",
+            "region": {
+                "address": 460,
+                "size": 16
+            }
+        },
+        {
+            "color": 3776321121,
+            "comment": "",
+            "id": 58,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 8 [0x1DC - 0x1EB]",
+            "region": {
+                "address": 476,
+                "size": 16
+            }
+        },
+        {
+            "color": 1501271957,
+            "comment": "",
+            "id": 59,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 9 [0x1EC - 0x1FB]",
+            "region": {
+                "address": 492,
+                "size": 16
+            }
+        },
+        {
+            "color": 2417562866,
+            "comment": "",
+            "id": 60,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 10 [0x1FC - 0x20B]",
+            "region": {
+                "address": 508,
+                "size": 16
+            }
+        },
+        {
+            "color": 2619993785,
+            "comment": "",
+            "id": 61,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Primary Color palette 11 [0x20C - 0x21B]",
+            "region": {
+                "address": 524,
+                "size": 16
+            }
+        },
+        {
+            "color": 835754401,
+            "comment": "",
+            "id": 62,
+            "locked": false,
+            "name": "Current Ranger Civilian Primary Color Swatch ID [0x21C - 0x21F]",
+            "region": {
+                "address": 540,
+                "size": 4
+            }
+        },
+        {
+            "color": 809332918,
+            "comment": "",
+            "id": 63,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 0 [0x220 - 0x22F]",
+            "region": {
+                "address": 544,
+                "size": 16
+            }
+        },
+        {
+            "color": 1126541248,
+            "comment": "",
+            "id": 64,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 1 [0x230 - 0x23F]",
+            "region": {
+                "address": 560,
+                "size": 16
+            }
+        },
+        {
+            "color": 1764837546,
+            "comment": "",
+            "id": 65,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 2 [0x240 - 0x24F]",
+            "region": {
+                "address": 576,
+                "size": 16
+            }
+        },
+        {
+            "color": 2023491874,
+            "comment": "",
+            "id": 66,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 3 [0x250 - 0x25F]",
+            "region": {
+                "address": 592,
+                "size": 16
+            }
+        },
+        {
+            "color": 580446176,
+            "comment": "",
+            "id": 67,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 4 [0x260 - 0x26F]",
+            "region": {
+                "address": 608,
+                "size": 16
+            }
+        },
+        {
+            "color": 125566315,
+            "comment": "",
+            "id": 68,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 5 [0x270 - 0x27F]",
+            "region": {
+                "address": 624,
+                "size": 16
+            }
+        },
+        {
+            "color": 1052443011,
+            "comment": "",
+            "id": 69,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 6 [0x280 - 0x28F]",
+            "region": {
+                "address": 640,
+                "size": 16
+            }
+        },
+        {
+            "color": 1892581989,
+            "comment": "",
+            "id": 70,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 7 [0x290 - 0x29F]",
+            "region": {
+                "address": 656,
+                "size": 16
+            }
+        },
+        {
+            "color": 3141561396,
+            "comment": "",
+            "id": 71,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 8 [0x2A0 - 0x2AF]",
+            "region": {
+                "address": 672,
+                "size": 16
+            }
+        },
+        {
+            "color": 1055307042,
+            "comment": "",
+            "id": 72,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 9 [0x2B0 - 0x2BF]",
+            "region": {
+                "address": 688,
+                "size": 16
+            }
+        },
+        {
+            "color": 1767254059,
+            "comment": "",
+            "id": 73,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 10 [0x2C0 - 0x2CF]",
+            "region": {
+                "address": 704,
+                "size": 16
+            }
+        },
+        {
+            "color": 819264447,
+            "comment": "",
+            "id": 74,
+            "locked": false,
+            "name": "Raw Hex Ranger Civilian Secondary Color palette 11 [0x2D0 - 0x2DF]",
+            "region": {
+                "address": 720,
+                "size": 16
+            }
+        },
+        {
+            "color": 3170151565,
+            "comment": "",
+            "id": 75,
+            "locked": false,
+            "name": "Current Ranger Civilian Secondary Color Swatch ID [0x2E0 - 0x2E3]",
+            "region": {
+                "address": 736,
+                "size": 4
+            }
+        },
+        {
+            "color": 3108656095,
+            "comment": "",
+            "id": 76,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 0 [0x2E4 - 0x2F3]",
+            "region": {
+                "address": 740,
+                "size": 16
+            }
+        },
+        {
+            "color": 2887856552,
+            "comment": "",
+            "id": 77,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 1 [0x2F4 - 0x303]",
+            "region": {
+                "address": 756,
+                "size": 16
+            }
+        },
+        {
+            "color": 1628286624,
+            "comment": "",
+            "id": 78,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 2 [0x304 - 0x313]",
+            "region": {
+                "address": 772,
+                "size": 16
+            }
+        },
+        {
+            "color": 3427511335,
+            "comment": "",
+            "id": 79,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 3 [0x314 - 0x323]",
+            "region": {
+                "address": 788,
+                "size": 16
+            }
+        },
+        {
+            "color": 2398618180,
+            "comment": "",
+            "id": 80,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 4 [0x324 - 0x333]",
+            "region": {
+                "address": 804,
+                "size": 16
+            }
+        },
+        {
+            "color": 79699471,
+            "comment": "",
+            "id": 81,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 5 [0x334 - 0x343]",
+            "region": {
+                "address": 820,
+                "size": 16
+            }
+        },
+        {
+            "color": 904339497,
+            "comment": "",
+            "id": 82,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 6 [0x344 - 0x353]",
+            "region": {
+                "address": 836,
+                "size": 16
+            }
+        },
+        {
+            "color": 4011497045,
+            "comment": "",
+            "id": 83,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 7 [0x354 - 0x363]",
+            "region": {
+                "address": 852,
+                "size": 16
+            }
+        },
+        {
+            "color": 428891658,
+            "comment": "",
+            "id": 84,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 8 [0x364 - 0x373]",
+            "region": {
+                "address": 868,
+                "size": 16
+            }
+        },
+        {
+            "color": 2965081923,
+            "comment": "",
+            "id": 85,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 9 [0x374 - 0x383]",
+            "region": {
+                "address": 884,
+                "size": 16
+            }
+        },
+        {
+            "color": 1489877119,
+            "comment": "",
+            "id": 86,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 10 [0x384 - 0x393]",
+            "region": {
+                "address": 900,
+                "size": 16
+            }
+        },
+        {
+            "color": 2881708576,
+            "comment": "",
+            "id": 87,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Primary Color palette 11 [0x394 - 0x3A3]",
+            "region": {
+                "address": 916,
+                "size": 16
+            }
+        },
+        {
+            "color": 4082882341,
+            "comment": "",
+            "id": 88,
+            "locked": false,
+            "name": "Current Ranger Soldier Primary Color Swatch ID [0x3A4 - 0x3A7]",
+            "region": {
+                "address": 932,
+                "size": 4
+            }
+        },
+        {
+            "color": 3074628545,
+            "comment": "",
+            "id": 89,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 0 [0x3A8 - 0x3B7]",
+            "region": {
+                "address": 936,
+                "size": 16
+            }
+        },
+        {
+            "color": 1286277017,
+            "comment": "",
+            "id": 90,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 1 [0x3B8 - 0x3C7]",
+            "region": {
+                "address": 952,
+                "size": 16
+            }
+        },
+        {
+            "color": 2354155982,
+            "comment": "",
+            "id": 91,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 2 [0x3C8 - 0x3D7]",
+            "region": {
+                "address": 968,
+                "size": 16
+            }
+        },
+        {
+            "color": 2446454327,
+            "comment": "",
+            "id": 92,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 3 [0x3D8 - 0x3E7]",
+            "region": {
+                "address": 984,
+                "size": 16
+            }
+        },
+        {
+            "color": 201903854,
+            "comment": "",
+            "id": 93,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 4 [0x3E8 - 0x3F7]",
+            "region": {
+                "address": 1000,
+                "size": 16
+            }
+        },
+        {
+            "color": 2385275976,
+            "comment": "",
+            "id": 94,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 5 [0x3F8 - 0x407]",
+            "region": {
+                "address": 1016,
+                "size": 16
+            }
+        },
+        {
+            "color": 1676663137,
+            "comment": "",
+            "id": 95,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 6 [0x408 - 0x417]",
+            "region": {
+                "address": 1032,
+                "size": 16
+            }
+        },
+        {
+            "color": 3284254141,
+            "comment": "",
+            "id": 96,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 7 [0x418 - 0x427]",
+            "region": {
+                "address": 1048,
+                "size": 16
+            }
+        },
+        {
+            "color": 954539169,
+            "comment": "",
+            "id": 97,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 8 [0x428 - 0x437]",
+            "region": {
+                "address": 1064,
+                "size": 16
+            }
+        },
+        {
+            "color": 2581264454,
+            "comment": "",
+            "id": 98,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 9 [0x438 - 0x447]",
+            "region": {
+                "address": 1080,
+                "size": 16
+            }
+        },
+        {
+            "color": 1663063076,
+            "comment": "",
+            "id": 99,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 10 [0x448 - 0x457]",
+            "region": {
+                "address": 1096,
+                "size": 16
+            }
+        },
+        {
+            "color": 2415456860,
+            "comment": "",
+            "id": 100,
+            "locked": false,
+            "name": "Raw Hex Ranger Soldier Secondary Color palette 11 [0x458 - 0x467]",
+            "region": {
+                "address": 1112,
+                "size": 16
+            }
+        },
+        {
+            "color": 1073887521,
+            "comment": "",
+            "id": 101,
+            "locked": false,
+            "name": "Current Ranger Soldier Secondary Color Swatch ID [0x468 - 0x46B]",
+            "region": {
+                "address": 1128,
+                "size": 4
+            }
+        },
+        {
+            "color": 1495121208,
+            "comment": "",
+            "id": 102,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 0 [0x46C - 0x47B]",
+            "region": {
+                "address": 1132,
+                "size": 16
+            }
+        },
+        {
+            "color": 2161072006,
+            "comment": "",
+            "id": 103,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 1 [0x47C - 0x48B]",
+            "region": {
+                "address": 1148,
+                "size": 16
+            }
+        },
+        {
+            "color": 2689065270,
+            "comment": "",
+            "id": 104,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 2 [0x48C - 0x49B]",
+            "region": {
+                "address": 1164,
+                "size": 16
+            }
+        },
+        {
+            "color": 2342522966,
+            "comment": "",
+            "id": 105,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 3 [0x49C - 0x4AB]",
+            "region": {
+                "address": 1180,
+                "size": 16
+            }
+        },
+        {
+            "color": 2510397135,
+            "comment": "",
+            "id": 106,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 4 [0x4AC - 0x4BB]",
+            "region": {
+                "address": 1196,
+                "size": 16
+            }
+        },
+        {
+            "color": 1017077645,
+            "comment": "",
+            "id": 107,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 5 [0x4BC - 0x4CB]",
+            "region": {
+                "address": 1212,
+                "size": 16
+            }
+        },
+        {
+            "color": 657646407,
+            "comment": "",
+            "id": 108,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 6 [0x4CC - 0x4DB]",
+            "region": {
+                "address": 1228,
+                "size": 16
+            }
+        },
+        {
+            "color": 3958702005,
+            "comment": "",
+            "id": 109,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 7 [0x4DC - 0x4EB]",
+            "region": {
+                "address": 1244,
+                "size": 16
+            }
+        },
+        {
+            "color": 4180794188,
+            "comment": "",
+            "id": 110,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 8 [0x4EC - 0x4FB]",
+            "region": {
+                "address": 1260,
+                "size": 16
+            }
+        },
+        {
+            "color": 2314692365,
+            "comment": "",
+            "id": 111,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 9 [0x4FC - 0x50B]",
+            "region": {
+                "address": 1276,
+                "size": 16
+            }
+        },
+        {
+            "color": 3430531188,
+            "comment": "",
+            "id": 112,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 10 [0x50C - 0x51B]",
+            "region": {
+                "address": 1292,
+                "size": 16
+            }
+        },
+        {
+            "color": 1385745448,
+            "comment": "",
+            "id": 113,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Primary Color palette 11 [0x51C - 0x52B]",
+            "region": {
+                "address": 1308,
+                "size": 16
+            }
+        },
+        {
+            "color": 2021424234,
+            "comment": "",
+            "id": 114,
+            "locked": false,
+            "name": "Current Ranger Devastation Primary Color Swatch ID [0x52C - 0x52F]",
+            "region": {
+                "address": 1324,
+                "size": 4
+            }
+        },
+        {
+            "color": 4048805744,
+            "comment": "",
+            "id": 115,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 0 [0x530 - 0x53F]",
+            "region": {
+                "address": 1328,
+                "size": 16
+            }
+        },
+        {
+            "color": 1459444339,
+            "comment": "",
+            "id": 116,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 1 [0x540 - 0x54F]",
+            "region": {
+                "address": 1344,
+                "size": 16
+            }
+        },
+        {
+            "color": 2987998795,
+            "comment": "",
+            "id": 117,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 2 [0x550 - 0x55F]",
+            "region": {
+                "address": 1360,
+                "size": 16
+            }
+        },
+        {
+            "color": 3711847944,
+            "comment": "",
+            "id": 118,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 3 [0x560 - 0x56F]",
+            "region": {
+                "address": 1376,
+                "size": 16
+            }
+        },
+        {
+            "color": 3013598410,
+            "comment": "",
+            "id": 119,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 4 [0x570 - 0x57F]",
+            "region": {
+                "address": 1392,
+                "size": 16
+            }
+        },
+        {
+            "color": 1109180000,
+            "comment": "",
+            "id": 120,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 5 [0x580 - 0x58F]",
+            "region": {
+                "address": 1408,
+                "size": 16
+            }
+        },
+        {
+            "color": 2848702223,
+            "comment": "",
+            "id": 121,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 6 [0x590 - 0x59F]",
+            "region": {
+                "address": 1424,
+                "size": 16
+            }
+        },
+        {
+            "color": 3288735428,
+            "comment": "",
+            "id": 122,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 7 [0x5A0 - 0x5AF]",
+            "region": {
+                "address": 1440,
+                "size": 16
+            }
+        },
+        {
+            "color": 2634219477,
+            "comment": "",
+            "id": 123,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 8 [0x5B0 - 0x5BF]",
+            "region": {
+                "address": 1456,
+                "size": 16
+            }
+        },
+        {
+            "color": 1143153385,
+            "comment": "",
+            "id": 124,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 9 [0x5C0 - 0x5CF]",
+            "region": {
+                "address": 1472,
+                "size": 16
+            }
+        },
+        {
+            "color": 3126507718,
+            "comment": "",
+            "id": 125,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 10 [0x5D0 - 0x5DF]",
+            "region": {
+                "address": 1488,
+                "size": 16
+            }
+        },
+        {
+            "color": 331590184,
+            "comment": "",
+            "id": 126,
+            "locked": false,
+            "name": "Raw Hex Ranger Devastation Secondary Color palette 11 [0x5E0 - 0x5EF]",
+            "region": {
+                "address": 1504,
+                "size": 16
+            }
+        },
+        {
+            "color": 2990955909,
+            "comment": "",
+            "id": 127,
+            "locked": false,
+            "name": "Current Ranger Devastation Secondary Color Swatch ID [0x5F0 - 0x5F3]",
+            "region": {
+                "address": 1520,
+                "size": 4
+            }
+        },
+        {
+            "color": 2582742217,
+            "comment": "",
+            "id": 128,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 0 [0x5F4 - 0x603]",
+            "region": {
+                "address": 1524,
+                "size": 16
+            }
+        },
+        {
+            "color": 210073554,
+            "comment": "",
+            "id": 129,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 1 [0x604 - 0x613]",
+            "region": {
+                "address": 1540,
+                "size": 16
+            }
+        },
+        {
+            "color": 1323324477,
+            "comment": "",
+            "id": 130,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 2 [0x614 - 0x623]",
+            "region": {
+                "address": 1556,
+                "size": 16
+            }
+        },
+        {
+            "color": 2188723028,
+            "comment": "",
+            "id": 131,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 3 [0x624 - 0x633]",
+            "region": {
+                "address": 1572,
+                "size": 16
+            }
+        },
+        {
+            "color": 2474234620,
+            "comment": "",
+            "id": 132,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 4 [0x634 - 0x643]",
+            "region": {
+                "address": 1588,
+                "size": 16
+            }
+        },
+        {
+            "color": 3483861874,
+            "comment": "",
+            "id": 133,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 5 [0x644 - 0x653]",
+            "region": {
+                "address": 1604,
+                "size": 16
+            }
+        },
+        {
+            "color": 4178284814,
+            "comment": "",
+            "id": 134,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 6 [0x654 - 0x663]",
+            "region": {
+                "address": 1620,
+                "size": 16
+            }
+        },
+        {
+            "color": 3285649415,
+            "comment": "",
+            "id": 135,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 7 [0x664 - 0x673]",
+            "region": {
+                "address": 1636,
+                "size": 16
+            }
+        },
+        {
+            "color": 427679043,
+            "comment": "",
+            "id": 136,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 8 [0x674 - 0x683]",
+            "region": {
+                "address": 1652,
+                "size": 16
+            }
+        },
+        {
+            "color": 558413942,
+            "comment": "",
+            "id": 137,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 9 [0x684 - 0x693]",
+            "region": {
+                "address": 1668,
+                "size": 16
+            }
+        },
+        {
+            "color": 369986021,
+            "comment": "",
+            "id": 138,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 10 [0x694 - 0x6A3]",
+            "region": {
+                "address": 1684,
+                "size": 16
+            }
+        },
+        {
+            "color": 2683487713,
+            "comment": "",
+            "id": 139,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Primary Color palette 11 [0x6A4 - 0x6B3]",
+            "region": {
+                "address": 1700,
+                "size": 16
+            }
+        },
+        {
+            "color": 2000217527,
+            "comment": "",
+            "id": 140,
+            "locked": false,
+            "name": "Current Ranger Up-and-Coming Primary Color Swatch ID [0x6B4 - 0x6B7]",
+            "region": {
+                "address": 1716,
+                "size": 4
+            }
+        },
+        {
+            "color": 3595253557,
+            "comment": "",
+            "id": 141,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 0 [0x6B8 - 0x6C7]",
+            "region": {
+                "address": 1720,
+                "size": 16
+            }
+        },
+        {
+            "color": 3869992568,
+            "comment": "",
+            "id": 142,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 1 [0x6C8 - 0x6D7]",
+            "region": {
+                "address": 1736,
+                "size": 16
+            }
+        },
+        {
+            "color": 3250059551,
+            "comment": "",
+            "id": 143,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 2 [0x6D8 - 0x6E7]",
+            "region": {
+                "address": 1752,
+                "size": 16
+            }
+        },
+        {
+            "color": 4002568638,
+            "comment": "",
+            "id": 144,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 3 [0x6E8 - 0x6F7]",
+            "region": {
+                "address": 1768,
+                "size": 16
+            }
+        },
+        {
+            "color": 3700783218,
+            "comment": "",
+            "id": 145,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 4 [0x6F8 - 0x707]",
+            "region": {
+                "address": 1784,
+                "size": 16
+            }
+        },
+        {
+            "color": 3828045119,
+            "comment": "",
+            "id": 146,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 5 [0x708 - 0x717]",
+            "region": {
+                "address": 1800,
+                "size": 16
+            }
+        },
+        {
+            "color": 76302176,
+            "comment": "",
+            "id": 147,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 6 [0x718 - 0x727]",
+            "region": {
+                "address": 1816,
+                "size": 16
+            }
+        },
+        {
+            "color": 909234441,
+            "comment": "",
+            "id": 148,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 7 [0x728 - 0x737]",
+            "region": {
+                "address": 1832,
+                "size": 16
+            }
+        },
+        {
+            "color": 385138957,
+            "comment": "",
+            "id": 149,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 8 [0x738 - 0x747]",
+            "region": {
+                "address": 1848,
+                "size": 16
+            }
+        },
+        {
+            "color": 1249434520,
+            "comment": "",
+            "id": 150,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 9 [0x748 - 0x757]",
+            "region": {
+                "address": 1864,
+                "size": 16
+            }
+        },
+        {
+            "color": 2865681346,
+            "comment": "",
+            "id": 151,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 10 [0x758 - 0x767]",
+            "region": {
+                "address": 1880,
+                "size": 16
+            }
+        },
+        {
+            "color": 3319625729,
+            "comment": "",
+            "id": 152,
+            "locked": false,
+            "name": "Raw Hex Ranger Up-and-Coming Secondary Color palette 11 [0x768 - 0x777]",
+            "region": {
+                "address": 1896,
+                "size": 16
+            }
+        },
+        {
+            "color": 954053169,
+            "comment": "",
+            "id": 153,
+            "locked": false,
+            "name": "Current Ranger Up-and-Coming Secondary Color Swatch ID [0x778 - 0x77B]",
+            "region": {
+                "address": 1912,
+                "size": 4
+            }
+        },
+        {
+            "color": 480114965,
+            "comment": "",
+            "id": 154,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 0 [0x77C - 0x78B]",
+            "region": {
+                "address": 1916,
+                "size": 16
+            }
+        },
+        {
+            "color": 155061537,
+            "comment": "",
+            "id": 155,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 1 [0x78C - 0x79B]",
+            "region": {
+                "address": 1932,
+                "size": 16
+            }
+        },
+        {
+            "color": 3905784943,
+            "comment": "",
+            "id": 156,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 2 [0x79C - 0x7AB]",
+            "region": {
+                "address": 1948,
+                "size": 16
+            }
+        },
+        {
+            "color": 2450086612,
+            "comment": "",
+            "id": 157,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 3 [0x7AC - 0x7BB]",
+            "region": {
+                "address": 1964,
+                "size": 16
+            }
+        },
+        {
+            "color": 2789182637,
+            "comment": "",
+            "id": 158,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 4 [0x7BC - 0x7CB]",
+            "region": {
+                "address": 1980,
+                "size": 16
+            }
+        },
+        {
+            "color": 2425463782,
+            "comment": "",
+            "id": 159,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 5 [0x7CC - 0x7DB]",
+            "region": {
+                "address": 1996,
+                "size": 16
+            }
+        },
+        {
+            "color": 3597721333,
+            "comment": "",
+            "id": 160,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 6 [0x7DC - 0x7EB]",
+            "region": {
+                "address": 2012,
+                "size": 16
+            }
+        },
+        {
+            "color": 2896908209,
+            "comment": "",
+            "id": 161,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 7 [0x7EC - 0x7FB]",
+            "region": {
+                "address": 2028,
+                "size": 16
+            }
+        },
+        {
+            "color": 4274200214,
+            "comment": "",
+            "id": 162,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 8 [0x7FC - 0x80B]",
+            "region": {
+                "address": 2044,
+                "size": 16
+            }
+        },
+        {
+            "color": 1276605760,
+            "comment": "",
+            "id": 163,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 9 [0x80C - 0x81B]",
+            "region": {
+                "address": 2060,
+                "size": 16
+            }
+        },
+        {
+            "color": 4017421424,
+            "comment": "",
+            "id": 164,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 10 [0x81C - 0x82B]",
+            "region": {
+                "address": 2076,
+                "size": 16
+            }
+        },
+        {
+            "color": 2428227529,
+            "comment": "",
+            "id": 165,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Primary Color palette 11 [0x82C - 0x83B]",
+            "region": {
+                "address": 2092,
+                "size": 16
+            }
+        },
+        {
+            "color": 1342561386,
+            "comment": "",
+            "id": 166,
+            "locked": false,
+            "name": "Current Wingdiver Civilian Primary Color Swatch ID [0x83C - 0x83F]",
+            "region": {
+                "address": 2108,
+                "size": 4
+            }
+        },
+        {
+            "color": 233231727,
+            "comment": "",
+            "id": 167,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 0 [0x840 - 0x84F]",
+            "region": {
+                "address": 2112,
+                "size": 16
+            }
+        },
+        {
+            "color": 2142682977,
+            "comment": "",
+            "id": 168,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 1 [0x850 - 0x85F]",
+            "region": {
+                "address": 2128,
+                "size": 16
+            }
+        },
+        {
+            "color": 2575965691,
+            "comment": "",
+            "id": 169,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 2 [0x860 - 0x86F]",
+            "region": {
+                "address": 2144,
+                "size": 16
+            }
+        },
+        {
+            "color": 3679123691,
+            "comment": "",
+            "id": 170,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 3 [0x870 - 0x87F]",
+            "region": {
+                "address": 2160,
+                "size": 16
+            }
+        },
+        {
+            "color": 1173790186,
+            "comment": "",
+            "id": 171,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 4 [0x880 - 0x88F]",
+            "region": {
+                "address": 2176,
+                "size": 16
+            }
+        },
+        {
+            "color": 2552804675,
+            "comment": "",
+            "id": 172,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 5 [0x890 - 0x89F]",
+            "region": {
+                "address": 2192,
+                "size": 16
+            }
+        },
+        {
+            "color": 1829304415,
+            "comment": "",
+            "id": 173,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 6 [0x8A0 - 0x8AF]",
+            "region": {
+                "address": 2208,
+                "size": 16
+            }
+        },
+        {
+            "color": 1353205905,
+            "comment": "",
+            "id": 174,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 7 [0x8B0 - 0x8BF]",
+            "region": {
+                "address": 2224,
+                "size": 16
+            }
+        },
+        {
+            "color": 547374628,
+            "comment": "",
+            "id": 175,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 8 [0x8C0 - 0x8CF]",
+            "region": {
+                "address": 2240,
+                "size": 16
+            }
+        },
+        {
+            "color": 625552821,
+            "comment": "",
+            "id": 176,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 9 [0x8D0 - 0x8DF]",
+            "region": {
+                "address": 2256,
+                "size": 16
+            }
+        },
+        {
+            "color": 2581113009,
+            "comment": "",
+            "id": 177,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 10 [0x8E0 - 0x8EF]",
+            "region": {
+                "address": 2272,
+                "size": 16
+            }
+        },
+        {
+            "color": 824839439,
+            "comment": "",
+            "id": 178,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Civilian Secondary Color palette 11 [0x8F0 - 0x8FF]",
+            "region": {
+                "address": 2288,
+                "size": 16
+            }
+        },
+        {
+            "color": 1599706714,
+            "comment": "",
+            "id": 179,
+            "locked": false,
+            "name": "Current Wingdiver Civilian Secondary Color Swatch ID [0x900 - 0x903]",
+            "region": {
+                "address": 2304,
+                "size": 4
+            }
+        },
+        {
+            "color": 1688209041,
+            "comment": "",
+            "id": 180,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 0 [0x904 - 0x913]",
+            "region": {
+                "address": 2308,
+                "size": 16
+            }
+        },
+        {
+            "color": 1596396108,
+            "comment": "",
+            "id": 181,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 1 [0x914 - 0x923]",
+            "region": {
+                "address": 2324,
+                "size": 16
+            }
+        },
+        {
+            "color": 706446044,
+            "comment": "",
+            "id": 182,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 2 [0x924 - 0x933]",
+            "region": {
+                "address": 2340,
+                "size": 16
+            }
+        },
+        {
+            "color": 4230511491,
+            "comment": "",
+            "id": 183,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 3 [0x934 - 0x943]",
+            "region": {
+                "address": 2356,
+                "size": 16
+            }
+        },
+        {
+            "color": 2946784047,
+            "comment": "",
+            "id": 184,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 4 [0x944 - 0x953]",
+            "region": {
+                "address": 2372,
+                "size": 16
+            }
+        },
+        {
+            "color": 1486586745,
+            "comment": "",
+            "id": 185,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 5 [0x954 - 0x963]",
+            "region": {
+                "address": 2388,
+                "size": 16
+            }
+        },
+        {
+            "color": 3210984192,
+            "comment": "",
+            "id": 186,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 6 [0x964 - 0x973]",
+            "region": {
+                "address": 2404,
+                "size": 16
+            }
+        },
+        {
+            "color": 1976476633,
+            "comment": "",
+            "id": 187,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 7 [0x974 - 0x983]",
+            "region": {
+                "address": 2420,
+                "size": 16
+            }
+        },
+        {
+            "color": 2763178601,
+            "comment": "",
+            "id": 188,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 8 [0x984 - 0x993]",
+            "region": {
+                "address": 2436,
+                "size": 16
+            }
+        },
+        {
+            "color": 4008144706,
+            "comment": "",
+            "id": 189,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 9 [0x994 - 0x9A3]",
+            "region": {
+                "address": 2452,
+                "size": 16
+            }
+        },
+        {
+            "color": 924897285,
+            "comment": "",
+            "id": 190,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 10 [0x9A4 - 0x9B3]",
+            "region": {
+                "address": 2468,
+                "size": 16
+            }
+        },
+        {
+            "color": 49431884,
+            "comment": "",
+            "id": 191,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Primary Color palette 11 [0x9B4 - 0x9C3]",
+            "region": {
+                "address": 2484,
+                "size": 16
+            }
+        },
+        {
+            "color": 1324525989,
+            "comment": "",
+            "id": 192,
+            "locked": false,
+            "name": "Current Wingdiver Soldier Primary Color Swatch ID [0x9C4 - 0x9C7]",
+            "region": {
+                "address": 2500,
+                "size": 4
+            }
+        },
+        {
+            "color": 2202311127,
+            "comment": "",
+            "id": 193,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 0 [0x9C8 - 0x9D7]",
+            "region": {
+                "address": 2504,
+                "size": 16
+            }
+        },
+        {
+            "color": 3929771463,
+            "comment": "",
+            "id": 194,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 1 [0x9D8 - 0x9E7]",
+            "region": {
+                "address": 2520,
+                "size": 16
+            }
+        },
+        {
+            "color": 59654451,
+            "comment": "",
+            "id": 195,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 2 [0x9E8 - 0x9F7]",
+            "region": {
+                "address": 2536,
+                "size": 16
+            }
+        },
+        {
+            "color": 95033956,
+            "comment": "",
+            "id": 196,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 3 [0x9F8 - 0xA07]",
+            "region": {
+                "address": 2552,
+                "size": 16
+            }
+        },
+        {
+            "color": 1532291681,
+            "comment": "",
+            "id": 197,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 4 [0xA08 - 0xA17]",
+            "region": {
+                "address": 2568,
+                "size": 16
+            }
+        },
+        {
+            "color": 4021102437,
+            "comment": "",
+            "id": 198,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 5 [0xA18 - 0xA27]",
+            "region": {
+                "address": 2584,
+                "size": 16
+            }
+        },
+        {
+            "color": 2485599652,
+            "comment": "",
+            "id": 199,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 6 [0xA28 - 0xA37]",
+            "region": {
+                "address": 2600,
+                "size": 16
+            }
+        },
+        {
+            "color": 553635069,
+            "comment": "",
+            "id": 200,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 7 [0xA38 - 0xA47]",
+            "region": {
+                "address": 2616,
+                "size": 16
+            }
+        },
+        {
+            "color": 1625642439,
+            "comment": "",
+            "id": 201,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 8 [0xA48 - 0xA57]",
+            "region": {
+                "address": 2632,
+                "size": 16
+            }
+        },
+        {
+            "color": 1151701457,
+            "comment": "",
+            "id": 202,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 9 [0xA58 - 0xA67]",
+            "region": {
+                "address": 2648,
+                "size": 16
+            }
+        },
+        {
+            "color": 3194112457,
+            "comment": "",
+            "id": 203,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 10 [0xA68 - 0xA77]",
+            "region": {
+                "address": 2664,
+                "size": 16
+            }
+        },
+        {
+            "color": 2152129852,
+            "comment": "",
+            "id": 204,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Soldier Secondary Color palette 11 [0xA78 - 0xA87]",
+            "region": {
+                "address": 2680,
+                "size": 16
+            }
+        },
+        {
+            "color": 3972746428,
+            "comment": "",
+            "id": 205,
+            "locked": false,
+            "name": "Current Wingdiver Soldier Secondary Color Swatch ID [0xA88 - 0xA8B]",
+            "region": {
+                "address": 2696,
+                "size": 4
+            }
+        },
+        {
+            "color": 2097363792,
+            "comment": "",
+            "id": 206,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 0 [0xA8C - 0xA9B]",
+            "region": {
+                "address": 2700,
+                "size": 16
+            }
+        },
+        {
+            "color": 3333327449,
+            "comment": "",
+            "id": 207,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 1 [0xA9C - 0xAAB]",
+            "region": {
+                "address": 2716,
+                "size": 16
+            }
+        },
+        {
+            "color": 1877010879,
+            "comment": "",
+            "id": 208,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 2 [0xAAC - 0xABB]",
+            "region": {
+                "address": 2732,
+                "size": 16
+            }
+        },
+        {
+            "color": 2065652718,
+            "comment": "",
+            "id": 209,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 3 [0xABC - 0xACB]",
+            "region": {
+                "address": 2748,
+                "size": 16
+            }
+        },
+        {
+            "color": 1519376602,
+            "comment": "",
+            "id": 210,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 4 [0xACC - 0xADB]",
+            "region": {
+                "address": 2764,
+                "size": 16
+            }
+        },
+        {
+            "color": 2369206343,
+            "comment": "",
+            "id": 211,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 5 [0xADC - 0xAEB]",
+            "region": {
+                "address": 2780,
+                "size": 16
+            }
+        },
+        {
+            "color": 2188327253,
+            "comment": "",
+            "id": 212,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 6 [0xAEC - 0xAFB]",
+            "region": {
+                "address": 2796,
+                "size": 16
+            }
+        },
+        {
+            "color": 503805155,
+            "comment": "",
+            "id": 213,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 7 [0xAFC - 0xB0B]",
+            "region": {
+                "address": 2812,
+                "size": 16
+            }
+        },
+        {
+            "color": 882247893,
+            "comment": "",
+            "id": 214,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 8 [0xB0C - 0xB1B]",
+            "region": {
+                "address": 2828,
+                "size": 16
+            }
+        },
+        {
+            "color": 4180379966,
+            "comment": "",
+            "id": 215,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 9 [0xB1C - 0xB2B]",
+            "region": {
+                "address": 2844,
+                "size": 16
+            }
+        },
+        {
+            "color": 4101942070,
+            "comment": "",
+            "id": 216,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 10 [0xB2C - 0xB3B]",
+            "region": {
+                "address": 2860,
+                "size": 16
+            }
+        },
+        {
+            "color": 2392540550,
+            "comment": "",
+            "id": 217,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Primary Color palette 11 [0xB3C - 0xB4B]",
+            "region": {
+                "address": 2876,
+                "size": 16
+            }
+        },
+        {
+            "color": 1319034736,
+            "comment": "",
+            "id": 218,
+            "locked": false,
+            "name": "Current Wingdiver Devastation Primary Color Swatch ID [0xB4C - 0xB4F]",
+            "region": {
+                "address": 2892,
+                "size": 4
+            }
+        },
+        {
+            "color": 3330501757,
+            "comment": "",
+            "id": 219,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 0 [0xB50 - 0xB5F]",
+            "region": {
+                "address": 2896,
+                "size": 16
+            }
+        },
+        {
+            "color": 978781422,
+            "comment": "",
+            "id": 220,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 1 [0xB60 - 0xB6F]",
+            "region": {
+                "address": 2912,
+                "size": 16
+            }
+        },
+        {
+            "color": 3245378511,
+            "comment": "",
+            "id": 221,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 2 [0xB70 - 0xB7F]",
+            "region": {
+                "address": 2928,
+                "size": 16
+            }
+        },
+        {
+            "color": 3448123284,
+            "comment": "",
+            "id": 222,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 3 [0xB80 - 0xB8F]",
+            "region": {
+                "address": 2944,
+                "size": 16
+            }
+        },
+        {
+            "color": 2754178168,
+            "comment": "",
+            "id": 223,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 4 [0xB90 - 0xB9F]",
+            "region": {
+                "address": 2960,
+                "size": 16
+            }
+        },
+        {
+            "color": 895934767,
+            "comment": "",
+            "id": 224,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 5 [0xBA0 - 0xBAF]",
+            "region": {
+                "address": 2976,
+                "size": 16
+            }
+        },
+        {
+            "color": 1181385787,
+            "comment": "",
+            "id": 225,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 6 [0xBB0 - 0xBBF]",
+            "region": {
+                "address": 2992,
+                "size": 16
+            }
+        },
+        {
+            "color": 3666720641,
+            "comment": "",
+            "id": 226,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 7 [0xBC0 - 0xBCF]",
+            "region": {
+                "address": 3008,
+                "size": 16
+            }
+        },
+        {
+            "color": 2555094811,
+            "comment": "",
+            "id": 227,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 8 [0xBD0 - 0xBDF]",
+            "region": {
+                "address": 3024,
+                "size": 16
+            }
+        },
+        {
+            "color": 328596402,
+            "comment": "",
+            "id": 228,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 9 [0xBE0 - 0xBEF]",
+            "region": {
+                "address": 3040,
+                "size": 16
+            }
+        },
+        {
+            "color": 116112896,
+            "comment": "",
+            "id": 229,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 10 [0xBF0 - 0xBFF]",
+            "region": {
+                "address": 3056,
+                "size": 16
+            }
+        },
+        {
+            "color": 762707516,
+            "comment": "",
+            "id": 230,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Devastation Secondary Color palette 11 [0xC00 - 0xC0F]",
+            "region": {
+                "address": 3072,
+                "size": 16
+            }
+        },
+        {
+            "color": 1118728189,
+            "comment": "",
+            "id": 231,
+            "locked": false,
+            "name": "Current Wingdiver Devastation Secondary Color Swatch ID [0xC10 - 0xC13]",
+            "region": {
+                "address": 3088,
+                "size": 4
+            }
+        },
+        {
+            "color": 4004926159,
+            "comment": "",
+            "id": 232,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 0 [0xC14 - 0xC23]",
+            "region": {
+                "address": 3092,
+                "size": 16
+            }
+        },
+        {
+            "color": 2676498946,
+            "comment": "",
+            "id": 233,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 1 [0xC24 - 0xC33]",
+            "region": {
+                "address": 3108,
+                "size": 16
+            }
+        },
+        {
+            "color": 2757373634,
+            "comment": "",
+            "id": 234,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 2 [0xC34 - 0xC43]",
+            "region": {
+                "address": 3124,
+                "size": 16
+            }
+        },
+        {
+            "color": 2311158789,
+            "comment": "",
+            "id": 235,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 3 [0xC44 - 0xC53]",
+            "region": {
+                "address": 3140,
+                "size": 16
+            }
+        },
+        {
+            "color": 1904529116,
+            "comment": "",
+            "id": 236,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 4 [0xC54 - 0xC63]",
+            "region": {
+                "address": 3156,
+                "size": 16
+            }
+        },
+        {
+            "color": 2802226765,
+            "comment": "",
+            "id": 237,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 5 [0xC64 - 0xC73]",
+            "region": {
+                "address": 3172,
+                "size": 16
+            }
+        },
+        {
+            "color": 1895517461,
+            "comment": "",
+            "id": 238,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 6 [0xC74 - 0xC83]",
+            "region": {
+                "address": 3188,
+                "size": 16
+            }
+        },
+        {
+            "color": 3762743190,
+            "comment": "",
+            "id": 239,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 7 [0xC84 - 0xC93]",
+            "region": {
+                "address": 3204,
+                "size": 16
+            }
+        },
+        {
+            "color": 211330132,
+            "comment": "",
+            "id": 240,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 8 [0xC94 - 0xCA3]",
+            "region": {
+                "address": 3220,
+                "size": 16
+            }
+        },
+        {
+            "color": 3395321383,
+            "comment": "",
+            "id": 241,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 9 [0xCA4 - 0xCB3]",
+            "region": {
+                "address": 3236,
+                "size": 16
+            }
+        },
+        {
+            "color": 3210430664,
+            "comment": "",
+            "id": 242,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 10 [0xCB4 - 0xCC3]",
+            "region": {
+                "address": 3252,
+                "size": 16
+            }
+        },
+        {
+            "color": 2448213210,
+            "comment": "",
+            "id": 243,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Primary Color palette 11 [0xCC4 - 0xCD3]",
+            "region": {
+                "address": 3268,
+                "size": 16
+            }
+        },
+        {
+            "color": 795761444,
+            "comment": "",
+            "id": 244,
+            "locked": false,
+            "name": "Current Wingdiver Up-and-Coming Primary Color Swatch ID [0xCD4 - 0xCD7]",
+            "region": {
+                "address": 3284,
+                "size": 4
+            }
+        },
+        {
+            "color": 1591433348,
+            "comment": "",
+            "id": 245,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 0 [0xCD8 - 0xCE7]",
+            "region": {
+                "address": 3288,
+                "size": 16
+            }
+        },
+        {
+            "color": 988397868,
+            "comment": "",
+            "id": 246,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 1 [0xCE8 - 0xCF7]",
+            "region": {
+                "address": 3304,
+                "size": 16
+            }
+        },
+        {
+            "color": 604951585,
+            "comment": "",
+            "id": 247,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 2 [0xCF8 - 0xD07]",
+            "region": {
+                "address": 3320,
+                "size": 16
+            }
+        },
+        {
+            "color": 1354744363,
+            "comment": "",
+            "id": 248,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 3 [0xD08 - 0xD17]",
+            "region": {
+                "address": 3336,
+                "size": 16
+            }
+        },
+        {
+            "color": 1809633947,
+            "comment": "",
+            "id": 249,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 4 [0xD18 - 0xD27]",
+            "region": {
+                "address": 3352,
+                "size": 16
+            }
+        },
+        {
+            "color": 2584918073,
+            "comment": "",
+            "id": 250,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 5 [0xD28 - 0xD37]",
+            "region": {
+                "address": 3368,
+                "size": 16
+            }
+        },
+        {
+            "color": 766493189,
+            "comment": "",
+            "id": 251,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 6 [0xD38 - 0xD47]",
+            "region": {
+                "address": 3384,
+                "size": 16
+            }
+        },
+        {
+            "color": 578615470,
+            "comment": "",
+            "id": 252,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 7 [0xD48 - 0xD57]",
+            "region": {
+                "address": 3400,
+                "size": 16
+            }
+        },
+        {
+            "color": 915423833,
+            "comment": "",
+            "id": 253,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 8 [0xD58 - 0xD67]",
+            "region": {
+                "address": 3416,
+                "size": 16
+            }
+        },
+        {
+            "color": 2713831262,
+            "comment": "",
+            "id": 254,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 9 [0xD68 - 0xD77]",
+            "region": {
+                "address": 3432,
+                "size": 16
+            }
+        },
+        {
+            "color": 3246245744,
+            "comment": "",
+            "id": 255,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 10 [0xD78 - 0xD87]",
+            "region": {
+                "address": 3448,
+                "size": 16
+            }
+        },
+        {
+            "color": 1002511242,
+            "comment": "",
+            "id": 256,
+            "locked": false,
+            "name": "Raw Hex Wingdiver Up-and-Coming Secondary Color palette 11 [0xD88 - 0xD97]",
+            "region": {
+                "address": 3464,
+                "size": 16
+            }
+        },
+        {
+            "color": 2923104214,
+            "comment": "",
+            "id": 257,
+            "locked": false,
+            "name": "Current Wingdiver Up-and-Coming Secondary Color Swatch ID [0xD98 - 0xD9B]",
+            "region": {
+                "address": 3480,
+                "size": 4
+            }
+        },
+        {
+            "color": 2378174103,
+            "comment": "",
+            "id": 258,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 0 [0xD9C - 0xDAB]",
+            "region": {
+                "address": 3484,
+                "size": 16
+            }
+        },
+        {
+            "color": 2703523379,
+            "comment": "",
+            "id": 259,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 1 [0xDAC - 0xDBB]",
+            "region": {
+                "address": 3500,
+                "size": 16
+            }
+        },
+        {
+            "color": 678236943,
+            "comment": "",
+            "id": 260,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 2 [0xDBC - 0xDCB]",
+            "region": {
+                "address": 3516,
+                "size": 16
+            }
+        },
+        {
+            "color": 701385680,
+            "comment": "",
+            "id": 261,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 3 [0xDCC - 0xDDB]",
+            "region": {
+                "address": 3532,
+                "size": 16
+            }
+        },
+        {
+            "color": 2168305942,
+            "comment": "",
+            "id": 262,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 4 [0xDDC - 0xDEB]",
+            "region": {
+                "address": 3548,
+                "size": 16
+            }
+        },
+        {
+            "color": 1076223821,
+            "comment": "",
+            "id": 263,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 5 [0xDEC - 0xDFB]",
+            "region": {
+                "address": 3564,
+                "size": 16
+            }
+        },
+        {
+            "color": 2153250327,
+            "comment": "",
+            "id": 264,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 6 [0xDFC - 0xE0B]",
+            "region": {
+                "address": 3580,
+                "size": 16
+            }
+        },
+        {
+            "color": 3548119651,
+            "comment": "",
+            "id": 265,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 7 [0xE0C - 0xE1B]",
+            "region": {
+                "address": 3596,
+                "size": 16
+            }
+        },
+        {
+            "color": 112426661,
+            "comment": "",
+            "id": 266,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 8 [0xE1C - 0xE2B]",
+            "region": {
+                "address": 3612,
+                "size": 16
+            }
+        },
+        {
+            "color": 3155941256,
+            "comment": "",
+            "id": 267,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 9 [0xE2C - 0xE3B]",
+            "region": {
+                "address": 3628,
+                "size": 16
+            }
+        },
+        {
+            "color": 3500272428,
+            "comment": "",
+            "id": 268,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 10 [0xE3C - 0xE4B]",
+            "region": {
+                "address": 3644,
+                "size": 16
+            }
+        },
+        {
+            "color": 3584867788,
+            "comment": "",
+            "id": 269,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Primary Color palette 11 [0xE4C - 0xE5B]",
+            "region": {
+                "address": 3660,
+                "size": 16
+            }
+        },
+        {
+            "color": 3860896706,
+            "comment": "",
+            "id": 270,
+            "locked": false,
+            "name": "Current Air Raider Civilian Primary Color Swatch ID [0xE5C - 0xE5F]",
+            "region": {
+                "address": 3676,
+                "size": 4
+            }
+        },
+        {
+            "color": 1009599377,
+            "comment": "",
+            "id": 271,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 0 [0xE60 - 0xE6F]",
+            "region": {
+                "address": 3680,
+                "size": 16
+            }
+        },
+        {
+            "color": 3416045103,
+            "comment": "",
+            "id": 272,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 1 [0xE70 - 0xE7F]",
+            "region": {
+                "address": 3696,
+                "size": 16
+            }
+        },
+        {
+            "color": 344871071,
+            "comment": "",
+            "id": 273,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 2 [0xE80 - 0xE8F]",
+            "region": {
+                "address": 3712,
+                "size": 16
+            }
+        },
+        {
+            "color": 347486762,
+            "comment": "",
+            "id": 274,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 3 [0xE90 - 0xE9F]",
+            "region": {
+                "address": 3728,
+                "size": 16
+            }
+        },
+        {
+            "color": 1681390249,
+            "comment": "",
+            "id": 275,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 4 [0xEA0 - 0xEAF]",
+            "region": {
+                "address": 3744,
+                "size": 16
+            }
+        },
+        {
+            "color": 2928058125,
+            "comment": "",
+            "id": 276,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 5 [0xEB0 - 0xEBF]",
+            "region": {
+                "address": 3760,
+                "size": 16
+            }
+        },
+        {
+            "color": 4264778011,
+            "comment": "",
+            "id": 277,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 6 [0xEC0 - 0xECF]",
+            "region": {
+                "address": 3776,
+                "size": 16
+            }
+        },
+        {
+            "color": 3105634310,
+            "comment": "",
+            "id": 278,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 7 [0xED0 - 0xEDF]",
+            "region": {
+                "address": 3792,
+                "size": 16
+            }
+        },
+        {
+            "color": 2394041407,
+            "comment": "",
+            "id": 279,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 8 [0xEE0 - 0xEEF]",
+            "region": {
+                "address": 3808,
+                "size": 16
+            }
+        },
+        {
+            "color": 2395527741,
+            "comment": "",
+            "id": 280,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 9 [0xEF0 - 0xEFF]",
+            "region": {
+                "address": 3824,
+                "size": 16
+            }
+        },
+        {
+            "color": 1275157468,
+            "comment": "",
+            "id": 281,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 10 [0xF00 - 0xF0F]",
+            "region": {
+                "address": 3840,
+                "size": 16
+            }
+        },
+        {
+            "color": 1311443882,
+            "comment": "",
+            "id": 282,
+            "locked": false,
+            "name": "Raw Hex Air Raider Civilian Secondary Color palette 11 [0xF10 - 0xF1F]",
+            "region": {
+                "address": 3856,
+                "size": 16
+            }
+        },
+        {
+            "color": 4234465302,
+            "comment": "",
+            "id": 283,
+            "locked": false,
+            "name": "Current Air Raider Civilian Secondary Color Swatch ID [0xF20 - 0xF23]",
+            "region": {
+                "address": 3872,
+                "size": 4
+            }
+        },
+        {
+            "color": 3251480901,
+            "comment": "",
+            "id": 284,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 0 [0xF24 - 0xF33]",
+            "region": {
+                "address": 3876,
+                "size": 16
+            }
+        },
+        {
+            "color": 1071902853,
+            "comment": "",
+            "id": 285,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 1 [0xF34 - 0xF43]",
+            "region": {
+                "address": 3892,
+                "size": 16
+            }
+        },
+        {
+            "color": 1623685028,
+            "comment": "",
+            "id": 286,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 2 [0xF44 - 0xF53]",
+            "region": {
+                "address": 3908,
+                "size": 16
+            }
+        },
+        {
+            "color": 668291866,
+            "comment": "",
+            "id": 287,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 3 [0xF54 - 0xF63]",
+            "region": {
+                "address": 3924,
+                "size": 16
+            }
+        },
+        {
+            "color": 1747475603,
+            "comment": "",
+            "id": 288,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 4 [0xF64 - 0xF73]",
+            "region": {
+                "address": 3940,
+                "size": 16
+            }
+        },
+        {
+            "color": 3871324964,
+            "comment": "",
+            "id": 289,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 5 [0xF74 - 0xF83]",
+            "region": {
+                "address": 3956,
+                "size": 16
+            }
+        },
+        {
+            "color": 1412954759,
+            "comment": "",
+            "id": 290,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 6 [0xF84 - 0xF93]",
+            "region": {
+                "address": 3972,
+                "size": 16
+            }
+        },
+        {
+            "color": 1103054240,
+            "comment": "",
+            "id": 291,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 7 [0xF94 - 0xFA3]",
+            "region": {
+                "address": 3988,
+                "size": 16
+            }
+        },
+        {
+            "color": 1285906793,
+            "comment": "",
+            "id": 292,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 8 [0xFA4 - 0xFB3]",
+            "region": {
+                "address": 4004,
+                "size": 16
+            }
+        },
+        {
+            "color": 4021584273,
+            "comment": "",
+            "id": 293,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 9 [0xFB4 - 0xFC3]",
+            "region": {
+                "address": 4020,
+                "size": 16
+            }
+        },
+        {
+            "color": 3181868557,
+            "comment": "",
+            "id": 294,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 10 [0xFC4 - 0xFD3]",
+            "region": {
+                "address": 4036,
+                "size": 16
+            }
+        },
+        {
+            "color": 2321150861,
+            "comment": "",
+            "id": 295,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Primary Color palette 11 [0xFD4 - 0xFE3]",
+            "region": {
+                "address": 4052,
+                "size": 16
+            }
+        },
+        {
+            "color": 2217832667,
+            "comment": "",
+            "id": 296,
+            "locked": false,
+            "name": "Current Air Raider Soldier Primary Color Swatch ID [0xFE4 - 0xFE7]",
+            "region": {
+                "address": 4068,
+                "size": 4
+            }
+        },
+        {
+            "color": 455842898,
+            "comment": "",
+            "id": 297,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 0 [0xFE8 - 0xFF7]",
+            "region": {
+                "address": 4072,
+                "size": 16
+            }
+        },
+        {
+            "color": 3752042200,
+            "comment": "",
+            "id": 298,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 1 [0xFF8 - 0x1007]",
+            "region": {
+                "address": 4088,
+                "size": 16
+            }
+        },
+        {
+            "color": 1721856531,
+            "comment": "",
+            "id": 299,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 2 [0x1008 - 0x1017]",
+            "region": {
+                "address": 4104,
+                "size": 16
+            }
+        },
+        {
+            "color": 764019214,
+            "comment": "",
+            "id": 300,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 3 [0x1018 - 0x1027]",
+            "region": {
+                "address": 4120,
+                "size": 16
+            }
+        },
+        {
+            "color": 1706256210,
+            "comment": "",
+            "id": 301,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 4 [0x1028 - 0x1037]",
+            "region": {
+                "address": 4136,
+                "size": 16
+            }
+        },
+        {
+            "color": 1375284142,
+            "comment": "",
+            "id": 302,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 5 [0x1038 - 0x1047]",
+            "region": {
+                "address": 4152,
+                "size": 16
+            }
+        },
+        {
+            "color": 529166385,
+            "comment": "",
+            "id": 303,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 6 [0x1048 - 0x1057]",
+            "region": {
+                "address": 4168,
+                "size": 16
+            }
+        },
+        {
+            "color": 285746462,
+            "comment": "",
+            "id": 304,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 7 [0x1058 - 0x1067]",
+            "region": {
+                "address": 4184,
+                "size": 16
+            }
+        },
+        {
+            "color": 85317072,
+            "comment": "",
+            "id": 305,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 8 [0x1068 - 0x1077]",
+            "region": {
+                "address": 4200,
+                "size": 16
+            }
+        },
+        {
+            "color": 3525616965,
+            "comment": "",
+            "id": 306,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 9 [0x1078 - 0x1087]",
+            "region": {
+                "address": 4216,
+                "size": 16
+            }
+        },
+        {
+            "color": 1741901750,
+            "comment": "",
+            "id": 307,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 10 [0x1088 - 0x1097]",
+            "region": {
+                "address": 4232,
+                "size": 16
+            }
+        },
+        {
+            "color": 1759505255,
+            "comment": "",
+            "id": 308,
+            "locked": false,
+            "name": "Raw Hex Air Raider Soldier Secondary Color palette 11 [0x1098 - 0x10A7]",
+            "region": {
+                "address": 4248,
+                "size": 16
+            }
+        },
+        {
+            "color": 2818134059,
+            "comment": "",
+            "id": 309,
+            "locked": false,
+            "name": "Current Air Raider Soldier Secondary Color Swatch ID [0x10A8 - 0x10AB]",
+            "region": {
+                "address": 4264,
+                "size": 4
+            }
+        },
+        {
+            "color": 1266700954,
+            "comment": "",
+            "id": 310,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 0 [0x10AC - 0x10BB]",
+            "region": {
+                "address": 4268,
+                "size": 16
+            }
+        },
+        {
+            "color": 4159943849,
+            "comment": "",
+            "id": 311,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 1 [0x10BC - 0x10CB]",
+            "region": {
+                "address": 4284,
+                "size": 16
+            }
+        },
+        {
+            "color": 899834131,
+            "comment": "",
+            "id": 312,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 2 [0x10CC - 0x10DB]",
+            "region": {
+                "address": 4300,
+                "size": 16
+            }
+        },
+        {
+            "color": 2637297834,
+            "comment": "",
+            "id": 313,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 3 [0x10DC - 0x10EB]",
+            "region": {
+                "address": 4316,
+                "size": 16
+            }
+        },
+        {
+            "color": 1533868892,
+            "comment": "",
+            "id": 314,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 4 [0x10EC - 0x10FB]",
+            "region": {
+                "address": 4332,
+                "size": 16
+            }
+        },
+        {
+            "color": 3641704874,
+            "comment": "",
+            "id": 315,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 5 [0x10FC - 0x110B]",
+            "region": {
+                "address": 4348,
+                "size": 16
+            }
+        },
+        {
+            "color": 3205101018,
+            "comment": "",
+            "id": 316,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 6 [0x110C - 0x111B]",
+            "region": {
+                "address": 4364,
+                "size": 16
+            }
+        },
+        {
+            "color": 727379375,
+            "comment": "",
+            "id": 317,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 7 [0x111C - 0x112B]",
+            "region": {
+                "address": 4380,
+                "size": 16
+            }
+        },
+        {
+            "color": 3373383937,
+            "comment": "",
+            "id": 318,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 8 [0x112C - 0x113B]",
+            "region": {
+                "address": 4396,
+                "size": 16
+            }
+        },
+        {
+            "color": 1449900642,
+            "comment": "",
+            "id": 319,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 9 [0x113C - 0x114B]",
+            "region": {
+                "address": 4412,
+                "size": 16
+            }
+        },
+        {
+            "color": 785812574,
+            "comment": "",
+            "id": 320,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 10 [0x114C - 0x115B]",
+            "region": {
+                "address": 4428,
+                "size": 16
+            }
+        },
+        {
+            "color": 1861963182,
+            "comment": "",
+            "id": 321,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Primary Color palette 11 [0x115C - 0x116B]",
+            "region": {
+                "address": 4444,
+                "size": 16
+            }
+        },
+        {
+            "color": 1239623568,
+            "comment": "",
+            "id": 322,
+            "locked": false,
+            "name": "Current Air Raider Devastation Primary Color Swatch ID [0x116C - 0x116F]",
+            "region": {
+                "address": 4460,
+                "size": 4
+            }
+        },
+        {
+            "color": 1222358410,
+            "comment": "",
+            "id": 323,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 0 [0x1170 - 0x117F]",
+            "region": {
+                "address": 4464,
+                "size": 16
+            }
+        },
+        {
+            "color": 3662211662,
+            "comment": "",
+            "id": 324,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 1 [0x1180 - 0x118F]",
+            "region": {
+                "address": 4480,
+                "size": 16
+            }
+        },
+        {
+            "color": 3799289991,
+            "comment": "",
+            "id": 325,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 2 [0x1190 - 0x119F]",
+            "region": {
+                "address": 4496,
+                "size": 16
+            }
+        },
+        {
+            "color": 4050560939,
+            "comment": "",
+            "id": 326,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 3 [0x11A0 - 0x11AF]",
+            "region": {
+                "address": 4512,
+                "size": 16
+            }
+        },
+        {
+            "color": 980316711,
+            "comment": "",
+            "id": 327,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 4 [0x11B0 - 0x11BF]",
+            "region": {
+                "address": 4528,
+                "size": 16
+            }
+        },
+        {
+            "color": 1127285393,
+            "comment": "",
+            "id": 328,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 5 [0x11C0 - 0x11CF]",
+            "region": {
+                "address": 4544,
+                "size": 16
+            }
+        },
+        {
+            "color": 1282201229,
+            "comment": "",
+            "id": 329,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 6 [0x11D0 - 0x11DF]",
+            "region": {
+                "address": 4560,
+                "size": 16
+            }
+        },
+        {
+            "color": 1044137291,
+            "comment": "",
+            "id": 330,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 7 [0x11E0 - 0x11EF]",
+            "region": {
+                "address": 4576,
+                "size": 16
+            }
+        },
+        {
+            "color": 1054065997,
+            "comment": "",
+            "id": 331,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 8 [0x11F0 - 0x11FF]",
+            "region": {
+                "address": 4592,
+                "size": 16
+            }
+        },
+        {
+            "color": 3581838892,
+            "comment": "",
+            "id": 332,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 9 [0x1200 - 0x120F]",
+            "region": {
+                "address": 4608,
+                "size": 16
+            }
+        },
+        {
+            "color": 1378582762,
+            "comment": "",
+            "id": 333,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 10 [0x1210 - 0x121F]",
+            "region": {
+                "address": 4624,
+                "size": 16
+            }
+        },
+        {
+            "color": 2840057045,
+            "comment": "",
+            "id": 334,
+            "locked": false,
+            "name": "Raw Hex Air Raider Devastation Secondary Color palette 11 [0x1220 - 0x122F]",
+            "region": {
+                "address": 4640,
+                "size": 16
+            }
+        },
+        {
+            "color": 1795169987,
+            "comment": "",
+            "id": 335,
+            "locked": false,
+            "name": "Current Air Raider Devastation Secondary Color Swatch ID [0x1230 - 0x1233]",
+            "region": {
+                "address": 4656,
+                "size": 4
+            }
+        },
+        {
+            "color": 2393666793,
+            "comment": "",
+            "id": 336,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 0 [0x1234 - 0x1243]",
+            "region": {
+                "address": 4660,
+                "size": 16
+            }
+        },
+        {
+            "color": 2192409404,
+            "comment": "",
+            "id": 337,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 1 [0x1244 - 0x1253]",
+            "region": {
+                "address": 4676,
+                "size": 16
+            }
+        },
+        {
+            "color": 2839191690,
+            "comment": "",
+            "id": 338,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 2 [0x1254 - 0x1263]",
+            "region": {
+                "address": 4692,
+                "size": 16
+            }
+        },
+        {
+            "color": 1951909385,
+            "comment": "",
+            "id": 339,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 3 [0x1264 - 0x1273]",
+            "region": {
+                "address": 4708,
+                "size": 16
+            }
+        },
+        {
+            "color": 1449998502,
+            "comment": "",
+            "id": 340,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 4 [0x1274 - 0x1283]",
+            "region": {
+                "address": 4724,
+                "size": 16
+            }
+        },
+        {
+            "color": 315332076,
+            "comment": "",
+            "id": 341,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 5 [0x1284 - 0x1293]",
+            "region": {
+                "address": 4740,
+                "size": 16
+            }
+        },
+        {
+            "color": 612823535,
+            "comment": "",
+            "id": 342,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 6 [0x1294 - 0x12A3]",
+            "region": {
+                "address": 4756,
+                "size": 16
+            }
+        },
+        {
+            "color": 3186001124,
+            "comment": "",
+            "id": 343,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 7 [0x12A4 - 0x12B3]",
+            "region": {
+                "address": 4772,
+                "size": 16
+            }
+        },
+        {
+            "color": 1539301083,
+            "comment": "",
+            "id": 344,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 8 [0x12B4 - 0x12C3]",
+            "region": {
+                "address": 4788,
+                "size": 16
+            }
+        },
+        {
+            "color": 2827290471,
+            "comment": "",
+            "id": 345,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 9 [0x12C4 - 0x12D3]",
+            "region": {
+                "address": 4804,
+                "size": 16
+            }
+        },
+        {
+            "color": 116492884,
+            "comment": "",
+            "id": 346,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 10 [0x12D4 - 0x12E3]",
+            "region": {
+                "address": 4820,
+                "size": 16
+            }
+        },
+        {
+            "color": 2944252052,
+            "comment": "",
+            "id": 347,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Primary Color palette 11 [0x12E4 - 0x12F3]",
+            "region": {
+                "address": 4836,
+                "size": 16
+            }
+        },
+        {
+            "color": 1583553612,
+            "comment": "",
+            "id": 348,
+            "locked": false,
+            "name": "Current Air Raider Up-and-Coming Primary Color Swatch ID [0x12F4 - 0x12F7]",
+            "region": {
+                "address": 4852,
+                "size": 4
+            }
+        },
+        {
+            "color": 859576701,
+            "comment": "",
+            "id": 349,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 0 [0x12F8 - 0x1307]",
+            "region": {
+                "address": 4856,
+                "size": 16
+            }
+        },
+        {
+            "color": 1191155789,
+            "comment": "",
+            "id": 350,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 1 [0x1308 - 0x1317]",
+            "region": {
+                "address": 4872,
+                "size": 16
+            }
+        },
+        {
+            "color": 334560825,
+            "comment": "",
+            "id": 351,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 2 [0x1318 - 0x1327]",
+            "region": {
+                "address": 4888,
+                "size": 16
+            }
+        },
+        {
+            "color": 2569071334,
+            "comment": "",
+            "id": 352,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 3 [0x1328 - 0x1337]",
+            "region": {
+                "address": 4904,
+                "size": 16
+            }
+        },
+        {
+            "color": 326429652,
+            "comment": "",
+            "id": 353,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 4 [0x1338 - 0x1347]",
+            "region": {
+                "address": 4920,
+                "size": 16
+            }
+        },
+        {
+            "color": 2063515437,
+            "comment": "",
+            "id": 354,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 5 [0x1348 - 0x1357]",
+            "region": {
+                "address": 4936,
+                "size": 16
+            }
+        },
+        {
+            "color": 3881405909,
+            "comment": "",
+            "id": 355,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 6 [0x1358 - 0x1367]",
+            "region": {
+                "address": 4952,
+                "size": 16
+            }
+        },
+        {
+            "color": 1263264815,
+            "comment": "",
+            "id": 356,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 7 [0x1368 - 0x1377]",
+            "region": {
+                "address": 4968,
+                "size": 16
+            }
+        },
+        {
+            "color": 1567940191,
+            "comment": "",
+            "id": 357,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 8 [0x1378 - 0x1387]",
+            "region": {
+                "address": 4984,
+                "size": 16
+            }
+        },
+        {
+            "color": 3253757243,
+            "comment": "",
+            "id": 358,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 9 [0x1388 - 0x1397]",
+            "region": {
+                "address": 5000,
+                "size": 16
+            }
+        },
+        {
+            "color": 833641302,
+            "comment": "",
+            "id": 359,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 10 [0x1398 - 0x13A7]",
+            "region": {
+                "address": 5016,
+                "size": 16
+            }
+        },
+        {
+            "color": 2608543180,
+            "comment": "",
+            "id": 360,
+            "locked": false,
+            "name": "Raw Hex Air Raider Up-and-Coming Secondary Color palette 11 [0x13A8 - 0x13B7]",
+            "region": {
+                "address": 5032,
+                "size": 16
+            }
+        },
+        {
+            "color": 3667700630,
+            "comment": "",
+            "id": 361,
+            "locked": false,
+            "name": "Current Air Raider Up-and-Coming Secondary Color Swatch ID [0x13B8 - 0x13BB]",
+            "region": {
+                "address": 5048,
+                "size": 4
+            }
+        },
+        {
+            "color": 2522255424,
+            "comment": "",
+            "id": 362,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 0 [0x13BC - 0x13CB]",
+            "region": {
+                "address": 5052,
+                "size": 16
+            }
+        },
+        {
+            "color": 434719482,
+            "comment": "",
+            "id": 363,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 1 [0x13CC - 0x13DB]",
+            "region": {
+                "address": 5068,
+                "size": 16
+            }
+        },
+        {
+            "color": 3326063255,
+            "comment": "",
+            "id": 364,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 2 [0x13DC - 0x13EB]",
+            "region": {
+                "address": 5084,
+                "size": 16
+            }
+        },
+        {
+            "color": 2556559004,
+            "comment": "",
+            "id": 365,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 3 [0x13EC - 0x13FB]",
+            "region": {
+                "address": 5100,
+                "size": 16
+            }
+        },
+        {
+            "color": 2827725608,
+            "comment": "",
+            "id": 366,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 4 [0x13FC - 0x140B]",
+            "region": {
+                "address": 5116,
+                "size": 16
+            }
+        },
+        {
+            "color": 2276726250,
+            "comment": "",
+            "id": 367,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 5 [0x140C - 0x141B]",
+            "region": {
+                "address": 5132,
+                "size": 16
+            }
+        },
+        {
+            "color": 3546547597,
+            "comment": "",
+            "id": 368,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 6 [0x141C - 0x142B]",
+            "region": {
+                "address": 5148,
+                "size": 16
+            }
+        },
+        {
+            "color": 4228559277,
+            "comment": "",
+            "id": 369,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 7 [0x142C - 0x143B]",
+            "region": {
+                "address": 5164,
+                "size": 16
+            }
+        },
+        {
+            "color": 1782473266,
+            "comment": "",
+            "id": 370,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 8 [0x143C - 0x144B]",
+            "region": {
+                "address": 5180,
+                "size": 16
+            }
+        },
+        {
+            "color": 4070166750,
+            "comment": "",
+            "id": 371,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 9 [0x144C - 0x145B]",
+            "region": {
+                "address": 5196,
+                "size": 16
+            }
+        },
+        {
+            "color": 2939563590,
+            "comment": "",
+            "id": 372,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 10 [0x145C - 0x146B]",
+            "region": {
+                "address": 5212,
+                "size": 16
+            }
+        },
+        {
+            "color": 1441213681,
+            "comment": "",
+            "id": 373,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Primary Color palette 11 [0x146C - 0x147B]",
+            "region": {
+                "address": 5228,
+                "size": 16
+            }
+        },
+        {
+            "color": 93168412,
+            "comment": "",
+            "id": 374,
+            "locked": false,
+            "name": "Current Fencer Civilian Primary Color Swatch ID [0x147C - 0x147F]",
+            "region": {
+                "address": 5244,
+                "size": 4
+            }
+        },
+        {
+            "color": 2919161015,
+            "comment": "",
+            "id": 375,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 0 [0x1480 - 0x148F]",
+            "region": {
+                "address": 5248,
+                "size": 16
+            }
+        },
+        {
+            "color": 3961010191,
+            "comment": "",
+            "id": 376,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 1 [0x1490 - 0x149F]",
+            "region": {
+                "address": 5264,
+                "size": 16
+            }
+        },
+        {
+            "color": 1691558368,
+            "comment": "",
+            "id": 377,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 2 [0x14A0 - 0x14AF]",
+            "region": {
+                "address": 5280,
+                "size": 16
+            }
+        },
+        {
+            "color": 975511136,
+            "comment": "",
+            "id": 378,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 3 [0x14B0 - 0x14BF]",
+            "region": {
+                "address": 5296,
+                "size": 16
+            }
+        },
+        {
+            "color": 4075392183,
+            "comment": "",
+            "id": 379,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 4 [0x14C0 - 0x14CF]",
+            "region": {
+                "address": 5312,
+                "size": 16
+            }
+        },
+        {
+            "color": 1117877694,
+            "comment": "",
+            "id": 380,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 5 [0x14D0 - 0x14DF]",
+            "region": {
+                "address": 5328,
+                "size": 16
+            }
+        },
+        {
+            "color": 1244936665,
+            "comment": "",
+            "id": 381,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 6 [0x14E0 - 0x14EF]",
+            "region": {
+                "address": 5344,
+                "size": 16
+            }
+        },
+        {
+            "color": 2735877871,
+            "comment": "",
+            "id": 382,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 7 [0x14F0 - 0x14FF]",
+            "region": {
+                "address": 5360,
+                "size": 16
+            }
+        },
+        {
+            "color": 898568354,
+            "comment": "",
+            "id": 383,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 8 [0x1500 - 0x150F]",
+            "region": {
+                "address": 5376,
+                "size": 16
+            }
+        },
+        {
+            "color": 4223295686,
+            "comment": "",
+            "id": 384,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 9 [0x1510 - 0x151F]",
+            "region": {
+                "address": 5392,
+                "size": 16
+            }
+        },
+        {
+            "color": 2526330800,
+            "comment": "",
+            "id": 385,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 10 [0x1520 - 0x152F]",
+            "region": {
+                "address": 5408,
+                "size": 16
+            }
+        },
+        {
+            "color": 2864847546,
+            "comment": "",
+            "id": 386,
+            "locked": false,
+            "name": "Raw Hex Fencer Civilian Secondary Color palette 11 [0x1530 - 0x153F]",
+            "region": {
+                "address": 5424,
+                "size": 16
+            }
+        },
+        {
+            "color": 3857991709,
+            "comment": "",
+            "id": 387,
+            "locked": false,
+            "name": "Current Fencer Civilian Secondary Color Swatch ID [0x1540 - 0x1543]",
+            "region": {
+                "address": 5440,
+                "size": 4
+            }
+        },
+        {
+            "color": 1457058973,
+            "comment": "",
+            "id": 388,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 0 [0x1544 - 0x1553]",
+            "region": {
+                "address": 5444,
+                "size": 16
+            }
+        },
+        {
+            "color": 1993552649,
+            "comment": "",
+            "id": 389,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 1 [0x1554 - 0x1563]",
+            "region": {
+                "address": 5460,
+                "size": 16
+            }
+        },
+        {
+            "color": 1348677029,
+            "comment": "",
+            "id": 390,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 2 [0x1564 - 0x1573]",
+            "region": {
+                "address": 5476,
+                "size": 16
+            }
+        },
+        {
+            "color": 3724162940,
+            "comment": "",
+            "id": 391,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 3 [0x1574 - 0x1583]",
+            "region": {
+                "address": 5492,
+                "size": 16
+            }
+        },
+        {
+            "color": 3893036208,
+            "comment": "",
+            "id": 392,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 4 [0x1584 - 0x1593]",
+            "region": {
+                "address": 5508,
+                "size": 16
+            }
+        },
+        {
+            "color": 2519174847,
+            "comment": "",
+            "id": 393,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 5 [0x1594 - 0x15A3]",
+            "region": {
+                "address": 5524,
+                "size": 16
+            }
+        },
+        {
+            "color": 4287931292,
+            "comment": "",
+            "id": 394,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 6 [0x15A4 - 0x15B3]",
+            "region": {
+                "address": 5540,
+                "size": 16
+            }
+        },
+        {
+            "color": 3575271231,
+            "comment": "",
+            "id": 395,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 7 [0x15B4 - 0x15C3]",
+            "region": {
+                "address": 5556,
+                "size": 16
+            }
+        },
+        {
+            "color": 3501013686,
+            "comment": "",
+            "id": 396,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 8 [0x15C4 - 0x15D3]",
+            "region": {
+                "address": 5572,
+                "size": 16
+            }
+        },
+        {
+            "color": 3653178366,
+            "comment": "",
+            "id": 397,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 9 [0x15D4 - 0x15E3]",
+            "region": {
+                "address": 5588,
+                "size": 16
+            }
+        },
+        {
+            "color": 3049511657,
+            "comment": "",
+            "id": 398,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 10 [0x15E4 - 0x15F3]",
+            "region": {
+                "address": 5604,
+                "size": 16
+            }
+        },
+        {
+            "color": 3264853032,
+            "comment": "",
+            "id": 399,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Primary Color palette 11 [0x15F4 - 0x1603]",
+            "region": {
+                "address": 5620,
+                "size": 16
+            }
+        },
+        {
+            "color": 1079430058,
+            "comment": "",
+            "id": 400,
+            "locked": false,
+            "name": "Current Fencer Soldier Primary Color Swatch ID [0x1604 - 0x1607]",
+            "region": {
+                "address": 5636,
+                "size": 4
+            }
+        },
+        {
+            "color": 158383682,
+            "comment": "",
+            "id": 401,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 0 [0x1608 - 0x1617]",
+            "region": {
+                "address": 5640,
+                "size": 16
+            }
+        },
+        {
+            "color": 865714482,
+            "comment": "",
+            "id": 402,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 1 [0x1618 - 0x1627]",
+            "region": {
+                "address": 5656,
+                "size": 16
+            }
+        },
+        {
+            "color": 3534230957,
+            "comment": "",
+            "id": 403,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 2 [0x1628 - 0x1637]",
+            "region": {
+                "address": 5672,
+                "size": 16
+            }
+        },
+        {
+            "color": 747674429,
+            "comment": "",
+            "id": 404,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 3 [0x1638 - 0x1647]",
+            "region": {
+                "address": 5688,
+                "size": 16
+            }
+        },
+        {
+            "color": 110607989,
+            "comment": "",
+            "id": 405,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 4 [0x1648 - 0x1657]",
+            "region": {
+                "address": 5704,
+                "size": 16
+            }
+        },
+        {
+            "color": 171761269,
+            "comment": "",
+            "id": 406,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 5 [0x1658 - 0x1667]",
+            "region": {
+                "address": 5720,
+                "size": 16
+            }
+        },
+        {
+            "color": 2551704408,
+            "comment": "",
+            "id": 407,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 6 [0x1668 - 0x1677]",
+            "region": {
+                "address": 5736,
+                "size": 16
+            }
+        },
+        {
+            "color": 1881907175,
+            "comment": "",
+            "id": 408,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 7 [0x1678 - 0x1687]",
+            "region": {
+                "address": 5752,
+                "size": 16
+            }
+        },
+        {
+            "color": 2502086339,
+            "comment": "",
+            "id": 409,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 8 [0x1688 - 0x1697]",
+            "region": {
+                "address": 5768,
+                "size": 16
+            }
+        },
+        {
+            "color": 3561048322,
+            "comment": "",
+            "id": 410,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 9 [0x1698 - 0x16A7]",
+            "region": {
+                "address": 5784,
+                "size": 16
+            }
+        },
+        {
+            "color": 991848525,
+            "comment": "",
+            "id": 411,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 10 [0x16A8 - 0x16B7]",
+            "region": {
+                "address": 5800,
+                "size": 16
+            }
+        },
+        {
+            "color": 2945084523,
+            "comment": "",
+            "id": 412,
+            "locked": false,
+            "name": "Raw Hex Fencer Soldier Secondary Color palette 11 [0x16B8 - 0x16C7]",
+            "region": {
+                "address": 5816,
+                "size": 16
+            }
+        },
+        {
+            "color": 2304841182,
+            "comment": "",
+            "id": 413,
+            "locked": false,
+            "name": "Current Fencer Soldier Secondary Color Swatch ID [0x16C8 - 0x16CB]",
+            "region": {
+                "address": 5832,
+                "size": 4
+            }
+        },
+        {
+            "color": 2951913096,
+            "comment": "",
+            "id": 414,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 0 [0x16CC - 0x16DB]",
+            "region": {
+                "address": 5836,
+                "size": 16
+            }
+        },
+        {
+            "color": 3157145907,
+            "comment": "",
+            "id": 415,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 1 [0x16DC - 0x16EB]",
+            "region": {
+                "address": 5852,
+                "size": 16
+            }
+        },
+        {
+            "color": 1910950155,
+            "comment": "",
+            "id": 416,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 2 [0x16EC - 0x16FB]",
+            "region": {
+                "address": 5868,
+                "size": 16
+            }
+        },
+        {
+            "color": 1808060909,
+            "comment": "",
+            "id": 417,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 3 [0x16FC - 0x170B]",
+            "region": {
+                "address": 5884,
+                "size": 16
+            }
+        },
+        {
+            "color": 2649140580,
+            "comment": "",
+            "id": 418,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 4 [0x170C - 0x171B]",
+            "region": {
+                "address": 5900,
+                "size": 16
+            }
+        },
+        {
+            "color": 1981868109,
+            "comment": "",
+            "id": 419,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 5 [0x171C - 0x172B]",
+            "region": {
+                "address": 5916,
+                "size": 16
+            }
+        },
+        {
+            "color": 2535743393,
+            "comment": "",
+            "id": 420,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 6 [0x172C - 0x173B]",
+            "region": {
+                "address": 5932,
+                "size": 16
+            }
+        },
+        {
+            "color": 2948812703,
+            "comment": "",
+            "id": 421,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 7 [0x173C - 0x174B]",
+            "region": {
+                "address": 5948,
+                "size": 16
+            }
+        },
+        {
+            "color": 3390091294,
+            "comment": "",
+            "id": 422,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 8 [0x174C - 0x175B]",
+            "region": {
+                "address": 5964,
+                "size": 16
+            }
+        },
+        {
+            "color": 291839600,
+            "comment": "",
+            "id": 423,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 9 [0x175C - 0x176B]",
+            "region": {
+                "address": 5980,
+                "size": 16
+            }
+        },
+        {
+            "color": 3975961428,
+            "comment": "",
+            "id": 424,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 10 [0x176C - 0x177B]",
+            "region": {
+                "address": 5996,
+                "size": 16
+            }
+        },
+        {
+            "color": 3239606497,
+            "comment": "",
+            "id": 425,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Primary Color palette 11 [0x177C - 0x178B]",
+            "region": {
+                "address": 6012,
+                "size": 16
+            }
+        },
+        {
+            "color": 1416526571,
+            "comment": "",
+            "id": 426,
+            "locked": false,
+            "name": "Current Fencer Devastation Primary Color Swatch ID [0x178C - 0x178F]",
+            "region": {
+                "address": 6028,
+                "size": 4
+            }
+        },
+        {
+            "color": 1820809611,
+            "comment": "",
+            "id": 427,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 0 [0x1790 - 0x179F]",
+            "region": {
+                "address": 6032,
+                "size": 16
+            }
+        },
+        {
+            "color": 2333682099,
+            "comment": "",
+            "id": 428,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 1 [0x17A0 - 0x17AF]",
+            "region": {
+                "address": 6048,
+                "size": 16
+            }
+        },
+        {
+            "color": 1404375193,
+            "comment": "",
+            "id": 429,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 2 [0x17B0 - 0x17BF]",
+            "region": {
+                "address": 6064,
+                "size": 16
+            }
+        },
+        {
+            "color": 4186507966,
+            "comment": "",
+            "id": 430,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 3 [0x17C0 - 0x17CF]",
+            "region": {
+                "address": 6080,
+                "size": 16
+            }
+        },
+        {
+            "color": 2321191411,
+            "comment": "",
+            "id": 431,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 4 [0x17D0 - 0x17DF]",
+            "region": {
+                "address": 6096,
+                "size": 16
+            }
+        },
+        {
+            "color": 2907600028,
+            "comment": "",
+            "id": 432,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 5 [0x17E0 - 0x17EF]",
+            "region": {
+                "address": 6112,
+                "size": 16
+            }
+        },
+        {
+            "color": 3931763527,
+            "comment": "",
+            "id": 433,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 6 [0x17F0 - 0x17FF]",
+            "region": {
+                "address": 6128,
+                "size": 16
+            }
+        },
+        {
+            "color": 3974659988,
+            "comment": "",
+            "id": 434,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 7 [0x1800 - 0x180F]",
+            "region": {
+                "address": 6144,
+                "size": 16
+            }
+        },
+        {
+            "color": 3617493853,
+            "comment": "",
+            "id": 435,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 8 [0x1810 - 0x181F]",
+            "region": {
+                "address": 6160,
+                "size": 16
+            }
+        },
+        {
+            "color": 4290112214,
+            "comment": "",
+            "id": 436,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 9 [0x1820 - 0x182F]",
+            "region": {
+                "address": 6176,
+                "size": 16
+            }
+        },
+        {
+            "color": 151295074,
+            "comment": "",
+            "id": 437,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 10 [0x1830 - 0x183F]",
+            "region": {
+                "address": 6192,
+                "size": 16
+            }
+        },
+        {
+            "color": 3792581835,
+            "comment": "",
+            "id": 438,
+            "locked": false,
+            "name": "Raw Hex Fencer Devastation Secondary Color palette 11 [0x1840 - 0x184F]",
+            "region": {
+                "address": 6208,
+                "size": 16
+            }
+        },
+        {
+            "color": 135591086,
+            "comment": "",
+            "id": 439,
+            "locked": false,
+            "name": "Current Fencer Devastation Secondary Color Swatch ID [0x1850 - 0x1853]",
+            "region": {
+                "address": 6224,
+                "size": 4
+            }
+        },
+        {
+            "color": 3957687065,
+            "comment": "",
+            "id": 440,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 0 [0x1854 - 0x1863]",
+            "region": {
+                "address": 6228,
+                "size": 16
+            }
+        },
+        {
+            "color": 4157904165,
+            "comment": "",
+            "id": 441,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 1 [0x1864 - 0x1873]",
+            "region": {
+                "address": 6244,
+                "size": 16
+            }
+        },
+        {
+            "color": 4245772209,
+            "comment": "",
+            "id": 442,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 2 [0x1874 - 0x1883]",
+            "region": {
+                "address": 6260,
+                "size": 16
+            }
+        },
+        {
+            "color": 567988327,
+            "comment": "",
+            "id": 443,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 3 [0x1884 - 0x1893]",
+            "region": {
+                "address": 6276,
+                "size": 16
+            }
+        },
+        {
+            "color": 250421934,
+            "comment": "",
+            "id": 444,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 4 [0x1894 - 0x18A3]",
+            "region": {
+                "address": 6292,
+                "size": 16
+            }
+        },
+        {
+            "color": 2339388096,
+            "comment": "",
+            "id": 445,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 5 [0x18A4 - 0x18B3]",
+            "region": {
+                "address": 6308,
+                "size": 16
+            }
+        },
+        {
+            "color": 3224728523,
+            "comment": "",
+            "id": 446,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 6 [0x18B4 - 0x18C3]",
+            "region": {
+                "address": 6324,
+                "size": 16
+            }
+        },
+        {
+            "color": 2259977184,
+            "comment": "",
+            "id": 447,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 7 [0x18C4 - 0x18D3]",
+            "region": {
+                "address": 6340,
+                "size": 16
+            }
+        },
+        {
+            "color": 834025945,
+            "comment": "",
+            "id": 448,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 8 [0x18D4 - 0x18E3]",
+            "region": {
+                "address": 6356,
+                "size": 16
+            }
+        },
+        {
+            "color": 3765736982,
+            "comment": "",
+            "id": 449,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 9 [0x18E4 - 0x18F3]",
+            "region": {
+                "address": 6372,
+                "size": 16
+            }
+        },
+        {
+            "color": 3502516768,
+            "comment": "",
+            "id": 450,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 10 [0x18F4 - 0x1903]",
+            "region": {
+                "address": 6388,
+                "size": 16
+            }
+        },
+        {
+            "color": 753313194,
+            "comment": "",
+            "id": 451,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Primary Color palette 11 [0x1904 - 0x1913]",
+            "region": {
+                "address": 6404,
+                "size": 16
+            }
+        },
+        {
+            "color": 3878545438,
+            "comment": "",
+            "id": 452,
+            "locked": false,
+            "name": "Current Fencer Up-and-Coming Primary Color Swatch ID [0x1914 - 0x1917]",
+            "region": {
+                "address": 6420,
+                "size": 4
+            }
+        },
+        {
+            "color": 1144863614,
+            "comment": "",
+            "id": 453,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 0 [0x1918 - 0x1927]",
+            "region": {
+                "address": 6424,
+                "size": 16
+            }
+        },
+        {
+            "color": 733168602,
+            "comment": "",
+            "id": 454,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 1 [0x1928 - 0x1937]",
+            "region": {
+                "address": 6440,
+                "size": 16
+            }
+        },
+        {
+            "color": 762715991,
+            "comment": "",
+            "id": 455,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 2 [0x1938 - 0x1947]",
+            "region": {
+                "address": 6456,
+                "size": 16
+            }
+        },
+        {
+            "color": 2204481368,
+            "comment": "",
+            "id": 456,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 3 [0x1948 - 0x1957]",
+            "region": {
+                "address": 6472,
+                "size": 16
+            }
+        },
+        {
+            "color": 1191608109,
+            "comment": "",
+            "id": 457,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 4 [0x1958 - 0x1967]",
+            "region": {
+                "address": 6488,
+                "size": 16
+            }
+        },
+        {
+            "color": 3608730629,
+            "comment": "",
+            "id": 458,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 5 [0x1968 - 0x1977]",
+            "region": {
+                "address": 6504,
+                "size": 16
+            }
+        },
+        {
+            "color": 2345545149,
+            "comment": "",
+            "id": 459,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 6 [0x1978 - 0x1987]",
+            "region": {
+                "address": 6520,
+                "size": 16
+            }
+        },
+        {
+            "color": 2849495221,
+            "comment": "",
+            "id": 460,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 7 [0x1988 - 0x1997]",
+            "region": {
+                "address": 6536,
+                "size": 16
+            }
+        },
+        {
+            "color": 4079976512,
+            "comment": "",
+            "id": 461,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 8 [0x1998 - 0x19A7]",
+            "region": {
+                "address": 6552,
+                "size": 16
+            }
+        },
+        {
+            "color": 878783587,
+            "comment": "",
+            "id": 462,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 9 [0x19A8 - 0x19B7]",
+            "region": {
+                "address": 6568,
+                "size": 16
+            }
+        },
+        {
+            "color": 595379299,
+            "comment": "",
+            "id": 463,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 10 [0x19B8 - 0x19C7]",
+            "region": {
+                "address": 6584,
+                "size": 16
+            }
+        },
+        {
+            "color": 3030147278,
+            "comment": "",
+            "id": 464,
+            "locked": false,
+            "name": "Raw Hex Fencer Up-and-Coming Secondary Color palette 11 [0x19C8 - 0x19D7]",
+            "region": {
+                "address": 6600,
+                "size": 16
+            }
+        },
+        {
+            "color": 763007496,
+            "comment": "",
+            "id": 465,
+            "locked": false,
+            "name": "Current Fencer Up-and-Coming Secondary Color Swatch ID [0x19D8 - 0x19DB]",
+            "region": {
+                "address": 6616,
+                "size": 4
+            }
+        }
+    ]
+}
