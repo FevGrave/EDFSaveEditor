@@ -56,7 +56,19 @@ class SaveEditor(ctk.CTk):
         # Build language_map dynamically from translations
         self.language_map = {}
         for lang_code, lang_dict in self.translations.items():
-            display_name = lang_dict.get(lang_code, lang_code)
+            display_name = None
+            # lang_dict may be a dict with several possible display-name keys
+            if isinstance(lang_dict, dict):
+                display_name = lang_dict.get('display_name') or lang_dict.get('name') or lang_dict.get(lang_code)
+            # Fallback to the language code if no nicer name found
+            if not display_name:
+                display_name = lang_code
+            # Persist a normalized display_name in the translations dict for future use
+            try:
+                if isinstance(self.translations.get(lang_code), dict):
+                    self.translations[lang_code]['display_name'] = display_name
+            except Exception:
+                pass
             self.language_map[lang_code] = display_name
         # Also build a reverse map for display name -> code
         self.language_map_reverse = {v: k for k, v in self.language_map.items()}
@@ -77,7 +89,7 @@ class SaveEditor(ctk.CTk):
         # (language_selector created later; store desired code)
         self._pending_language_code = self.current_language
         # Replace local version variable with instance attribute
-        self.version = "--- V 1.0.0"
+        self.version = "--- V 1.0.1.001"
         self.title(self.translations[self.current_language].get('title', 'EDF Save Editor') + " " + self.version)
         self.geometry("1320x960")
         self.armor_entries = []
@@ -126,6 +138,7 @@ class SaveEditor(ctk.CTk):
         header_frame.pack(side="top", fill="x", pady=5, padx=10)
         header_frame.grid_columnconfigure((0, 1, 2, 3, 4), weight=1)
         header_frame.grid_columnconfigure(5, weight=0)  # new column for language selector
+        header_frame.grid_columnconfigure(6, weight=0)
         header_frame.grid_rowconfigure(0, weight=1)
 
         # Game selector replaces old language dropdown
@@ -136,7 +149,8 @@ class SaveEditor(ctk.CTk):
             'EDF5 Offline': {'total_missions': 110, 'coming_soon': True},
             'EDF5 Offline DLC1': {'total_missions': 19, 'coming_soon': True},
             'EDF5 Offline DLC2': {'total_missions': 19, 'coming_soon': True},
-            'EDF5 Online': {'total_missions': 111, 'coming_soon': True},            'EDF5 Online DLC1': {'total_missions': 40, 'coming_soon': True},
+            'EDF5 Online': {'total_missions': 111, 'coming_soon': True},
+            'EDF5 Online DLC1': {'total_missions': 40, 'coming_soon': True},
             'EDF5 Online DLC2': {'total_missions': 40, 'coming_soon': True},
             'EDF4.1 Offline': {'total_missions': 89, 'coming_soon': True},
             'EDF4.1 Online': {'total_missions': 89, 'coming_soon': True}
@@ -154,6 +168,9 @@ class SaveEditor(ctk.CTk):
         self.game_selector.grid(row=0, column=3, padx=5, sticky="e")
         try: self.update_default_save_dir()
         except Exception: pass
+
+        self.save_status_label = ctk.CTkLabel(header_frame, text="", font=("Arial", 12, "bold"))
+        self.save_status_label.grid(row=0, column=6, padx=10, sticky="e")
 
         self.theme_switch = ctk.CTkSwitch(
             header_frame,
@@ -208,10 +225,12 @@ class SaveEditor(ctk.CTk):
         main_content = ctk.CTkFrame(self.scrollable_frame)
         main_content.pack(side="top", fill="both", expand=True, pady=10, padx=10)
 
-        # Armor section (unchanged)
-        self.armor_content = self.create_collapsible_section(main_content, "armor_section", height=250)
+        # Armor section (polished — allow content to shrink to fit)
+        # Use auto-sizing (height=None) so the section does not reserve extra space
+        self.armor_content = self.create_collapsible_section(main_content, "armor_section", height=None)
         self.modded_frame = ctk.CTkFrame(self.armor_content)
-        self.modded_frame.pack(pady=10, padx=10, fill="x")
+        # Slightly reduce vertical padding so the element takes up less room
+        self.modded_frame.pack(pady=(6,2), padx=10, fill="x")
         # Use new modded_multiplier_label key (static label without {value})
         self.modded_multiplier_label_widget = ctk.CTkLabel(
             self.modded_frame,
@@ -224,10 +243,11 @@ class SaveEditor(ctk.CTk):
         self.modded_gain_entry.pack(side="left", padx=5)
         self.modded_gain_entry.insert(0, "1.0")
         self.modded_gain_entry.bind("<KeyRelease>", lambda e: self.update_armor_display())
+        # Slightly smaller font and spacing for the helper note
         note_label = ctk.CTkLabel(
             self.modded_frame,
             text=self.translations[self.current_language].get('modded_gain_note', 'Modded Values may not be exact due to floating-point precision'),
-            font=("Arial", 10, "italic")
+            font=("Arial", 12, "italic")
         )
         note_label.translation_key = 'modded_gain_note'
         note_label.pack(side="left", padx=10)
@@ -235,7 +255,10 @@ class SaveEditor(ctk.CTk):
         # Replace armor rows creation to tag labels
         for i in range(4):
             frame = ctk.CTkFrame(self.armor_content)
-            frame.pack(pady=5, padx=10, fill="x")
+            if i == 3:
+                frame.pack(pady=(5,0), padx=10, fill="x")
+            else:
+                frame.pack(pady=5, padx=10, fill="x")
             class_name = PLAYER_CLASS_MAP[i]
             armor_label_key = f"{class_name.lower().replace(' ', '_')}_armor_label"  # FIX: ensure underscore for Air Raider
             armor_label = ctk.CTkLabel(frame, text=self.translations[self.current_language].get(armor_label_key, f'{class_name} MAX Armor:'), font=("Arial", 12, "bold"))
@@ -254,26 +277,39 @@ class SaveEditor(ctk.CTk):
             inc_button.pack(side="left", padx=5)
             dec_button = ctk.CTkButton(frame, text="-100", width=60, command=lambda idx=i: self.adjust_armor(idx, -100))
             dec_button.pack(side="left", padx=5)
+            # Slightly reduce padding so rows are narrower and fit the content better
             base_label = ctk.CTkLabel(frame, text=self.translations[self.current_language].get('base_gain_label', 'Base Game Gain: {value}').format(value=0.0), font=("Arial", 12))
             base_label.translation_key = 'base_gain_label'
-            base_label.pack(side="left", padx=10)
+            base_label.pack(side="left", padx=6)
             self.base_gain_labels.append(base_label)
             modded_label = ctk.CTkLabel(frame, text=self.translations[self.current_language].get('modded_gain_label', 'Modded Armor Gain: {value}').format(value=0.0), font=("Arial", 12))
             modded_label.translation_key = 'modded_gain_label'
-            modded_label.pack(side="left", padx=10)
+            modded_label.pack(side="left", padx=6)
             self.modded_gain_labels.append(modded_label)
 
+        # Add note under the last armor value
+        armor_note_label = ctk.CTkLabel(
+            self.armor_content,
+            text=self.translations[self.current_language].get('armor_note', 'You the user will be expected to Adjust Armor to Maximum when in the Class / Equipment tab'),
+            font=("Arial", 14, "italic")
+        )
+        armor_note_label.translation_key = 'armor_note'
+        armor_note_label.pack(pady=(0,5), padx=10, anchor="w")
+
         # Loadouts section (updated)
-        self.loadout_content = self.create_collapsible_section(main_content, "loadouts_section", height=544)
+        # Use auto-sizing (height=None) so the section does not reserve extra space
+        self.loadout_content = self.create_collapsible_section(main_content, "loadouts_section", height=None)
         self.loadout_grid = ctk.CTkFrame(self.loadout_content)
-        self.loadout_grid.pack(fill="both", expand=True, padx=10, pady=10)
+        # Slightly reduce vertical padding so the section takes up less room
+        self.loadout_grid.pack(fill="both", expand=True, padx=10, pady=(6,2))
         self.loadout_grid.grid_columnconfigure((0, 1), weight=1)
         self.loadout_grid.grid_rowconfigure((0, 1), weight=1)
 
         row, col = 0, 0
         for class_name, slots in LOADOUT_GROUPS.items():
             class_subframe = ctk.CTkFrame(self.loadout_grid)
-            class_subframe.grid(row=row, column=col, pady=5, padx=5, sticky="nsew")
+            # Slightly reduce vertical padding between class frames
+            class_subframe.grid(row=row, column=col, pady=(4,1), padx=5, sticky="nsew")
             normalized = class_name.lower().replace(' ', '_')  # ensure Air Raider uses underscores
             class_label_key = f'{normalized}_loadout_label'
             header_label = ctk.CTkLabel(class_subframe, text=self.translations[self.current_language].get(class_label_key, f"{class_name} Loadout:"), font=("Arial", 12, "bold"))
@@ -283,7 +319,8 @@ class SaveEditor(ctk.CTk):
                 slot_desc = slot[3]
                 slot_key = f"{normalized}_loadout_slot{slot_index+1}"
                 slot_frame = ctk.CTkFrame(class_subframe)
-                slot_frame.pack(fill="x", padx=10, pady=2)
+                # Slightly reduce vertical spacing for each slot row
+                slot_frame.pack(fill="x", padx=10, pady=1)
                 slot_label = ctk.CTkLabel(slot_frame, text=self.translations[self.current_language].get(slot_key, slot_desc) + ":", font=("Arial", 12))
                 slot_label.translation_key = slot_key
                 slot_label.pack(side="left", padx=5)
@@ -293,12 +330,21 @@ class SaveEditor(ctk.CTk):
                 entry.bind("<KeyRelease>", lambda e: self.update_loadout_names())
                 self.loadout_entries.append(entry)
                 name_label = ctk.CTkLabel(slot_frame, text="", font=("Arial", 12))
-                name_label.pack(side="left", padx=10)
+                name_label.pack(side="left", padx=6)
                 self.loadout_name_labels.append(name_label)
             col += 1
             if col == 2:
                 col = 0
                 row += 1
+
+        # Add note under the last loadout value to help users
+        loadout_note_label = ctk.CTkLabel(
+            self.loadout_content,
+            text=self.translations[self.current_language].get('loadout_note', "Tip: Enter weapon ID numbers in these fields. IDs are the same as the 'ID' column shown in the Weapon Table tab."),
+            font=("Arial", 14, "italic")
+        )
+        loadout_note_label.translation_key = 'loadout_note'
+        loadout_note_label.pack(pady=(0,5), padx=10, anchor="w")
 
         # Weapon table section
         self.weapon_content = self.create_collapsible_section(main_content, "weapon_table_section", height=400)
@@ -351,17 +397,38 @@ class SaveEditor(ctk.CTk):
         self.vsb.pack(side="right", fill="y")
         self.tree.pack(side="left", expand=True, fill="both")
 
+        # Controls and note for weapon table: mass-edit buttons and quick help
+        control_frame = ctk.CTkFrame(self.weapon_content)
+        control_frame.pack(fill="x", padx=10, pady=(6,4))
+        own_btn = ctk.CTkButton(control_frame, text=self.translations[self.current_language].get('own_all_button', 'Own All'), width=120, command=lambda: self.mass_edit_weapon_stats('own_all'))
+        sudo_btn = ctk.CTkButton(control_frame, text=self.translations[self.current_language].get('sudo_max_button', 'Sudo Max'), width=120, command=lambda: self.mass_edit_weapon_stats('sudo_max'))
+        poor_btn = ctk.CTkButton(control_frame, text=self.translations[self.current_language].get('poverty_button', 'Poverty'), width=120, command=lambda: self.mass_edit_weapon_stats('poverty'))
+        own_btn.pack(side='left', padx=6)
+        sudo_btn.pack(side='left', padx=6)
+        poor_btn.pack(side='left', padx=6)
+        # Instruction note (editable via translations.json)
+        note_text = self.translations[self.current_language].get('weapon_table_note', "Double-click a cell to edit. Example: weapon ID 10, Stat 4 -> change value (0-10). Some weapons max at 8. Mass-edit: Own All =  set stats to 1; Sudo Max = set stats to 8; Poverty = set stats to 0. Protected IDs and DLC ranges will be skipped.")
+        # Use a read-only textbox so long notes wrap and remain visible; allow expanding horizontally
+        note_box = ctk.CTkTextbox(control_frame, height=56, font=("Arial", 14, "italic"))
+        try:
+            note_box.insert('1.0', note_text)
+            note_box.configure(state='disabled')
+        except Exception:
+            # Fallback to label if CTkTextbox is unavailable
+            note_label = ctk.CTkLabel(control_frame, text=note_text, font=("Arial", 14, "italic"))
+            note_label.pack(side='left', padx=12, fill='x', expand=True)
+        else:
+            note_box.translation_key = 'weapon_table_note'
+            note_box.pack(side='left', padx=12, fill='x', expand=True)
+
         self.tree.bind("<Double-1>", self.edit_cell)
 
-        # Initialize weapon_data with valid IDs and placeholder data
-        self.weapon_data = [[i, "Unknown", 0, 0, 0, 0, 0, 0, 0, 0] for i in range(15)]
+        # Initialize weapon_data with valid IDs and placeholder data (restore full range 0..2047)
+        self.weapon_data = [[i, "Unknown", 0, 0, 0, 0, 0, 0, 0, 0, 0] for i in range(2048)]
         # Populate the weapon table
         for idx, row in enumerate(self.weapon_data):
             self.tree.insert("", "end", iid=str(idx), values=row)
         # Update weapon names in the table
-        self.update_weapon_table_names()
-
-        # After creating self.tree and populating weapon_data, update names in the table
         self.update_weapon_table_names()
 
         # Mission section
@@ -467,6 +534,39 @@ class SaveEditor(ctk.CTk):
             show_vertical_scrollbar=False
         )
         self.sheet.pack(expand=True, fill="both")
+
+        # Ensure any accidental vertical scrollbar widgets inside the sheet container are hidden
+        try:
+            for child in sheet_container.winfo_children():
+                try:
+                    # Hide standard Tkinter/ttk vertical scrollbars if present
+                    if isinstance(child, (tk.Scrollbar, ttk.Scrollbar)):
+                        orient = getattr(child, 'orient', None)
+                        if orient == 'vertical' or orient == tk.VERTICAL:
+                            try: child.pack_forget()
+                            except Exception: pass
+                            try: child.grid_forget()
+                            except Exception: pass
+                except Exception:
+                    pass
+        except Exception:
+            pass
+
+        # Add a short read-only note to guide users on editing mission unlocks (translatable)
+        trans_local = self.translations.get(self.current_language, self.translations.get('en', {}))
+        mission_note = trans_local.get('mission_table_note', "Double-click a mission difficulty cell to toggle completion (Y/N). Use the Unlock/Reset buttons above to change an entire difficulty for a class. Changes update the in-memory arrays — press Save to persist to disk.")
+        try:
+            note_box = ctk.CTkTextbox(self.mission_content, height=56, font=("Arial", 11, "italic"))
+            note_box.insert('1.0', mission_note)
+            note_box.configure(state='disabled')
+        except Exception:
+            note_label = ctk.CTkLabel(self.mission_content, text=mission_note, font=("Arial", 11, "italic"))
+            note_label.translation_key = 'mission_table_note'
+            note_label.pack(fill='x', padx=10, pady=(4,6))
+        else:
+            note_box.translation_key = 'mission_table_note'
+            note_box.pack(fill='x', padx=10, pady=(4,6))
+
         self.sheet.headers(headers)
 
         # Separator columns
@@ -502,7 +602,7 @@ class SaveEditor(ctk.CTk):
         trans = self.translations.get(self.current_language, self.translations['en'])
         yn_yes = trans.get('mission_table_cell_yes', 'Y')
         yn_no = trans.get('mission_table_cell_no', 'N')
-        self.completion_legend_label = ctk.CTkLabel(pag_frame, text=f"{yn_yes}: {trans.get('mission_table_cell_yes_desc', 'Completed')}   {yn_no}: {trans.get('mission_table_cell_no_desc', 'Not Completed')}", font=("Arial", 10, "italic"))
+        self.completion_legend_label = ctk.CTkLabel(pag_frame, text=f"{yn_yes}: {trans.get('mission_table_cell_yes_desc', 'Completed')}   {yn_no}: {trans.get('mission_table_cell_no_desc', 'Not Completed')}", font=("Arial", 12, "italic"))
         self.completion_legend_label.pack(pady=2, fill="x")
 
         self.next_btn = ctk.CTkButton(pag_frame, text=self.translations[self.current_language].get('next_button', 'Next'), command=self.next_page)
@@ -539,8 +639,22 @@ class SaveEditor(ctk.CTk):
         ach_vsb.config(command=self.ach_tree.yview)
         self.ach_tree.grid(row=0, column=0, sticky="nsew")
         self.ach_tree.bind("<Double-1>", self.edit_ach_cell)
+        # Ensure headings and column widths are set even when the tree is empty
         for i, col in enumerate(ach_columns):
-            self.ach_tree.heading(col, text=col)
+            try:
+                # Set the heading text (translated string or fallback)
+                self.ach_tree.heading(col, text=col)
+                # Give sensible default widths/anchors for each column
+                if i == 0:  # ID
+                    self.ach_tree.column(col, width=50, anchor="c")
+                elif i == 1:  # Name
+                    self.ach_tree.column(col, width=350, anchor="w")
+                else:  # Unlocked or other small cols
+                    self.ach_tree.column(col, width=100, anchor="c")
+            except Exception:
+                # Don't break initialization if something unexpected is present in translations
+                pass
+        self.ach_tree_frame.grid_propagate(False)
         self.ach_tree_frame.grid_propagate(False)
         # Right: Kill Statistics (static, not scrollable)
         kills_frame = ctk.CTkFrame(ach_frame, width=400)
@@ -579,12 +693,15 @@ class SaveEditor(ctk.CTk):
         # Language dropdown and add button (above segmented button)
         lang_frame = ctk.CTkFrame(self.translation_content)
         lang_frame.pack(fill="x", padx=10, pady=(5, 0))
-        self.translation_lang_var = ctk.StringVar(value=self.current_language)
+        # Dropdown shows human-friendly display names. Store/display the display name in the var.
+        default_display = self.language_map.get(self.current_language, self.current_language)
+        self.translation_lang_var = ctk.StringVar(value=default_display)
         # Backwards compatibility alias (bug fix for code referencing translation_language_var)
         self.translation_language_var = self.translation_lang_var  # alias
+        # Option menu values use display names so users see readable names.
         self.translation_lang_dropdown = ctk.CTkOptionMenu(
             lang_frame,
-            values=list(self.translations.keys()),
+            values=list(self.language_map.values()),
             variable=self.translation_lang_var,
             command=self.on_translation_lang_change
         )
@@ -676,8 +793,11 @@ class SaveEditor(ctk.CTk):
         # Use the provided language or the current selection
         if language is None:
             language = self.translation_language_var.get()
-        reverse_map = {v: k for k, v in self.language_map.items()}
-        lang_code = reverse_map.get(language, None)
+        # Accept either a language code or a display name
+        if language in self.translations:
+            lang_code = language
+        else:
+            lang_code = self.language_map_reverse.get(language, None)
         if lang_code is None:
             # Fallback to current_language if dropdown value is not mapped
             lang_code = self.current_language
@@ -692,7 +812,12 @@ class SaveEditor(ctk.CTk):
         if is_frozen():
             messagebox.showinfo("Read Only", "Cannot save translations while running packaged executable.")
             return
-        lang = self.translation_lang_var.get()
+        # translation_lang_var holds a display name; map it to a language code if needed
+        sel = self.translation_lang_var.get()
+        if sel in self.translations:
+            lang = sel
+        else:
+            lang = self.language_map_reverse.get(sel, sel)
         tab = self.translation_tab_var.get()
         json_text = self.translation_textbox.get("1.0", "end").strip()
         try:
@@ -1076,7 +1201,8 @@ class SaveEditor(ctk.CTk):
 
     def create_collapsible_section(self, parent, title_key, height=None):
         outer_frame = ctk.CTkFrame(parent)
-        outer_frame.pack(pady=10, fill="x")
+        # Reduce vertical padding so sections don't take up extra space
+        outer_frame.pack(pady=(6,2), fill="x")
         trans = self.translations.get(self.current_language, self.translations['en'])
         btn = ctk.CTkButton(
             outer_frame,
@@ -1084,10 +1210,11 @@ class SaveEditor(ctk.CTk):
             font=("Arial", 14, "bold"),
             command=lambda: self.toggle_collapsible(outer_frame, btn, title_key)
         )
+        # Slightly reduce the button padding so it occupies less vertical space
+        btn.pack(fill="x", padx=2, pady=(1,1))
         # Tag button with translation key so generic refresh can find it
         btn.translation_key = title_key
         self.__setattr__(f"{title_key.lower()}_button", btn)
-        btn.pack(fill="x")
         content_frame = ctk.CTkFrame(outer_frame)
         if height is not None:
             content_frame.configure(height=height)
@@ -1104,7 +1231,8 @@ class SaveEditor(ctk.CTk):
             content_frame.pack_forget()
             button.configure(text=label + " ▶")
         else:
-            content_frame.pack(fill="both", expand=True, pady=5, padx=5)
+            # Reduce internal section padding to avoid extra vertical height
+            content_frame.pack(fill="both", expand=True, pady=(2,2), padx=5)
             button.configure(text=label + " ▼")
             if title_key == "mission_table_section":  # Target only the mission section
                 self.sheet.refresh(redraw_header=True, redraw_row_index=True)
@@ -1206,7 +1334,7 @@ class SaveEditor(ctk.CTk):
             pass
 
     def edit_cell(self, event):
-        # Re-added clean version
+        # Improved editor: Name column accepts free text; Avg Level limited to 0-999; stats limited to 0-65535
         if not hasattr(self, 'tree'):
             return
         item = self.tree.identify_row(event.y)
@@ -1221,28 +1349,61 @@ class SaveEditor(ctk.CTk):
             return
         x, y, w, h = bbox
         current_value = self.tree.item(item, 'values')[col_idx]
-        edit_entry = ctk.CTkEntry(self.tree_frame)
-        edit_entry.place(x=x, y=y, width=w, height=h)
+        # Create CTkEntry with width/height in constructor to satisfy customtkinter requirements
+        try:
+            edit_entry = ctk.CTkEntry(self.tree_frame, width=w, height=h)
+        except Exception:
+            # Fallback to width-only if height not supported
+            try:
+                edit_entry = ctk.CTkEntry(self.tree_frame, width=w)
+            except Exception:
+                edit_entry = ctk.CTkEntry(self.tree_frame)
+        # Place without passing width/height (must be in constructor)
+        edit_entry.place(x=x, y=y)
         edit_entry.insert(0, current_value)
         edit_entry.focus()
         def save_edit(event=None):
             new_value = edit_entry.get().strip()
             if new_value == '':
                 edit_entry.destroy(); return
+            values = list(self.tree.item(item, 'values'))
+            row_idx = None
+            try:
+                row_idx = int(item)
+            except Exception:
+                pass
+            # Name column (index 1) accepts any text
+            if col_idx == 1:
+                values[col_idx] = new_value
+                try:
+                    if row_idx is not None:
+                        self.weapon_data[row_idx][col_idx] = new_value
+                except Exception:
+                    pass
+                self.tree.item(item, values=values)
+                edit_entry.destroy()
+                return
+            # Numeric columns: validate according to column
             try:
                 val = int(new_value)
                 if col_idx == 2:
-                    if val < 0: raise ValueError
+                    # Avg Level: allow 0..999
+                    if val < 0 or val > 999:
+                        raise ValueError
                 else:
-                    if not 0 <= val <= 255: raise ValueError
-                values = list(self.tree.item(item, 'values'))
+                    # Stat columns: allow 0..65535
+                    if not 0 <= val <= 65535:
+                        raise ValueError
                 values[col_idx] = val
                 self.tree.item(item, values=values)
-                row_idx = int(item)
-                self.weapon_data[row_idx][col_idx] = val
+                if row_idx is not None:
+                    try: self.weapon_data[row_idx][col_idx] = val
+                    except Exception: pass
             except ValueError:
+                # invalid numeric input - ignore change
                 pass
-            edit_entry.destroy()
+            finally:
+                edit_entry.destroy()
         edit_entry.bind('<Return>', save_edit)
         edit_entry.bind('<FocusOut>', save_edit)
 
@@ -1308,12 +1469,23 @@ class SaveEditor(ctk.CTk):
         if hasattr(self, 'achievements_section_button'):
             self.achievements_section_button.configure(text=trans.get('achievements_section', 'Achievements') + (" ▼" if self.achievement_content.winfo_ismapped() else " ▶"))
         # Robustly update the Achievements List label
-        if hasattr(self, 'ach_tree_frame') and hasattr(self.ach_tree_frame.master, 'master'):
-            parent = self.ach_tree_frame.master.master
-            for widget in parent.winfo_children():
-                if isinstance(widget, ctk.CTkLabel):
-                    widget.configure(text=trans.get('achievements_box_label', 'Achievements List'))
-                    break
+        if hasattr(self, 'ach_tree_frame'):
+            try:
+                parent = None
+                # Prefer the grandparent if present (master.master), otherwise fall back to master
+                if hasattr(self.ach_tree_frame, 'master') and hasattr(self.ach_tree_frame.master, 'master'):
+                    parent = self.ach_tree_frame.master.master
+                elif hasattr(self.ach_tree_frame, 'master'):
+                    parent = self.ach_tree_frame.master
+                else:
+                    parent = None
+            except Exception:
+                parent = None
+            if parent:
+                for widget in parent.winfo_children():
+                    if isinstance(widget, ctk.CTkLabel):
+                        widget.configure(text=trans.get('achievements_box_label', 'Achievements List'))
+                        break
         # Update achievement table headers
         ach_columns = [
             trans.get('achievement_table_col_id', 'ID'),
@@ -1556,10 +1728,17 @@ class SaveEditor(ctk.CTk):
         return container
 
     def on_translation_lang_change(self, lang):
-        self.current_language = lang  # sync app language with selection
-        self.translation_lang_var.set(lang)
+        # The OptionMenu passes a display name; accept either code or display name
+        if lang in self.translations:
+            code = lang
+            disp = self.language_map.get(code, code)
+        else:
+            code = self.language_map_reverse.get(lang, lang)
+            disp = self.language_map.get(code, code)
+        self.current_language = code  # sync app language with selection
+        # Ensure the var shows the display name
         try:
-            self.language_dropdown.set(lang)
+            self.translation_lang_var.set(disp)
         except Exception:
             pass
         # Refresh all language dependent UI
@@ -1614,7 +1793,9 @@ class SaveEditor(ctk.CTk):
     def update_translation_tab(self, selected=None):
         for widget in self.translation_frame.winfo_children():
             widget.destroy()
-        lang = self.translation_lang_var.get()
+        # Translation var stores a display name; map to code for lookups
+        sel = self.translation_lang_var.get()
+        lang = sel if sel in self.translations else self.language_map_reverse.get(sel, self.current_language)
         tab = self.translation_tab_var.get()
         label = ctk.CTkLabel(self.translation_frame, text=f"Editing: {tab} ({lang})", font=("Arial", 12, "bold"))
         label.pack(anchor="w", pady=(0, 5))
@@ -1701,11 +1882,20 @@ class SaveEditor(ctk.CTk):
         self.refresh_armor_labels()
 
     def on_save_clicked(self):
+        if self.current_file is None:
+            self.save_status_label.configure(text="No save loaded", text_color="red")
+            self.after(3000, lambda: self.save_status_label.configure(text=""))
+            return
         prev_cwd = os.getcwd()
         try:
             if hasattr(self, 'default_save_dir') and os.path.isdir(self.default_save_dir):
                 os.chdir(self.default_save_dir)
             save_save_data(self)
+            self.save_status_label.configure(text="Saved successfully", text_color="green")
+            self.after(3000, lambda: self.save_status_label.configure(text=""))
+        except Exception as e:
+            self.save_status_label.configure(text="Save failed", text_color="red")
+            self.after(3000, lambda: self.save_status_label.configure(text=""))
         finally:
             try: os.chdir(prev_cwd)
             except Exception: pass
@@ -1929,6 +2119,87 @@ class SaveEditor(ctk.CTk):
                 self.active_save_dir_entry = entry
             except Exception:
                 pass
+
+    def mass_edit_weapon_stats(self, mode):
+        """Mass-edit weapon stat columns according to mode: 'own_all' -> set to 1, 'sudo_max' -> set to 8, 'poverty' -> set to 0.
+        Skip protected IDs for 'own_all'; for 'poverty' protected IDs will have their stat values set to 4 and Avg Level set to 5.
+        """
+        if not hasattr(self, 'weapon_data') or not hasattr(self, 'tree'):
+            return
+        # Protected starting IDs that should not be altered by 'Own All' (but handled specially for 'poverty')
+        protected_ids = {0,46,77,109,165,225,305,384,385,462,534,584,597,619,654,690,715,747,771,866,867,1041,1042,1080,1095,1124,1163,1174,1206,1262}
+        # DLC single-paid ranges to skip
+        protected_ranges = [(1346,1362),(1561,1563)]
+        def is_protected(wid):
+            if wid in protected_ids:
+                return True
+            for a,b in protected_ranges:
+                if a <= wid <= b:
+                    return True
+            # modded range 1564+ considered editable
+            return False
+        # Determine target value per mode
+        if mode == 'own_all':
+            target = 1
+        elif mode == 'sudo_max':
+            target = 8
+        elif mode == 'poverty':
+            target = 0
+            protected_stat = 4  # protected IDs get this stat value under poverty
+            protected_avg = 5   # protected IDs get this avg level under poverty
+        else:
+            return
+        # Apply to weapon_data and update tree rows (skip ID and Name columns)
+        for idx, row in enumerate(self.weapon_data):
+            try:
+                wid = int(row[0])
+            except Exception:
+                continue
+            # For 'own_all' we still skip protected IDs entirely
+            if mode == 'own_all' and is_protected(wid):
+                continue
+            # Prepare working values: prefer tree-display values if available
+            values = list(self.tree.item(str(idx), 'values')) if self.tree.exists(str(idx)) else list(row)
+            # Avg level handling
+            try:
+                if mode == 'sudo_max':
+                    # sudo_max should set Avg Level to 8 as requested
+                    values[2] = 8
+                elif mode == 'poverty':
+                    if is_protected(wid):
+                        # Protected IDs get avg level set back to 5 under poverty
+                        values[2] = protected_avg
+                    else:
+                        values[2] = target
+                else:
+                    # own_all and other modes use the generic target
+                    values[2] = target
+            except Exception:
+                pass
+            # Stats columns (3..10). For poverty protected IDs set to protected_stat; otherwise use target (or sudo_max target)
+            for c in range(3, 11):
+                try:
+                    if mode == 'poverty' and is_protected(wid):
+                        values[c] = protected_stat
+                    else:
+                        values[c] = target
+                except Exception:
+                    pass
+            # Write back to tree and internal weapon_data
+            if self.tree.exists(str(idx)):
+                try:
+                    self.tree.item(str(idx), values=values)
+                except Exception:
+                    pass
+            # Update internal weapon_data for persistence
+            for c in range(min(len(self.weapon_data[idx]), len(values))):
+                self.weapon_data[idx][c] = values[c]
+        # Provide a small UI hint
+        try:
+            self.save_status_label.configure(text=self.translations[self.current_language].get('mass_edit_done', 'Mass edit applied'), text_color='green')
+            self.after(2500, lambda: self.save_status_label.configure(text=''))
+        except Exception:
+            pass
 
 if __name__ == "__main__":
     app = SaveEditor()

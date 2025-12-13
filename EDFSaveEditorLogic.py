@@ -4,7 +4,7 @@ import os
 import json
 import sys  # added for frozen exe path handling
 from tkinter import filedialog
-from EDFSaveEditorSave_Handler import load_save, save_save
+from EDFSaveEditorSave_Handler import load_save, save_save, generate_key_iv, aes_ctr_decrypt, aes_ctr_encrypt, crc32c, generate_mst_key_iv_variants
 
 # Helper functions for locating bundled resources when frozen (PyInstaller)
 def _resource_base():
@@ -155,7 +155,7 @@ def load_save_data(app):
         # For simplicity, assume MAIN.GST or first GST file
         gst_file = os.path.join(folder, 'MAIN.GST') if 'MAIN.GST' in gst_files else os.path.join(folder, gst_files[0])
         data = load_save(gst_file)  # Returns decrypted bytes
-        app.current_gst_file = gst_file
+        app.current_file = gst_file
         # Load armor
         for i, (offset, _, fmt, _, _) in enumerate(ARMOR_STRUCTURE):
             if len(data) < offset + 4:
@@ -213,72 +213,234 @@ def load_save_data(app):
         else:
             print("Warning: DEFP_M00.MST not found - mission data skipped")
         # Load additional files from the same folder
-        folder = os.path.dirname(app.current_gst_file) if app.current_gst_file else None
+        folder = os.path.dirname(app.current_file) if app.current_file else None
         if folder:
             # TROPHY.DAT
             trophy_file = os.path.join(folder, 'TROPHY.DAT')
+            td = None
             if os.path.exists(trophy_file):
-                trophy_data = load_save(trophy_file)
-                if len(trophy_data) >= 0x160 + 4:
-                    v = struct.unpack_from("<I", trophy_data, 0x160)[0]
-                    hours = v // 0x34bc0
-                    minutes = (v // 0xe10) % 60
-                    seconds = (v // 0x3c) % 60
+                # Prefer a decrypted copy produced by an external tool if present
+                decrypted_workspace_path = os.path.join(os.path.dirname(__file__), '..', 'EDF6_Decrypted', 'TROPHY.DAT')
+                decrypted_workspace_path = os.path.normpath(decrypted_workspace_path)
+                if os.path.exists(decrypted_workspace_path):
+                    try:
+                        with open(decrypted_workspace_path, 'rb') as f:
+                            td = f.read()
+                        app.trophy_encrypted = False
+                        app.trophy_key = None
+                        app.trophy_iv = None
+                        print(f"Loaded TROPHY.DAT from decrypted workspace copy: {decrypted_workspace_path}")
+                    except Exception as e:
+                        print(f"Error reading decrypted workspace TROPHY.DAT: {e}")
+                        td = None
+                if td is None:
+                    # Read raw ciphertext
+                    with open(trophy_file, 'rb') as f:
+                        raw = f.read()
+                    trophy_data = None
+                    app.trophy_key = None
+                    app.trophy_iv = None
+                    app.trophy_encrypted = False
+
+                    # Try decrypting using GST-derived key/iv first (most likely)
+                    try:
+                        if app.current_file:
+                            try:
+                                gst_key, gst_iv = generate_key_iv(app.current_file)
+                                dec = aes_ctr_decrypt(raw, gst_key, gst_iv)
+                                if dec[:4] == b'MDB0':
+                                    trophy_data = dec
+                                    app.trophy_encrypted = True
+                                    app.trophy_key = gst_key
+                                    app.trophy_iv = gst_iv
+                                    print("TROPHY.DAT decrypted using GST key/iv")
+                            except Exception:
+                                pass
+                    except Exception:
+                        pass
+
+                    # Brute-force reasonable variants if GST key didn't work
+                    if trophy_data is None:
+                        import hashlib
+                        suffix_candidates = [b"Edf41.*_Steam_Ver", b"Edf5.*_Steam_Ver"]
+                        base_name = os.path.splitext(os.path.basename(trophy_file))[0]
+                        bases = [base_name, 'GAMESTATE']
+                        found = False
+                        for digit in ('6', '5'):
+                            if found:
+                                break
+                            for base in bases:
+                                if found:
+                                    break
+                                for suffix in suffix_candidates:
+                                    str1 = f"edf{digit}{base}.sav"
+                                    str2 = f"edf{digit}{base}.stm"
+                                    k_part = hashlib.md5(str1.encode('utf-16le')).digest()
+                                    iv_part = hashlib.md5(str2.encode('utf-16le')).digest()
+                                    if len(suffix) != 16:
+                                        continue
+                                    key_candidate = k_part + suffix
+                                    iv_candidate = iv_part
+                                    try:
+                                        dec = aes_ctr_decrypt(raw, key_candidate, iv_candidate)
+                                    except Exception:
+                                        continue
+                                    if dec[:4] == b'MDB0':
+                                        trophy_data = dec
+                                        app.trophy_encrypted = True
+                                        app.trophy_key = key_candidate
+                                        app.trophy_iv = iv_candidate
+                                        print(f"TROPHY.DAT decrypted with variant {str1}+{suffix.decode('ascii','ignore')}")
+                                        found = True
+                                        break
+                        # If still not found, try MST-style generated variants which may include more suffix/key combos
+                        if not found:
+                            try:
+                                for tag, k_candidate, iv_candidate in generate_mst_key_iv_variants(trophy_file):
+                                    try:
+                                        dec = aes_ctr_decrypt(raw, k_candidate, iv_candidate)
+                                    except Exception:
+                                        continue
+                                    if dec[:4] == b'MDB0':
+                                        trophy_data = dec
+                                        app.trophy_encrypted = True
+                                        app.trophy_key = k_candidate
+                                        app.trophy_iv = iv_candidate
+                                        print(f"TROPHY.DAT decrypted with MST variant {tag}")
+                                        found = True
+                                        break
+                                # allow outer loop to exit
+                            except Exception:
+                                pass
+                        # Last-resort: try load_save which uses generate_key_iv internally
+                        if trophy_data is None:
+                            try:
+                                trophy_data = load_save(trophy_file)
+                                app.trophy_encrypted = True
+                                try:
+                                    k, iv = generate_key_iv(trophy_file)
+                                    app.trophy_key = k
+                                    app.trophy_iv = iv
+                                except Exception:
+                                    app.trophy_key = None
+                                    app.trophy_iv = None
+                                print("TROPHY.DAT decrypted via load_save() fallback")
+                            except Exception:
+                                # Fallback to plain file
+                                trophy_data = raw
+                                app.trophy_encrypted = False
+                                app.trophy_key = None
+                                app.trophy_iv = None
+                                print("TROPHY.DAT used as plain bytes (no decryption succeeded)")
+
+                    td = trophy_data if isinstance(trophy_data, (bytes, bytearray)) else bytes(trophy_data)
+
+                # Remember current trophy path
+                app.current_trophy_file = trophy_file
+
+                # Debug: header and snippets
+                try:
+                    header = td[0:4].decode('ascii', errors='replace')
+                except Exception:
+                    header = str(td[0:4])
+                hex_014 = td[0x14:0x14+32].hex(' ').upper() if len(td) >= 0x14+32 else ''
+                hex_034 = td[0x34:0x34+8].hex(' ').upper() if len(td) >= 0x34+8 else ''
+                hex_160 = td[0x160:0x160+4].hex(' ').upper() if len(td) >= 0x160+4 else ''
+
+                # Extra debug: show raw ciphertext bytes at 0x160 and key/iv used (if available)
+                raw_preview = ''
+                try:
+                    if 'raw' in locals() and raw is not None and len(raw) >= 0x160 + 4:
+                        raw_preview = raw[0x160:0x160+4].hex(' ').upper()
+                except Exception:
+                    raw_preview = ''
+                key_hex = getattr(app, 'trophy_key', None).hex().upper() if getattr(app, 'trophy_key', None) is not None else None
+                iv_hex = getattr(app, 'trophy_iv', None).hex().upper() if getattr(app, 'trophy_iv', None) is not None else None
+                print(f"TROPHY.DAT header: {header} | bytes[0x14..0x14+32]: {hex_014} | bytes[0x34..0x34+8]: {hex_034} | bytes[0x160..0x160+4]: {hex_160}")
+                print(f"DEBUG: raw[0x160..0x163]={raw_preview} dec[0x160..0x163]={hex_160} key={key_hex} iv={iv_hex}")
+
+                # Interpret total-time value (ticks at 60Hz -> seconds)
+                if len(td) >= 0x160 + 4:
+                    v_le = struct.unpack_from("<I", td, 0x160)[0]
+                    hours = v_le // 0x34bc0        # 0x34bc0 == 216000 == 3600*60 H
+                    minutes = (v_le // 0xE10) % 60 # 0xE10 == 3600 == 60*60 M
+                    seconds = (v_le // 0x3C) % 60  # 0x3C == 60 == ticks per S
                     formatted = f"{hours}h {minutes}m {seconds}s"
                     app.playtime_label.configure(text=formatted)
+                    print(f"TROPHY.DAT time raw ticks={v_le} -> {formatted}")
                 else:
                     app.playtime_label.configure(text="TROPHY.DAT Too Small")
-                app.current_trophy_file = trophy_file
-                # Load achievements
+
+                # Load achievements and normalize flags to 0/1
                 achievement_data = []
-                # Progress flags (Conquest)
                 percentages = list(range(5, 65, 5)) + list(range(62, 102, 2))
                 while len(percentages) < 32:
                     percentages.append(percentages[-1])
-                print('Progress achievement flags:', list(trophy_data[0x14:0x14+32]))
+                raw_progress = list(td[0x14:0x14+32])
+                print('Progress achievement flags (raw):', raw_progress)
                 for i in range(32):
-                    flag = trophy_data[0x14 + i]
+                    raw_flag = td[0x14 + i] if (0x14 + i) < len(td) else 0
+                    flag = 1 if raw_flag != 0 else 0
                     perc = percentages[i]
-                    name = f"'Conquest{perc}' Unlocked?"  # Changed to match new format
+                    name = f"Conquest{perc} (Made {perc}% game progress)"
                     achievement_data.append([i, name, flag])
-                # Other achievements
+                raw_other = list(td[0x34:0x34+7])
+                print('Other achievement flags (raw):', raw_other)
                 other_achievements_names = [
-                    "Medic (Healed another player in co-op play)",
                     "Rescue (Rescued 5 other players in co-op play)",
                     "Super Rescue (Rescued 50 other players in co-op play)",
+                    "Medic (Healed another player in co-op play)",
                     "Master Ranger (Ranger’s health has reached 1000)",
                     "Master Diver (Wing Diver’s health has reached 550)",
                     "Master Air Raider (Air Raider’s health has reached 1000)",
                     "Master Fencer (Fencer’s health has reached 1250)",
                 ]
-                print('Other achievement flags:', list(trophy_data[0x34:0x34+7]))
                 for i in range(len(other_achievements_names)):
-                    flag = trophy_data[0x34 + i]
+                    raw_flag = td[0x34 + i] if (0x34 + i) < len(td) else 0
+                    flag = 1 if raw_flag != 0 else 0
                     name = other_achievements_names[i]
                     achievement_data.append([32 + i, name, flag])
+
                 app.achievement_data = achievement_data
+
             else:
                 app.playtime_label.configure(text="TROPHY.DAT Not Found")
+
+            # After loading DAT file, extract kill fields using the already-loaded td if available
+            if 'td' in locals() and td is not None:
+                app.kill_fields = extract_kill_fields(td)
+            else:
+                app.kill_fields = {}
 
             # COMMON.CFG
             cfg_file = os.path.join(folder, 'COMMON.CFG')
             if os.path.exists(cfg_file):
-                cfg_data = load_save(cfg_file)
-                if len(cfg_data) >= 0x5014 + 0x20:
-                    v = cfg_data[0x5014:0x5014 + 0x20]
-                    name = v.decode("utf-16le", errors="replace").rstrip("\x00")
-                    app.profile_name_label.configure(text=name)
-                else:
-                    app.profile_name_label.configure(text="COMMON.CFG Too Small")
+                try:
+                    # Prefer decrypted via load_save, but fall back to raw bytes if decryption fails
+                    try:
+                        cfg_data = load_save(cfg_file)
+                    except ValueError:
+                        with open(cfg_file, 'rb') as f:
+                            cfg_data = f.read()
+                    if len(cfg_data) >= 0x5014 + 0x20:
+                        v = cfg_data[0x5014:0x5014 + 0x20]
+                        name = v.decode("utf-16le", errors="replace").rstrip("\x00")
+                        app.profile_name_label.configure(text=name)
+                    else:
+                        # Try a best-effort decode of the file for a displayable name
+                        try:
+                            name_guess = cfg_data.decode("utf-16le", errors="replace").split("\x00")[0]
+                            if name_guess:
+                                app.profile_name_label.configure(text=name_guess)
+                            else:
+                                app.profile_name_label.configure(text="COMMON.CFG Too Small")
+                        except Exception:
+                            app.profile_name_label.configure(text="COMMON.CFG Too Small")
+                except Exception as e:
+                    print(f"Error reading COMMON.CFG: {e}")
+                    app.profile_name_label.configure(text="COMMON.CFG Read Error")
             else:
                 app.profile_name_label.configure(text="COMMON.CFG Not Found")
-        # After loading DAT file, extract kill fields
-        trophy_file = os.path.join(folder, 'TROPHY.DAT')
-        if os.path.exists(trophy_file):
-            trophy_data = load_save(trophy_file)
-            app.kill_fields = extract_kill_fields(trophy_data)
-        else:
-            app.kill_fields = {}
         # Refresh sheet to apply sizes
         update_displays(app)
         app.update_loadout_names()
@@ -286,14 +448,26 @@ def load_save_data(app):
         if hasattr(app, 'update_kill_fields'):
             app.update_kill_fields()
 
+        # Ensure header labels are refreshed immediately
+        try:
+            if hasattr(app, 'profile_name_label') and app.profile_name_label is not None:
+                app.profile_name_label.update_idletasks()
+        except Exception:
+            pass
+        try:
+            if hasattr(app, 'playtime_label') and app.playtime_label is not None:
+                app.playtime_label.update_idletasks()
+        except Exception:
+            pass
+
 def save_save_data(app):
-    if app.current_gst_file is None:
+    if app.current_file is None:
         file = filedialog.asksaveasfilename(title="Save Save File", filetypes=(("GST Files", "*.GST"), ("All Files", "*.*")))
         if not file:
             return
-        app.current_gst_file = file
+        app.current_file = file
     else:
-        file = app.current_gst_file
+        file = app.current_file
 
     data = bytearray(load_save(file))  # Load original as bytearray
     # Save armor
@@ -313,33 +487,45 @@ def save_save_data(app):
     # Save weapon table
     weapon_data = app.weapon_data
     for r, row in enumerate(weapon_data):
+        offset = 0x7CFC + r * 12
+        if offset + 12 > len(data):
+            break  # Don't save beyond file size
         try:
             avg = int(row[2])  # Changed from float to int
             stats = bytes([int(s) for s in row[3:11]])
         except ValueError:
             continue  # Skip invalid rows
-        offset = 0x7CFC + r * 12
         struct.pack_into("<I", data, offset, avg)  # Changed from <f to <I
         data[offset+4:offset+12] = stats
     # Save mission data to DEFP_M00.MST
     if hasattr(app, 'current_mst_file') and app.current_mst_file:
         mst_data = bytearray(load_save(app.current_mst_file))
-        mst_data[0x1C:0x1C+0x200] = app.mission_arrays[0]  # Ranger
-        mst_data[0x21C:0x21C+0x200] = app.mission_arrays[1]  # Wing Diver
-        mst_data[0x41C:0x41C+0x200] = app.mission_arrays[2]  # Air Raider
-        mst_data[0x61C:0x61C+0x200] = app.mission_arrays[3]  # Fencer
+        mst_data[0x1C:0x1C+0x200] = app.mission_arrays[0]   # Ranger
+        mst_data[0x21C:0x21C+0x200] = app.mission_arrays[1] # Wing Diver
+        mst_data[0x41C:0x41C+0x200] = app.mission_arrays[2] # Air Raider
+        mst_data[0x61C:0x61C+0x200] = app.mission_arrays[3] # Fencer
         save_save(app.current_mst_file, mst_data)
     # Save achievements to TROPHY.DAT
     if hasattr(app, 'current_trophy_file') and app.current_trophy_file:
-        trophy_data = bytearray(load_save(app.current_trophy_file))
+        try:
+            trophy_data = bytearray(load_save(app.current_trophy_file))
+        except ValueError:
+            # If decryption fails, load as plain
+            with open(app.current_trophy_file, 'rb') as f:
+                trophy_data = bytearray(f.read())
         for idx, row in enumerate(app.achievement_data):
             if idx < 32:
                 offset = 0x14 + idx
             else:
                 offset = 0x34 + (idx - 32)
             unlocked = 1 if row[2] else 0
-            trophy_data[offset] = unlocked
-        save_save(app.current_trophy_file, trophy_data)
+            if offset < len(trophy_data):
+                trophy_data[offset] = unlocked
+        # Save as plain, since it might be plain
+        with open(app.current_trophy_file, 'wb') as f:
+            f.write(trophy_data)
+    # Save the modified GST data back to file
+    save_save(file, data)
 
 def update_displays(app):
     try:

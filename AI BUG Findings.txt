@@ -1,0 +1,74 @@
+Language mapping is likely wrong
+
+Building self.language_map uses display_name = lang_dict.get(lang_code, lang_code) which will usually return nothing (language dicts don't have a key equal to their own code). Result: display names/reverse mapping are incorrect and language-selection features may behave unpredictably.
+Multiple inconsistent/undefined widget names
+
+Code references attributes that are never created (e.g. self.language_selector, self.language_dropdown, self.save_paths_section_content in places). Those calls are wrapped in try/except so they silently no-op, but features depending on those widgets will not work.
+Editable "Name" column treated as integer
+
+edit_cell allows editing every column except column 0, then unconditionally attempts to parse the new value as int. Column index 1 is the weapon Name (string) — attempts to int() will raise ValueError and the edit will be ignored. (Likely intent: only numeric stat columns should be validated as ints.)
+Many errors are silently swallowed
+
+The code uses numerous bare try/except: pass blocks. That hides real errors during runtime and makes debugging difficult.
+Appearance mode string mismatch
+
+ctk.set_appearance_mode('dark') (lowercase) is used but update_tree_style compares appearance_mode == "Dark" (capitalized). This may cause theme styles to not be applied as intended.
+Saving config uses relative path and cwd is changed around saves
+
+save_config writes config.json relative to the current working directory. on_save_clicked / on_load_clicked temporarily chdir into default_save_dir before calling save/load handlers. If save_config runs while cwd is changed, config.json may be written into a save folder instead of the app folder.
+Placeholder vs entry text confusion in search
+
+filter_table checks query == self.search_placeholder_value to decide "show all". Placeholder text is not necessarily the entry's content; logic may hide results or clear them incorrectly. update_search_placeholder also deletes content if it equals the placeholder — risky.
+Language/translation structure assumptions are inconsistent
+
+The code tries to support several JSON shapes (flattened vs nested under languages or EDF6), but many places assume different shapes. This can lead to missing keys or wrong lookups (e.g. self.translations.get(self.current_language, self.translations['en']) vs direct indexing).
+Shallow-copy when adding new languages
+
+add_new_language uses shallow .copy() for nested structures (weapon/mission names). That can produce shared nested dictionaries between languages and cause accidental cross-language edits.
+UI update helper names inconsistent
+
+Several methods attempt to set or read attributes by name built from translation keys (e.g. self.achievements_section_button etc). If the attribute naming or creation changes, refresh logic silently fails.
+TreeView heading updates may be fragile
+
+update_weapon_table_headers uses numeric headings (self.tree.heading(f"#{i+1}"...)) while headings were originally created by name. This usually works but is brittle if column order changes.
+Editing entry placement may be mis-positioned
+
+edit_cell uses self.tree.bbox(... ) and places a CTkEntry into self.tree_frame using those coords. Coordinates may be relative to the Treeview widget and not the frame, causing misplacement on some platforms.
+Mission/missions arrays boundary assumptions
+
+mission_arrays are initialized to 512 bytes. If total_missions > 512 (unlikely here) or missions/per-page logic changes, indexing could go out of bounds. on_game_change extends arrays but relies on correct sizing logic.
+Example path patterns and patterns strings are misleading
+
+Example patterns in init_save_paths_section use constructs like (EDF6ModdedSaves||EarthDefenceForce6) which are not valid paths — this is only cosmetic but could confuse users.
+Use of modules/submodules not explicitly imported
+
+add_new_language calls tk.simpledialog.askstring — simpledialog isn't imported explicitly. It may work because tk is the tkinter module, but this is fragile and non-obvious.
+Heavy use of getattr/hasattr to guard calls
+
+Excessive defensive checks hide design problems: if initialization order changes, UI may be partially functional and failures silent.
+
+
+
+
+
+
+
+
+
+BIg bad
+Language map / translations lookup is incorrect
+
+Why: building display names with lang_dict.get(lang_code, ...) is wrong; many lookups use inconsistent JSON shapes so translations can be missing or wrong.
+Fix: normalize languages.json on load to a single internal shape (e.g. translations[code] = { ... , "display_name": ... }) and update all lookup sites to use that normalized shape.
+config.json writes can end up in wrong cwd
+
+Why: on_save/on_load temporarily chdir into save directories; save_config writes relative 'config.json' — may create configs inside save folders.
+Fix: write using an absolute path (resource_path or appdir) or always restore cwd before saving, and use try/finally to guarantee restore.
+Excessive bare except: pass hides real errors
+
+Why: many try/except blocks swallow exceptions; bugs become silent and hard to trace.
+Fix: log exceptions (logging.exception) or at minimum print warnings. Remove overly broad catches; catch specific exceptions.
+Theme/appearance mismatch and tree style fragility
+
+Why: code sets appearance mode lowercase ('dark') but compares to "Dark" in update_tree_style; Treeview style selection may fail.
+Fix: normalize appearance mode comparisons (lowercase) and explicitly call ctk.get_appearance_mode().lower().

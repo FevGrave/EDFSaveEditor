@@ -68,3 +68,91 @@
 # - Many auxiliary scripts (parser, generator, checker) are optional developer tools not required at runtime.
 # - Refactor goal: move more logic from Main into Logic module or new modules (e.g., save_paths, translations, ui_widgets).
 # - Keep this overview updated when adding new significant files.
+
+WhErE iS OuR EDF MULTI MOD LOADER?????????????
+
+Well, it been delayed due DLC mission pack saves not being created in data just the file, and needing to patch a small loop hole to REMOVE ALL Modded mission pack Online lobbies from being listed in game, BUT WHERE IS THE CODE, ALSO THIS GUI IS MADE WITH AI (GPT, Grok), IS ALSO NOT CODE SIGNED SO YOUR OS WILL complain IT'S UNSAFE, even though it is open source and you can build it yourself. and I am putting this out so we can finnally get a mod loader out there.
+
+Just pushed WHATEVER I have for that GUI to here
+https://github.com/FevGrave/EDFMultiModLoader
+
+NEW WILL NEED EDF 4.1 and 5 support and DLCs for them and for 6,
+https://github.com/FevGrave/EDFSaveEditor/releases
+
+
+%AppData%\Local\EarthDefenceForce6\SAVE_DATA\{Your Steam 64 ID}\saveslot0X
+
+
+Unfortunate News
+
+
+
+
+
+
+
+
+
+
+Title: Save File Loophole: Bypassing Room Type Restrictions, Empty New Mission Table in Modded Packs, and Expanding Save File Limits
+
+1. Save File Loophole: Bypassing "Room Type" Restrictions for Online Listing
+When users create or load save files with specific byte values at designated offsets, they can bypass intended "Room Type" restrictions, allowing rooms to appear in public online listings despite being set to private, invite-only, or RoomNameOnly. This loophole affects both modded and vanilla users, with vanilla clients experiencing crashes when joining modded rooms due to desyncs or invalid data.
+
+Key Offsets and Byte Patterns:
+
+Offset 0x1498 (4 bytes): Controls "Room ID" or visibility settings.
+
+Values:
+
+0 = Everyone (public)
+1 = Friends of Participants / Invite Only
+1 = Invite Only (possible duplicate or alias)
+2 = Password
+3 = RoomNameOnly
+
+
+Bypass Behavior: Specific byte patterns (e.g., setting to 0) force the room to list publicly, ignoring the intended privacy setting.
+
+
+Offset 0x14A8 (4 bytes): Secondary "Room ID" or Security Level flag.
+
+Values:
+
+0 = Everyone
+2 = Friends of Participants / Invite Only
+3 = Invite Only
+0 = Password (overlap with Everyone?)
+0 = RoomNameOnly (overlap?)
+
+
+Bypass Behavior: Precreated saves will still have rooms listed on the public list that will still harm vanilla users.
+
+Stricter Validation in EDF6ModPlugin: Implement checks in the mod plugin to sanitize 0x1498 and 0x14A8 during save creation/loading. Override into "Friends of Participants / Invite Only" if detected.
+
+Weapon Desync Mitigation is also a potenial issue, as modded weapons may not be recognized by vanilla clients, leading to crashes. so total enablement of this tools function is recommended for all modded users only.
+
+2. New Mission Table Is Empty in Modded Mission Packs
+When loading modded mission packs, a .MST file (e.g., ExampleModName.MST) is generated successfully, but it contains no data, resulting in an empty mission table. This prevents modded missions from appearing or loading, often followed by a crash to desktop (CTD).
+
+Root Cause Hypothesis: The write process has a unhandled creation logic.
+
+3. Expanding Save Table File Limits
+Current save file structures impose hard limits that could be quickly fill up with modded content, particularly for missions and weapons. Expanding these would enable larger mod packs without corruption or truncation.
+
+Mission Count Cap:
+512 bytes for the mission table per class on mission pack. Each Byte is a mission that has additive values for mission completion status per diff. but I really dont this this is a need to edit to increase but would be a nice increase.
+
+Total Weapon Count Limitation:
+Needing Expansion: With 476 slots left, we're ~80% full (18,864 / 24,576 ≈ 0.768). Pushing beyond this risks overwriting data beyond what is expected within the EDF.dll's assembly.
+4096, would be a good cap.
+
+4. Player Custom Color System / full save file data funtions (Bonus Investigation)
+If feasible, understanding and implementing the custom color system could enhance save editing for player customization.
+
+Key Functionality from Librarian.py that has documented bytes of the save files:
+
+class_color_sets acts as a dictionary or list-based table that points to predefined color palettes or dynamic RGBA mappings.
+It parses and annotates color-related structures during save decryption (using integrated tools like EDFDecrypt for GST/CFG files).
+For prime colors (pure R=255/G=0/B=0/A=0), the 1.5x multiplier is applied during write-back: e.g., input value * 1.5 (clamped to 255), which may explain over-brightening in mods.
+Mixed colors undergo compression: Values are quantized (e.g., divided by a factor like 1.5 or bit-shifted) to fit into 4-byte RGBA storage, reducing precision for blends (e.g., RGB(128,64,32,0) might compress to ~85,42,21,0).

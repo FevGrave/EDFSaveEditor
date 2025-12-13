@@ -24,6 +24,8 @@ def _md5_utf16le(s: str) -> bytes:
 
 def generate_key_iv(filename: str) -> tuple[bytes, bytes]:
     base_name = os.path.basename(filename).rsplit('.sav', 1)[0]
+    if base_name.endswith('.DAT'):
+        base_name = 'GAMESTATE'  # Use same key for all DAT files as GST
     str1 = f"edf6{base_name}.sav"
     str2 = f"edf6{base_name}.stm"
     digest1 = _md5_utf16le(str1)
