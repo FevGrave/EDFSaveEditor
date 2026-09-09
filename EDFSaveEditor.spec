@@ -1,7 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 from PyInstaller.utils.hooks import collect_all
 
-datas = [('C:\\Python312\\Lib\\site-packages\\tksheet', 'tksheet'), ('EDFSaveEditorLogic.py', '.'), ('EDFSaveEditorSave_Handler.py', '.'), ('TableParser.py', '.'), ('MissionNames.json', '.'), ('WeaponNamesLang.json', '.'), ('languages.json', '.')]
+datas = [('AppIcon.ico', '.'), ('C:\\Python312\\Lib\\site-packages\\tksheet', 'tksheet'), ('EDFSaveEditorLogic.py', '.'), ('EDFSaveEditorSave_Handler.py', '.'), ('TableParser.py', '.'), ('EDFWeaponFarming.py', '.'), ('MissionNames.json', '.'), ('WeaponNamesLang.json', '.'), ('languages.json', '.'), ('fonts', 'fonts')]
 binaries = [('C:\\Python312\\tcl\\tcl8.6', 'lib\\tcl8.6'), ('C:\\Python312\\tcl\\tk8.6', 'lib\\tk8.6')]
 hiddenimports = ['customtkinter', 'timeit', 'cryptography.hazmat.bindings._openssl']
 tmp_ret = collect_all('cryptography')
@@ -43,4 +43,5 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
     version='version_info.txt',
+    icon=['AppIcon.ico'],
 )

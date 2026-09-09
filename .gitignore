@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+
+# PyInstaller build/output
+build/
+dist/
+
+# Runtime/debug output
+log.txt
+build_log_*.txt
+
+# Nuitka
+dist_nuitka_onefile/
+dist_nuitka_standalone/
+
+# Save dumps / local saves - never commit user data
+DUMP/
+
+# HexBM bookmarks - generated
+HexBM/
+
+# Local fonts cache (if generated)
+# fonts/  # uncomment if fonts/ is generated; keep tracked if source asset
+
+# Legacy / deprecated - consolidated into WeaponNamesLang.json
+# (uncomment if you want to ignore them locally)
+# TEXTTABLE_STEAM.EN.TXT.json
+# WeaponDropData_EDF6.json
+# WeaponDropCurves_EDF6.json
+# WeaponLevelFloat_EDF6.json
+
+# Encrypted/decrypted saves - never commit
+EDF6_Encrypted/
+EDF6_Decrypted/

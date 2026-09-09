@@ -58,8 +58,36 @@
 #                               structures with documented offsets, annotates armor/loadouts/weapons/missions, builds
 #                               ImHex bookmark files, loads weapon names, logs coverage stats for reverse engineering the save files.
 #                               Use this to help document save file structures. for 4.1 and 5 for revering data complexity. (LAST BEFORE OPENING ALL PARSED DATA IN ImHex, THERE IS A % OF BYTES UNDERSTOOD)
-# WeaponNamesLang.json        : Weapon name mappings per game & language.
+# WeaponNamesLang.json        : Consolidated per-game weapon data (2026-08-14 restructure). Under each game's
+#                               top-level key ("EDF6" etc.):
+#                                 "languages"   - display name mappings per language (id -> name), as before.
+#                                 "level float" - id -> exact-precision level_req (P4), unrounded straight from
+#                                                 WEAPONTABLE.json's raw doubles (e.g. 0.05000000074505806, not a
+#                                                 rounded 0.05 -- rounding here could shift a weapon across a
+#                                                 level-band boundary).
+#                                 "weapon_meta" - id -> {name, sgo, category, drop_weight, availability,
+#                                                 tag_count, item_class, pack}, the rest of P0-P8.
+#                                                 availability (P5, wiki-confirmed) is 0=COLLECT, 1=STARTER ITEM,
+#                                                 3=SINGLE DLC. item_class (P7) is the raw value only, 0 or 1 --
+#                                                 an earlier pass incorrectly forced a 3rd value (2) onto this
+#                                                 field for the SINGLE DLC promo items; that classification
+#                                                 already lives in availability==3 and the override was reverted.
+#                                 "category_names" - category id (P2) -> internal enum name (e.g. "0" ->
+#                                                 "Weapon_AssaultRifle"), verified 59/59 against the community
+#                                                 wiki's own "WEAPON TABLE" section.
+#                                 "EDF6" / "EDF6 DLC1" / "EDF6 DLC2" (sub-keys, one per mode) - the drop-level-band
+#                                                 curve: {<difficulty>: {min_endpoint, max_endpoint, band_width}}.
+#                                                 14 of 15 cells populated from the community wiki's
+#                                                 {{{WeaponDrops}}} field; EDF6 DLC2/Normal stays null due to a
+#                                                 genuine 3-way conflict in the wiki's own source table.
+#                               WeaponDropData_EDF6.json / WeaponLevelFloat_EDF6.json / WeaponDropCurves_EDF6.json
+#                               are DEPRECATED -- their content lives here now, EDFWeaponFarming.py no longer
+#                               reads them, safe to delete.
 # MissionNames.json           : Mission name mappings per game/DLC & language.
+# EDFWeaponFarming.py         : Weapon Farming Helper logic (weapon table panel, EDF6 only so far). RE-verified
+#                               formula (WeaponDropLevelBand_Compute/_ReadDifficultyCurve, Ghidra RE session
+#                               2026-08-14) for the REAL gameplay drop-level band, distinct from the online-room
+#                               "Weapon Level Limit" display value. Reads everything from WeaponNamesLang.json.
 # BACKUP/                     : Auto-created backup folders for save snapshots (logic to expand still pending).
 # log.txt                     : Runtime diagnostic / error logging target (extend usage for debugging).
 # LICENSE.txt                 : Project license (currently CC0 public domain dedication).
