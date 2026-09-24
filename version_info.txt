@@ -2,8 +2,8 @@
 # Windows version resource for EDF SaveEditor executable
 VSVersionInfo(
   ffi=FixedFileInfo(
-    filevers=(1, 1, 0, 0),       # Major, Minor, Patch, Build
-    prodvers=(1, 1, 0, 0),       # Product version numbers
+    filevers=(1, 1, 0, 1),       # Major, Minor, Patch, Build
+    prodvers=(1, 1, 0, 1),       # Product version numbers
     mask=0x3f,
     flags=0x0,
     OS=0x40004,                  # Indicates the operating system
@@ -19,12 +19,12 @@ VSVersionInfo(
           [
             StringStruct(u'CompanyName', u'FevGrave - EDF Community - A Community Based Project'),
             StringStruct(u'FileDescription', u'Save Modification Editor For The Earth Defense Force Series'),
-            StringStruct(u'FileVersion', u'1.1.0.0'),
+            StringStruct(u'FileVersion', u'1.1.0.1'),
             StringStruct(u'InternalName', u'EDFSaveEditor.exe'),
             StringStruct(u'LegalCopyright', u'CC0 1.0 Universal (CC0 1.0) Public Domain Dedication'),
             StringStruct(u'OriginalFilename', u'EDFSaveEditor.exe'),
             StringStruct(u'ProductName', u'Earth Defense Force: Save Editor'),
-            StringStruct(u'ProductVersion', u'1.1.0.0'),
+            StringStruct(u'ProductVersion', u'1.1.0.1'),
           ]
         )
       ]

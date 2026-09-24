@@ -331,6 +331,142 @@ def get_weapon_table_base(game) -> int:
     """Return the MAIN.GST byte offset where the 2048x12-byte weapon table starts, for app.current_game."""
     return 0x7D08 if _game_is_edf5(game) else 0x7CFC
 
+# --- WeaponLimit mod sidecar (.bin) support ------------------------------------------------
+# EDF6-only. The "WeaponLimit" native plugin (edf6_weaponlimit.dll, an EDF Mod Loader plugin;
+# see D:\EDF_GhidraRE_Documents\Mods\EDF6Weaponlimit\edf6_weaponlimit.cpp) relocates the game's
+# in-memory weapon ownership/level table so it can hold more than the hardcoded 2048 slots. The
+# relocated table sits outside the block the game copies to/from MAIN.GST, so once the mod is
+# active NONE of it round-trips through a normal save anymore (not even the original 2048) - the
+# mod persists it itself, once its own Watcher thread has merged the real table with whatever it
+# had on disk, to:
+#     <Mods folder>\SaveData\edf6_weapons_slotNN.bin      (NN = save slot, mod's own numbering)
+# where <Mods folder> is the "Mods" directory sitting next to the plugin's own Plugins subfolder
+# (i.e. <GameDir>\Mods, the same folder the game's own Mods system uses) - NOT anything under the
+# save folder itself. File layout (from the mod's PersistSave/PersistLoad):
+#     offset 0x0  4 bytes   magic "EW6S"
+#     offset 0x4  4 bytes   uint32 LE slot count N (the mod's configured SlotCount, up to 65536)
+#     offset 0x8  N*12      one 12-byte entry per weapon ID - SAME layout as MAIN.GST's own weapon
+#                           table (uint32 condition/flags + 8 stat/level bytes), so slots 0..2047
+#                           mirror what used to live in MAIN.GST and 2048..N-1 only exist here.
+WEAPON_LIMIT_BIN_MAGIC = b"EW6S"
+WEAPON_LIMIT_ENTRY_SIZE = 12
+
+
+def weapon_limit_bin_filename(slot: int) -> str:
+    """Matches the mod's own SlotFileName(): 'edf6_weapons_slot' + 2-digit slot + '.bin'."""
+    return f"edf6_weapons_slot{slot % 100:02d}.bin"
+
+
+def get_weapon_limit_bin_path(app, slot):
+    """Full path to this save slot's WeaponLimit sidecar, or None if no Mods folder is configured
+    (app.config_data['weapon_limit_mods_dir']) or slot is unknown. Mirrors the mod's own
+    ModsSubPath(L"SaveData", name): <mods_dir>\SaveData\edf6_weapons_slotNN.bin - UNLESS the
+    configured folder is already named "SaveData" (a user pointing this setting straight at the
+    folder the .bin visibly sits in - the natural thing to browse to, even though the mod's own
+    ModsSubPath() anchors from the Mods root one level up - is exactly as valid as pointing at the
+    Mods root itself, and doubling up into a nonexistent .../SaveData/SaveData/... must not
+    silently swallow that)."""
+    if slot is None:
+        return None
+    mods_dir = getattr(app, 'config_data', {}).get('weapon_limit_mods_dir', '') if hasattr(app, 'config_data') else ''
+    if not mods_dir or not os.path.isdir(mods_dir):
+        return None
+    filename = weapon_limit_bin_filename(slot)
+    if os.path.basename(os.path.normpath(mods_dir)).lower() == 'savedata':
+        return os.path.join(mods_dir, filename)
+    return os.path.join(mods_dir, "SaveData", filename)
+
+
+def parse_save_slot_number(folder_path):
+    """Best-effort extraction of the numeric save slot from a 'SAVESLOTxx' folder name, matching
+    the in-game saveslot%02d naming the mod itself reads from obj+0x50. None if it doesn't match."""
+    if not folder_path:
+        return None
+    name = os.path.basename(os.path.normpath(folder_path))
+    m = re.search(r'(?i)saveslot(\d+)', name)
+    if not m:
+        return None
+    try:
+        return int(m.group(1))
+    except ValueError:
+        return None
+
+
+def load_weapon_limit_bin(path):
+    """Read a WeaponLimit sidecar .bin. Returns (slot_count, entries): entries is a list of
+    12-byte bytes objects (as many as fully fit, even if the file is short/truncated), or
+    (None, None) if the file doesn't exist or fails the magic check."""
+    try:
+        with open(path, 'rb') as f:
+            raw = f.read()
+    except OSError:
+        return None, None
+    if len(raw) < 8 or raw[0:4] != WEAPON_LIMIT_BIN_MAGIC:
+        return None, None
+    n = struct.unpack_from("<I", raw, 4)[0]
+    entries = []
+    off = 8
+    for _ in range(n):
+        if off + WEAPON_LIMIT_ENTRY_SIZE > len(raw):
+            break
+        entries.append(bytes(raw[off:off + WEAPON_LIMIT_ENTRY_SIZE]))
+        off += WEAPON_LIMIT_ENTRY_SIZE
+    return n, entries
+
+
+def save_weapon_limit_bin(path, entries):
+    """Write a WeaponLimit sidecar .bin in the mod's own format (magic + count + entries),
+    atomically (temp file + os.replace) so a crash mid-write can't corrupt the mod's own copy.
+    entries is a list of 12-byte bytes/bytearray objects."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    buf = bytearray()
+    buf += WEAPON_LIMIT_BIN_MAGIC
+    buf += struct.pack("<I", len(entries))
+    for e in entries:
+        e = bytes(e)
+        if len(e) != WEAPON_LIMIT_ENTRY_SIZE:
+            e = (e + b"\x00" * WEAPON_LIMIT_ENTRY_SIZE)[:WEAPON_LIMIT_ENTRY_SIZE]
+        buf += e
+    tmp_path = path + ".tmp"
+    with open(tmp_path, 'wb') as f:
+        f.write(buf)
+    os.replace(tmp_path, path)
+
+
+def compute_weapon_limit_diff(weapon_data, gst_snapshot):
+    """Compare condition+stats (columns 2..10, i.e. row[2:11]) between the working weapon table
+    and the frozen MAIN.GST snapshot taken at load time. Returns a set of row indices where the
+    two disagree, over however many rows both sides actually have (a WeaponLimit sidecar can make
+    weapon_data longer than gst_snapshot, and those extra slots simply can't disagree with
+    anything - GST never held them to begin with)."""
+    n = min(len(weapon_data), len(gst_snapshot))
+    diff = set()
+    for i in range(n):
+        a, b = weapon_data[i], gst_snapshot[i]
+        if a[2:11] != b[2:11]:
+            diff.add(i)
+    return diff
+
+
+def port_weapon_limit_gst_to_bin(app, indices=None):
+    """Copy MAIN.GST's own condition+stats (app.weapon_limit_gst_snapshot) over the working table
+    (app.weapon_data) for the given row indices - defaulting to every currently-known
+    disagreeing index (app.weapon_limit_diff_indices) when indices is None. This only edits the
+    in-memory table; the caller still needs to Save to write it out to MAIN.GST and the .bin
+    sidecar. Returns the list of indices actually changed."""
+    weapon_data = getattr(app, 'weapon_data', None)
+    gst_snapshot = getattr(app, 'weapon_limit_gst_snapshot', None)
+    if not weapon_data or not gst_snapshot:
+        return []
+    if indices is None:
+        indices = getattr(app, 'weapon_limit_diff_indices', set())
+    changed = []
+    for idx in sorted(indices):
+        if idx < len(weapon_data) and idx < len(gst_snapshot):
+            weapon_data[idx][2:11] = list(gst_snapshot[idx][2:11])
+            changed.append(idx)
+    return changed
+
 # --- KILL FIELDS for Achievements Tab ---
 # SUPERSEDED 2026-09-08: the table below (byte-scan/hexbm/sentinel-flavored guessed names, wired
 # 2026-09-07) is replaced with the fuller, Achievement.sgo-derived table further down, using the
@@ -2592,6 +2728,8 @@ def load_save_data(app):
         # 3 bytes are leftover/overflow, cached in app.weapon_condition_upper and preserved on save.
         weapon_data = []
         app.weapon_condition_upper = {}
+        app.weapon_limit_gst_snapshot = []
+        app.weapon_limit_diff_indices = set()
         if _game_is_edf41(current_game):
             # EDF4.1: ownership flag array at EDF41_WEAPON_TABLE_BASE; names from WeaponNamesLang.json's EDF4.1 roster; Stat1-8 don't apply (EDF6/5-only).
             en_names = app.weapon_names_lang.get('EDF4.1', {}).get('languages', {}).get('en', {})
@@ -2617,17 +2755,63 @@ def load_save_data(app):
                 stats = list(entry[4:12])
                 name = "Unknown"  # Overwritten right after load by get_weapon_name() in EDFSaveEditorMain.py
                 weapon_data.append([i//12, name, condition_display] + stats)
+            # WeaponLimit mod sidecar (.bin) support - see the module comment above
+            # load_weapon_limit_bin(). EDF6-only. Once a valid sidecar exists for this
+            # save slot it is authoritative for EVERY weapon (not just 2048+): the mod
+            # relocates the whole table out of MAIN.GST's reach, so entries 0..2047 here
+            # replace what was just read from the file, and 2048..N-1 extend weapon_data.
+            #
+            # Snapshot MAIN.GST's own values BEFORE the sidecar merge below overwrites them,
+            # so the UI can still show/compare "what GST says" even after weapon_data itself
+            # becomes BIN-authoritative - once the mod is active, MAIN.GST's copy is frozen at
+            # whatever it was on the run that introduced the mod (or since the last time the
+            # user manually ran a legacy import), while the .bin keeps changing from gameplay,
+            # so the two WILL drift apart over time. Read-only; only weapon_data is ever saved.
+            app.weapon_limit_gst_snapshot = [list(row) for row in weapon_data]
+            app.weapon_limit_bin_path = None
+            app.weapon_limit_active = False
+            app.weapon_limit_slot = None
+            if current_game.startswith('EDF6'):
+                slot = parse_save_slot_number(folder)
+                app.weapon_limit_slot = slot
+                bin_path = get_weapon_limit_bin_path(app, slot)
+                if bin_path and os.path.isfile(bin_path):
+                    _n, entries = load_weapon_limit_bin(bin_path)
+                    if entries:
+                        for idx, entry in enumerate(entries):
+                            condition_raw = struct.unpack_from("<I", entry, 0)[0]
+                            condition_display = condition_raw & 0xFF
+                            app.weapon_condition_upper[idx] = condition_raw & 0xFFFFFF00
+                            row = [idx, "Unknown", condition_display] + list(entry[4:12])
+                            if idx < len(weapon_data):
+                                weapon_data[idx] = row
+                            else:
+                                weapon_data.append(row)
+                        app.weapon_limit_bin_path = bin_path
+                        app.weapon_limit_active = True
+                        print(f"[WeaponLimit] Loaded {len(entries)} slots from {bin_path}")
+                    else:
+                        print(f"[WeaponLimit] {bin_path} exists but failed the magic/format check - ignoring")
+            app.weapon_limit_diff_indices = compute_weapon_limit_diff(weapon_data, app.weapon_limit_gst_snapshot)
         app.weapon_data = weapon_data
         if hasattr(app, 'rebuild_weapon_table_columns_for_game'):
             try: app.rebuild_weapon_table_columns_for_game()
             except Exception as e: print(f"[WARN] rebuild_weapon_table_columns_for_game failed: {e}")
-        # Clear the full 0..2047 iid range (not just get_children()) so no stale detached row survives a reload.
-        for idx in range(2048):
+        # Clear the full iid range (not just get_children(), which misses rows a search
+        # filter has detached) so no stale row survives a reload - bounded by whichever is
+        # larger: the base 2048, this load's row count, or a previous load's row count (a
+        # WeaponLimit sidecar can make either side bigger than 2048).
+        clear_upper = max(2048, len(weapon_data), getattr(app, '_weapon_table_last_row_count', 0))
+        for idx in range(clear_upper):
             iid = str(idx)
             if app.tree.exists(iid):
                 app.tree.delete(iid)
         for idx, row in enumerate(weapon_data):
             app.tree.insert("", "end", iid=str(idx), values=row)
+        app._weapon_table_last_row_count = len(weapon_data)
+        if hasattr(app, 'refresh_weapon_limit_status'):
+            try: app.refresh_weapon_limit_status()
+            except Exception as e: print(f"[WARN] refresh_weapon_limit_status failed: {e}")
         load_all_mission_tables(app, folder)
         current_game = getattr(app, 'current_game', 'EDF6')
         player_slot = getattr(app, 'mission_player_slot', 1)
@@ -2940,6 +3124,36 @@ def save_save_data(app):
             condition_raw = condition_upper.get(r, 0) | condition_display
             struct.pack_into("<I", data, offset, condition_raw)
             data[offset+4:offset+12] = stats
+        # WeaponLimit mod sidecar (.bin) support: MAIN.GST above only ever holds slots
+        # 0..2047 (the loop breaks past len(data)). When a Mods folder is configured and
+        # this save slot is known, mirror the FULL weapon_data (all rows, potentially
+        # thousands more than 2048) into the sidecar .bin too, in the mod's own format -
+        # so edits keep working whether or not the WeaponLimit plugin happens to be active
+        # next time the game runs, and slots 2048+ (which MAIN.GST can never hold) persist
+        # at all.
+        if not _game_is_edf41(save_game) and save_game.startswith('EDF6'):
+            slot = getattr(app, 'weapon_limit_slot', None)
+            if slot is None and app.current_file:
+                slot = parse_save_slot_number(os.path.dirname(app.current_file))
+            bin_path = get_weapon_limit_bin_path(app, slot)
+            if bin_path:
+                entries = []
+                for r, row in enumerate(weapon_data):
+                    try:
+                        condition_display = int(row[2]) & 0xFF
+                        stats = bytes([int(s) for s in row[3:11]])
+                    except (ValueError, IndexError):
+                        entries.append(bytes(12))
+                        continue
+                    condition_raw = condition_upper.get(r, 0) | condition_display
+                    entries.append(struct.pack("<I", condition_raw) + stats)
+                try:
+                    save_weapon_limit_bin(bin_path, entries)
+                    app.weapon_limit_bin_path = bin_path
+                    app.weapon_limit_active = True
+                    print(f"[WeaponLimit] Wrote {len(entries)} slots to {bin_path}")
+                except OSError as e:
+                    print(f"[WARN] Could not write WeaponLimit sidecar {bin_path}: {e}")
     # Save mission data for every game/DLC mission table in app.mission_table_cache, not just the active selection - otherwise editing multiple DLCs then saving once would drop all but the last.
     active_game = getattr(app, 'current_game', 'EDF6')
     active_slot = getattr(app, 'mission_player_slot', 1)
