@@ -519,7 +519,8 @@
       "EDF6_WingDiverHardestClearRatio": "Hardest Difficulty Completion Rate (Wing Diver)",
       "EDF6_WingDiverInfernoClearRatio": "Inferno Difficulty Completion Rate (Wing Diver)",
       "EDF6_WingDiverNormalClearRatio": "Normal Difficulty Completion Rate (Wing Diver)",
-      "EDF6_WingDiverPlayCount": "Missions as Wing Diver"
+      "EDF6_WingDiverPlayCount": "Missions as Wing Diver",
+      "system_settings_section": "System Settings"
     },
     "ja": {
       "display_name": "日本語",
@@ -1040,7 +1041,8 @@
       "EDF6_WingDiverHardestClearRatio": "難易度ハーデスト達成率（ウイングダイバー）",
       "EDF6_WingDiverInfernoClearRatio": "難易度インフェルノ達成率（ウイングダイバー）",
       "EDF6_WingDiverNormalClearRatio": "難易度ノーマル達成率（ウイングダイバー）",
-      "EDF6_WingDiverPlayCount": "ウイングダイバー出撃回数"
+      "EDF6_WingDiverPlayCount": "ウイングダイバー出撃回数",
+      "system_settings_section": "システム設定"
     },
     "kr": {
       "display_name": "한국어",
@@ -1561,7 +1563,8 @@
       "EDF6_WingDiverHardestClearRatio": "난이도 HARDEST 달성률(윙 다이버)",
       "EDF6_WingDiverInfernoClearRatio": "난이도 INFERNO 달성률(윙 다이버)",
       "EDF6_WingDiverNormalClearRatio": "난이도 NORMAL 달성률(윙 다이버)",
-      "EDF6_WingDiverPlayCount": "윙 다이버 출격 횟수"
+      "EDF6_WingDiverPlayCount": "윙 다이버 출격 횟수",
+      "system_settings_section": "System Settings"
     },
     "cn": {
       "display_name": "中文(繁體)",
@@ -2082,7 +2085,8 @@
       "EDF6_WingDiverHardestClearRatio": "難度ＨＡＲＤＥＳＴ達成率（飛翼潛行兵）",
       "EDF6_WingDiverInfernoClearRatio": "難度ＩＮＦＥＲＮＯ達成率（飛翼潛行兵）",
       "EDF6_WingDiverNormalClearRatio": "難度ＮＯＲＭＡＬ達成率（飛翼潛行兵）",
-      "EDF6_WingDiverPlayCount": "飛翼潛行兵出擊次數"
+      "EDF6_WingDiverPlayCount": "飛翼潛行兵出擊次數",
+      "system_settings_section": "System Settings"
     },
     "sc": {
       "display_name": "简体中文",
@@ -2603,7 +2607,8 @@
       "EDF6_WingDiverHardestClearRatio": "难度ＨＡＲＤＥＳＴ达成率（飞翼潜行兵）",
       "EDF6_WingDiverInfernoClearRatio": "难度ＩＮＦＥＲＮＯ达成率（飞翼潜行兵）",
       "EDF6_WingDiverNormalClearRatio": "难度ＮＯＲＭＡＬ达成率（飞翼潜行兵）",
-      "EDF6_WingDiverPlayCount": "飞翼潜行兵出击次数"
+      "EDF6_WingDiverPlayCount": "飞翼潜行兵出击次数",
+      "system_settings_section": "System Settings"
     }
   }
 }

@@ -3,13 +3,14 @@ import customtkinter as ctk
 import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
 from tkinter import colorchooser
-import json, sys, os, math
+import json, sys, os, math, re
 from tksheet import Sheet
 from EDFSaveEditorLogic import *
 from EDFSaveEditorLogic import _load_game_file, _extract_mission_arrays, _game_is_edf5, _game_is_edf6, _game_is_edf41, _backup_before_overwrite
 from EDFSaveEditorSave_Handler import *
 import EDFWeaponFarming as wf
 import EDFSaveEditorPS_SaveHandler as ps_saves
+import EDFSystemSettings as syscfg
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
@@ -81,6 +82,17 @@ EDF_SAVE_FOLDER_NAMES = {
     'EDF6': ['EarthDefenceForce6', 'EDF6ModdedSaves'],
     'EDF5': ['EARTH DEFENSE FORCE 5', 'EDF5', 'EDF5_MODSAVES'],
     'EDF4.1': ['EDF4.1', 'EDF4.M'],
+}
+# Steam AppIDs, needed only for Linux/Proton save detection (get_proton_save_dir_candidates()):
+# on Linux there's no LOCALAPPDATA/Documents to fall back on, so the only way to find a save is
+# to know which steamapps/compatdata/<appid>/ Wine prefix Proton ran the game in. Confirmed via
+# a real user-supplied Proton save path for EDF6 (2291060); EDF5/EDF4.1 confirmed via Steam/SteamDB
+# store listings 2026-09-24 (1007040, 410320) - not independently verified against a real Proton
+# install the way EDF6's was, so treat those two as best-effort.
+EDF_STEAM_APPID = {
+    'EDF6': '2291060',
+    'EDF5': '1007040',
+    'EDF4.1': '410320',
 }
 SAVE_PATHS_LABEL_WIDTH = 210
 ARMOR_CLASS_LABEL_WIDTH = 190
@@ -1643,6 +1655,11 @@ class SaveEditor(ctk.CTk):
         self.update_kill_fields()
 
         # Player 2 Data (Experimental) GUI section removed; the underlying export/import_player2_color_block functions are left in place.
+
+        # System Settings (SYSTEM\SYSTEMWIN32.CFG graphics/screen options) - last section, very bottom.
+        try: syscfg.build_system_settings_section(self, main_content)
+        except Exception as e:
+            self._warn(e)
 
         # Re-run theming now that every tksheet.Sheet exists - the earlier call only styled the ttk.Treeview widgets.
         try: self.update_tree_style()
@@ -3496,6 +3513,72 @@ class SaveEditor(ctk.CTk):
             for docs_root in docs_roots:
                 candidates += [os.path.join(docs_root, 'My Games', n, 'SAVE_DATA') for n in names]
             candidates += [os.path.join(local, n, 'SAVE_DATA') for n in names]  # e.g. EDF5_MODSAVES, which - unlike EDF6 - sits directly under LOCALAPPDATA rather than Documents/My Games
+        candidates += self.get_proton_save_dir_candidates(game_key)
+        return candidates
+
+    def get_linux_steam_library_roots(self):
+        """Every plausible Steam library root on Linux: native install, Flatpak, and Snap, plus
+        whatever additional libraries (other drives) each one's own steamapps/libraryfolders.vdf
+        lists - e.g. a user's second Steam library mounted at /mnt/<uuid>/SteamLibrary. Best-effort
+        text scan rather than a full VDF/KeyValues parser (Valve's format has no escaping quirk
+        that would trip up a bare 'path' "value" pair on Linux, where paths use plain forward
+        slashes). No-op (empty list) on anything but Linux, or if Steam was never installed/run
+        here. Used only by get_proton_save_dir_candidates() for Proton compatdata detection -
+        native Windows detection (get_edf_save_dir_candidates()'s LOCALAPPDATA/Documents branches)
+        is untouched by any of this."""
+        if not sys.platform.startswith('linux'):
+            return []
+        home = os.path.expanduser('~')
+        steam_roots = [
+            os.path.join(home, '.steam', 'steam'),
+            os.path.join(home, '.local', 'share', 'Steam'),
+            os.path.join(home, '.var', 'app', 'com.valvesoftware.Steam', '.local', 'share', 'Steam'),
+            os.path.join(home, 'snap', 'steam', 'common', '.local', 'share', 'Steam'),
+        ]
+        libraries = []
+        seen = set()
+        for root in steam_roots:
+            if os.path.isdir(root) and root not in seen:
+                # The Steam install root is always itself a library (steamapps/common lives
+                # directly under it), whether or not libraryfolders.vdf bothers to list it.
+                seen.add(root)
+                libraries.append(root)
+            vdf_path = os.path.join(root, 'steamapps', 'libraryfolders.vdf')
+            try:
+                with open(vdf_path, 'r', encoding='utf-8', errors='replace') as f:
+                    content = f.read()
+            except OSError:
+                continue
+            for m in re.finditer(r'"path"\s*"((?:[^"\\]|\\.)*)"', content):
+                path = os.path.normpath(m.group(1).replace('\\\\', '\\').replace('\\"', '"'))
+                if path and path not in seen:
+                    seen.add(path)
+                    libraries.append(path)
+        return libraries
+
+    def get_proton_save_dir_candidates(self, game_key):
+        """Linux-only: for every detected Steam library (see get_linux_steam_library_roots()),
+        build the save path inside that library's steamapps/compatdata/<appid>/pfx Wine prefix -
+        the Proton equivalent of get_edf_save_dir_candidates()'s native LOCALAPPDATA/Documents
+        branches, since a Proton game's "Windows" AppData/Documents lives at
+        <library>/steamapps/compatdata/<appid>/pfx/drive_c/users/steamuser/... instead. Empty on
+        Windows (get_linux_steam_library_roots() already no-ops there) or for a game_key with no
+        known Steam AppID (EDF_STEAM_APPID)."""
+        appid = EDF_STEAM_APPID.get(game_key)
+        if not appid:
+            return []
+        names = EDF_SAVE_FOLDER_NAMES.get(game_key, [])
+        candidates = []
+        for library in self.get_linux_steam_library_roots():
+            prefix_user = os.path.join(library, 'steamapps', 'compatdata', appid, 'pfx',
+                                        'drive_c', 'users', 'steamuser')
+            appdata_local = os.path.join(prefix_user, 'AppData', 'Local')
+            my_games = os.path.join(prefix_user, 'Documents', 'My Games')
+            if game_key == 'EDF6':
+                candidates += [os.path.join(appdata_local, n, 'SAVE_DATA') for n in names]
+            else:
+                candidates += [os.path.join(my_games, n, 'SAVE_DATA') for n in names]
+                candidates += [os.path.join(appdata_local, n, 'SAVE_DATA') for n in names]
         return candidates
 
     def get_edf_save_dirs(self):
@@ -3766,6 +3849,9 @@ class SaveEditor(ctk.CTk):
             if hasattr(self, 'default_save_dir') and os.path.isdir(self.default_save_dir):
                 os.chdir(self.default_save_dir)
             save_save_data(self)
+            # System Settings panel rides along with the main Save (writes SYSTEMWIN32.CFG only if changed).
+            if hasattr(self, 'system_settings_content'):
+                syscfg.save_system_settings(self)
             self.save_status_label.configure(text="Saved successfully", text_color="green")
             self.after(3000, lambda: self.save_status_label.configure(text=""))
         except Exception as e:
@@ -3836,6 +3922,11 @@ class SaveEditor(ctk.CTk):
         # Refresh the Mission Table panel's MST dropdown now that mission_table_cache has been repopulated.
         if hasattr(self, 'update_mst_dropdown'):
             try: self.update_mst_dropdown()
+            except Exception as e:
+                self._warn(e)
+        # Auto-load SYSTEM\SYSTEMWIN32.CFG for the newly loaded slot's save root.
+        if hasattr(self, 'system_settings_content'):
+            try: syscfg.load_system_settings(self, quiet=True)
             except Exception as e:
                 self._warn(e)
 
