@@ -490,7 +490,7 @@ class SaveEditor(ctk.CTk):
         # (language_selector created later; store desired code)
         self._pending_language_code = self.current_language
         # Replace local version variable with instance attribute
-        self.version = "--- V 1.1.0.1"
+        self.version = "--- V 1.1.0.2"
         self.title(self.tr('title') + " " + self.version)
         self.geometry("1320x960")
         # Window/taskbar icon while running; AppIcon.ico is optional and silently no-ops if absent. The .exe's own file icon is set separately at build time via --icon.
